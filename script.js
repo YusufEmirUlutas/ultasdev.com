@@ -196,15 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         statObserver.observe(stat);
     });
 
-    // Parallax effect for hero section
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.5;
-            heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        });
-    }
+    // Removed parallax effect to prevent overlap issues
 
     // Typing effect for hero title (optional enhancement)
     const heroTitle = document.querySelector('.hero-title');

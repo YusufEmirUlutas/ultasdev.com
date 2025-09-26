@@ -3,112 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - Uza | Ultastech</title>
+    <title>Gizlilik Politikası - Uza | UltasDev</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        .policy-hero {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .policy-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .policy-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+        .policy-date {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+        .policy-content {
+            padding: 60px 0;
+            background: var(--primary-white);
+        }
         .policy-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        .policy-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        .policy-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        .policy-date {
-            color: #666;
-            font-size: 14px;
+            padding: 0 20px;
         }
         .policy-section {
-            margin-bottom: 30px;
+            margin-bottom: 3rem;
         }
         .policy-section h2 {
-            color: #333;
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 1.75rem;
             font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
         }
         .policy-section h3 {
-            color: #555;
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            font-size: 1.25rem;
             font-weight: 600;
+            color: var(--gray-700);
+            margin: 2rem 0 1rem;
         }
-        .policy-section p, .policy-section li {
-            color: #555;
+        .policy-section p {
+            color: var(--gray-600);
             line-height: 1.8;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
         }
         .policy-section ul {
-            padding-left: 30px;
-            margin-bottom: 15px;
+            margin: 1rem 0 1rem 2rem;
         }
-        .policy-section li {
-            margin-bottom: 8px;
+        .policy-section ul li {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
         }
-        .contact-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-        .back-link {
+        .back-button {
             display: inline-block;
-            margin-bottom: 20px;
-            color: #007bff;
+            padding: 0.875rem 2rem;
+            background: var(--primary-black);
+            color: var(--primary-white);
             text-decoration: none;
-            font-weight: 500;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 2rem;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav class="navbar">
             <div class="container">
-                <div class="nav-brand">
-                    <h1>ULTASTECH</h1>
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">ULTASDEV</span>
+                        <span class="logo-dot">.</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html#home" class="nav-link">Ana Sayfa</a></li>
+                        <li><a href="index.html#services" class="nav-link">Hizmetler</a></li>
+                        <li><a href="index.html#portfolio" class="nav-link">Projeler</a></li>
+                        <li><a href="index.html#process" class="nav-link">Süreç</a></li>
+                        <li><a href="index.html#about" class="nav-link">Hakkımızda</a></li>
+                        <li><a href="index.html#contact" class="nav-link nav-cta">Başlayalım</a></li>
+                    </ul>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
-                    <li><a href="privacy-policy.html" class="nav-link active">Gizlilik Politikası</a></li>
-                    <li><a href="terms-of-service.html" class="nav-link">Kullanım Koşulları</a></li>
-                </ul>
             </div>
         </nav>
     </header>
 
-    <main style="padding: 60px 20px; background: #f5f7fa;">
+    <section class="policy-hero">
+        <div class="container">
+            <div class="policy-badge">UZA UYGULAMASI</div>
+            <h1 class="policy-title">Gizlilik Politikası</h1>
+            <p class="policy-date">Son Güncelleme: 21 Eylül 2024</p>
+        </div>
+    </section>
+
+    <section class="policy-content">
         <div class="policy-container">
-            <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
-
-            <div class="policy-header">
-                <h1 class="policy-title">Uza Uygulaması Gizlilik Politikası</h1>
-                <p class="policy-date">Son Güncelleme: 25 Eylül 2024</p>
-            </div>
-
             <div class="policy-section">
                 <h2>1. Giriş</h2>
-                <p>Ultastech ("biz", "bizim" veya "şirket") olarak, Uza mobil uygulaması ("Uygulama") kullanıcılarımızın gizliliğini korumayı taahhüt ediyoruz. Bu Gizlilik Politikası, Uygulamamızı kullandığınızda kişisel bilgilerinizi nasıl topladığımızı, kullandığımızı, paylaştığımızı ve koruduğumuzu açıklar.</p>
-
-                <p>Uygulamamızı kullanarak, bu Gizlilik Politikası'nda açıklanan uygulamaları kabul etmiş olursunuz. Bu politikayı kabul etmiyorsanız, lütfen Uygulamamızı kullanmayın.</p>
+                <p>
+                    UltasDev ("biz", "bizim") olarak, Uza uygulamasının geliştiricisi olarak kullanıcılarımızın gizliliğini korumaya kararlıyız.
+                    Bu Gizlilik Politikası, Uza uygulamasını kullandığınızda hangi bilgileri topladığımızı, nasıl kullandığımızı ve koruduğumuzu açıklar.
+                </p>
+                <p>
+                    Uza uygulamasını kullanarak, bu Gizlilik Politikası'nda açıklanan uygulamaları kabul etmiş olursunuz.
+                </p>
             </div>
 
             <div class="policy-section">
@@ -116,151 +148,204 @@
 
                 <h3>2.1 Kullanıcı Tarafından Sağlanan Bilgiler</h3>
                 <ul>
-                    <li><strong>Profil Bilgileri:</strong> Ad, yaş, cinsiyet, boy, kilo</li>
-                    <li><strong>Fiziksel Özellikler:</strong> Mevcut boy, hedef boy, anne/baba boyu, ayak numarası</li>
-                    <li><strong>Yaşam Tarzı Bilgileri:</strong> Uyku düzeni, egzersiz alışkanlıkları, beslenme tercihleri</li>
-                    <li><strong>Hesap Bilgileri:</strong> E-posta adresi (Firebase Authentication için)</li>
-                    <li><strong>Sağlık Verileri:</strong> Büyüme ile ilgili sağlık bilgileri (isteğe bağlı)</li>
+                    <li><strong>Hesap Bilgileri:</strong> Ad, e-posta adresi, kullanıcı adı</li>
+                    <li><strong>Profil Bilgileri:</strong> Profil fotoğrafı, biyografi, ilgi alanları</li>
+                    <li><strong>İçerik:</strong> Paylaşımlar, mesajlar, yorumlar</li>
                 </ul>
 
                 <h3>2.2 Otomatik Olarak Toplanan Bilgiler</h3>
                 <ul>
-                    <li><strong>Cihaz Bilgileri:</strong> Cihaz ID, işletim sistemi, uygulama versiyonu</li>
-                    <li><strong>Kullanım Verileri:</strong> Uygulama içi aktiviteler, özellik kullanımları, oturum süreleri</li>
-                    <li><strong>Analitik Verileri:</strong> Firebase Analytics aracılığıyla toplanan anonim kullanım istatistikleri</li>
-                    <li><strong>Crash Raporları:</strong> Uygulama çökmeleri ve hata raporları</li>
+                    <li><strong>Cihaz Bilgileri:</strong> Cihaz türü, işletim sistemi, uygulama sürümü</li>
+                    <li><strong>Kullanım Verileri:</strong> Uygulama içi aktiviteler, özellik kullanımı</li>
+                    <li><strong>Log Verileri:</strong> IP adresi, erişim zamanları, hata raporları</li>
                 </ul>
+
+                <h3>2.3 Konum Bilgileri</h3>
+                <p>
+                    Uza, izninizle cihazınızın konum bilgilerini kullanabilir. Bu bilgiler, konum tabanlı özellikler için kullanılır
+                    ve istediğiniz zaman cihaz ayarlarınızdan devre dışı bırakılabilir.
+                </p>
             </div>
 
             <div class="policy-section">
-                <h2>3. Bilgileri Kullanma Amaçlarımız</h2>
-                <p>Topladığımız bilgileri aşağıdaki amaçlarla kullanıyoruz:</p>
+                <h2>3. Bilgilerin Kullanımı</h2>
+                <p>Topladığımız bilgileri şu amaçlarla kullanırız:</p>
                 <ul>
-                    <li>Kişiselleştirilmiş boy uzama programları ve öneriler sunmak</li>
-                    <li>Uza AI asistanı aracılığıyla kişisel koçluk hizmeti sağlamak</li>
-                    <li>Büyüme potansiyeli hesaplamaları ve tahminler yapmak</li>
-                    <li>Egzersiz, beslenme ve yaşam tarzı önerileri sunmak</li>
-                    <li>İlerleme takibi ve raporlama hizmetleri sağlamak</li>
-                    <li>Uygulama performansını iyileştirmek ve hataları düzeltmek</li>
-                    <li>Kullanıcı deneyimini geliştirmek</li>
-                    <li>Yasal yükümlülüklerimizi yerine getirmek</li>
+                    <li>Uza hizmetlerini sağlamak ve geliştirmek</li>
+                    <li>Kullanıcı deneyimini kişiselleştirmek</li>
+                    <li>Kullanıcılarla iletişim kurmak</li>
+                    <li>Güvenlik ve dolandırıcılık tespiti</li>
+                    <li>Yasal yükümlülükleri yerine getirmek</li>
+                    <li>Uygulama performansını analiz etmek</li>
                 </ul>
             </div>
 
             <div class="policy-section">
                 <h2>4. Bilgi Paylaşımı</h2>
-                <p>Kişisel bilgilerinizi aşağıdaki durumlar dışında üçüncü taraflarla paylaşmayız:</p>
+                <p>Kullanıcı bilgilerinizi şu durumlar dışında üçüncü taraflarla paylaşmayız:</p>
                 <ul>
-                    <li><strong>Hizmet Sağlayıcılar:</strong> Firebase (Google) - kimlik doğrulama, veritabanı ve analitik hizmetleri için</li>
-                    <li><strong>OpenAI API:</strong> Uza AI özelliği için (anonim ve toplu veri)</li>
-                    <li><strong>Yasal Gereklilikler:</strong> Kanun gerektirdiğinde veya yasal süreçlere uymak için</li>
-                    <li><strong>Güvenlik:</strong> Dolandırıcılığı önlemek veya güvenlik tehditlerine karşı koruma sağlamak için</li>
+                    <li><strong>Sizin İzninizle:</strong> Açık onayınızı aldığımızda</li>
+                    <li><strong>Hizmet Sağlayıcılarla:</strong> Uygulama işlevlerini destekleyen güvenilir iş ortakları</li>
+                    <li><strong>Yasal Nedenlerle:</strong> Kanuni zorunluluklar veya yasal süreçler</li>
+                    <li><strong>İş Transferleri:</strong> Birleşme, satın alma veya varlık satışı durumunda</li>
                 </ul>
-                <p><strong>Önemli:</strong> Kişisel bilgilerinizi hiçbir zaman reklam amaçlı satmayız veya kiralamayız.</p>
             </div>
 
             <div class="policy-section">
                 <h2>5. Veri Güvenliği</h2>
-                <p>Kişisel bilgilerinizi korumak için endüstri standardı güvenlik önlemleri kullanıyoruz:</p>
+                <p>
+                    Kullanıcı bilgilerinizi korumak için endüstri standardı güvenlik önlemleri uygularız:
+                </p>
                 <ul>
-                    <li>SSL/TLS şifreleme ile veri iletimi</li>
-                    <li>Firebase Security Rules ile veri erişim kontrolü</li>
-                    <li>Şifrelenmiş veri depolama</li>
-                    <li>Düzenli güvenlik güncellemeleri ve denetimler</li>
-                    <li>Sınırlı erişim yetkilendirmesi</li>
+                    <li>Şifreleme teknolojileri</li>
+                    <li>Güvenli sunucu altyapısı</li>
+                    <li>Düzenli güvenlik güncellemeleri</li>
+                    <li>Erişim kontrolleri</li>
                 </ul>
+                <p>
+                    Ancak, internet üzerinden hiçbir veri iletimi veya depolama yöntemi %100 güvenli değildir.
+                </p>
             </div>
 
             <div class="policy-section">
                 <h2>6. Çocukların Gizliliği</h2>
-                <p>Uygulamamız 13 yaş ve üzeri kullanıcılar için tasarlanmıştır. 13 yaşından küçük çocuklardan bilerek kişisel bilgi toplamayız. Eğer 13 yaşından küçük bir çocuğun bilgilerini topladığımızı fark ederseniz, lütfen bizimle iletişime geçin ve bu bilgileri derhal sileceğiz.</p>
-
-                <p>13-18 yaş arası kullanıcılar için ebeveyn onayı önerilir. Ebeveynler, çocuklarının hesap bilgilerini inceleme ve silme talebinde bulunabilirler.</p>
+                <p>
+                    Uza, 13 yaşın altındaki çocuklar için tasarlanmamıştır. 13 yaşın altındaki kullanıcılardan bilerek
+                    kişisel bilgi toplamayız. Eğer bir çocuğun bize kişisel bilgi sağladığını öğrenirsek, bu bilgileri
+                    derhal sileriz.
+                </p>
             </div>
 
             <div class="policy-section">
                 <h2>7. Kullanıcı Hakları</h2>
-                <p>KVKK (Kişisel Verilerin Korunması Kanunu) ve GDPR kapsamında aşağıdaki haklara sahipsiniz:</p>
+                <p>Kullanıcılarımız aşağıdaki haklara sahiptir:</p>
                 <ul>
                     <li><strong>Erişim Hakkı:</strong> Kişisel verilerinize erişim talep edebilirsiniz</li>
                     <li><strong>Düzeltme Hakkı:</strong> Yanlış veya eksik bilgilerin düzeltilmesini isteyebilirsiniz</li>
                     <li><strong>Silme Hakkı:</strong> Kişisel verilerinizin silinmesini talep edebilirsiniz</li>
-                    <li><strong>Taşınabilirlik Hakkı:</strong> Verilerinizin taşınabilir formatta size veya başka bir veri sorumlusuna aktarılmasını isteyebilirsiniz</li>
-                    <li><strong>İtiraz Hakkı:</strong> Verilerinizin işlenmesine itiraz edebilirsiniz</li>
-                    <li><strong>Kısıtlama Hakkı:</strong> Verilerinizin işlenmesinin kısıtlanmasını talep edebilirsiniz</li>
+                    <li><strong>İtiraz Hakkı:</strong> Veri işlemeye itiraz edebilirsiniz</li>
+                    <li><strong>Veri Taşınabilirliği:</strong> Verilerinizin kopyasını isteyebilirsiniz</li>
                 </ul>
-                <p>Bu haklarınızı kullanmak için privacy@ultastech.com adresinden bizimle iletişime geçebilirsiniz.</p>
             </div>
 
             <div class="policy-section">
-                <h2>8. Veri Saklama</h2>
-                <p>Kişisel bilgilerinizi, aşağıdaki durumlar haricinde, hesabınız aktif olduğu sürece saklarız:</p>
-                <ul>
-                    <li>Hesabınızı silmeniz durumunda, verileriniz 30 gün içinde sistemlerimizden kaldırılır</li>
-                    <li>12 ay boyunca inaktif kalan hesaplar otomatik olarak silinebilir</li>
-                    <li>Yasal gereklilikler nedeniyle bazı veriler daha uzun süre saklanabilir</li>
-                </ul>
+                <h2>8. Çerezler ve Takip Teknolojileri</h2>
+                <p>
+                    Uza, kullanıcı deneyimini geliştirmek için çerezler ve benzer teknolojiler kullanabilir.
+                    Bu teknolojiler, oturum yönetimi, tercih kaydetme ve analitik amaçlar için kullanılır.
+                </p>
             </div>
 
             <div class="policy-section">
                 <h2>9. Üçüncü Taraf Bağlantıları</h2>
-                <p>Uygulamamız, üçüncü taraf web sitelerine veya hizmetlere bağlantılar içerebilir. Bu sitelerin gizlilik uygulamalarından sorumlu değiliz. Bu siteleri ziyaret ettiğinizde kendi gizlilik politikalarını incelemenizi öneririz.</p>
+                <p>
+                    Uza, üçüncü taraf web sitelerine veya hizmetlere bağlantılar içerebilir. Bu sitelerin
+                    gizlilik uygulamalarından sorumlu değiliz. Bu bağlantıları kullanmadan önce ilgili
+                    gizlilik politikalarını incelemenizi öneririz.
+                </p>
             </div>
 
             <div class="policy-section">
-                <h2>10. Uluslararası Veri Aktarımı</h2>
-                <p>Verileriniz, Firebase altyapısı nedeniyle Türkiye dışındaki sunucularda (özellikle ABD ve AB) saklanabilir. Bu aktarımlar, GDPR ve ilgili veri koruma yasalarına uygun olarak gerçekleştirilir.</p>
+                <h2>10. Uluslararası Veri Transferleri</h2>
+                <p>
+                    Bilgileriniz, farklı veri koruma yasalarına sahip ülkelerde işlenebilir ve saklanabilir.
+                    Bu transferlerde, verilerinizin güvenliğini sağlamak için uygun önlemleri alırız.
+                </p>
             </div>
 
             <div class="policy-section">
-                <h2>11. Çerezler ve Takip Teknolojileri</h2>
-                <p>Uygulamamız, kullanıcı deneyimini iyileştirmek için çerezler ve benzer teknolojiler kullanır:</p>
-                <ul>
-                    <li><strong>Oturum Çerezleri:</strong> Oturum yönetimi için</li>
-                    <li><strong>Tercih Çerezleri:</strong> Uygulama ayarlarınızı hatırlamak için</li>
-                    <li><strong>Analitik Çerezleri:</strong> Uygulama kullanımını anlamak için (Firebase Analytics)</li>
-                </ul>
+                <h2>11. Veri Saklama</h2>
+                <p>
+                    Kişisel verilerinizi, bu politikada belirtilen amaçlar için gerekli olduğu sürece veya
+                    yasal yükümlülüklerimizi yerine getirmek için gerekli olduğu sürece saklarız. Hesabınızı
+                    sildiğinizde, verileriniz makul bir süre içinde sistemlerimizden kaldırılır.
+                </p>
             </div>
 
             <div class="policy-section">
                 <h2>12. Politika Değişiklikleri</h2>
-                <p>Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Önemli değişiklikler yapıldığında, uygulama içi bildirim veya e-posta yoluyla sizi bilgilendireceğiz. Değişiklikler yayınlandıktan sonra Uygulamayı kullanmaya devam etmeniz, yeni politikayı kabul ettiğiniz anlamına gelir.</p>
+                <p>
+                    Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Önemli değişiklikler yapıldığında,
+                    uygulama içi bildirim veya e-posta yoluyla sizi bilgilendiririz. Değişikliklerin yürürlüğe
+                    girmesinden sonra Uza'yı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz
+                    anlamına gelir.
+                </p>
             </div>
 
             <div class="policy-section">
-                <h2>13. İletişim Bilgileri</h2>
-                <div class="contact-info">
-                    <p><strong>Şirket Adı:</strong> Ultastech Yazılım ve Teknoloji A.Ş.</p>
-                    <p><strong>E-posta:</strong> privacy@ultastech.com</p>
-                    <p><strong>Destek E-posta:</strong> support@ultastech.com</p>
-                    <p><strong>Web Sitesi:</strong> www.ultastech.com</p>
-                    <p><strong>Adres:</strong> İstanbul, Türkiye</p>
-                    <p><strong>Veri Sorumlusu:</strong> Ultastech Yazılım ve Teknoloji A.Ş.</p>
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2>14. Yasal Dayanak</h2>
-                <p>Kişisel verilerinizi işleme yasal dayanağımız:</p>
+                <h2>13. İletişim</h2>
+                <p>
+                    Gizlilik politikamız hakkında sorularınız veya endişeleriniz varsa, bizimle iletişime geçebilirsiniz:
+                </p>
                 <ul>
-                    <li>Sözleşmenin ifası (kullanıcı hesabı ve hizmet sağlama)</li>
-                    <li>Meşru menfaat (uygulama güvenliği ve iyileştirme)</li>
-                    <li>Açık rıza (pazarlama iletişimleri için)</li>
-                    <li>Yasal yükümlülük (vergi ve muhasebe gereklilikleri)</li>
+                    <li><strong>E-posta:</strong> privacy@ultasdev.com</li>
+                    <li><strong>Web:</strong> www.ultasdev.com</li>
+                    <li><strong>Adres:</strong> Global - Uzaktan Çalışma</li>
                 </ul>
             </div>
-        </div>
-    </main>
 
-    <footer>
+            <div class="policy-section">
+                <h2>14. Yasal Dayanak (KVKK)</h2>
+                <p>
+                    6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, kişisel verileriniz;
+                    veri sorumlusu olarak UltasDev tarafından aşağıda açıklanan kapsamda işlenebilecektir.
+                </p>
+                <h3>Veri Sorumlusunun Kimliği</h3>
+                <p>
+                    UltasDev olarak, KVKK'nın 10. maddesi uyarınca veri sorumlusu sıfatıyla, kişisel verilerinizi
+                    aşağıda açıklanan amaçlar kapsamında; hukuka ve dürüstlük kurallarına uygun, doğru ve gerektiğinde
+                    güncel, belirli, açık ve meşru amaçlar için, amaçla bağlantılı, sınırlı ve ölçülü bir biçimde
+                    işleyeceğimizi bildiririz.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html" class="back-button">Ana Sayfaya Dön</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>ULTASTECH</h3>
-                    <p>&copy; 2024 Ultastech. Tüm hakları saklıdır.</p>
+                    <div class="footer-logo">ULTASDEV.</div>
+                    <p class="footer-tagline">Geleceği inşa ediyoruz, birer uygulama ile.</p>
                 </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Şirket</h4>
+                        <ul>
+                            <li><a href="index.html#about">Hakkımızda</a></li>
+                            <li><a href="index.html#portfolio">Projeler</a></li>
+                            <li><a href="index.html#process">Süreç</a></li>
+                            <li><a href="index.html#contact">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Hizmetler</h4>
+                        <ul>
+                            <li><a href="index.html#services">iOS Geliştirme</a></li>
+                            <li><a href="index.html#services">Android Geliştirme</a></li>
+                            <li><a href="index.html#services">UI/UX Tasarım</a></li>
+                            <li><a href="index.html#services">Danışmanlık</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Yasal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Gizlilik Politikası</a></li>
+                            <li><a href="terms-of-service.html">Kullanım Koşulları</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UltasDev. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
