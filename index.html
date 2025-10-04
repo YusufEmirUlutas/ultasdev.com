@@ -14,20 +14,32 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="#" class="logo">
-                        <span class="logo-text">ULTASDEV</span>
-                        <span class="logo-dot">.</span>
-                    </a>
-                    <div class="nav-actions">
-                        <button class="language-toggle" id="languageToggle" aria-label="Switch language">
-                            <span class="lang-text">EN</span>
-                        </button>
-                        <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                            <span class="hamburger-line"></span>
-                            <span class="hamburger-line"></span>
-                            <span class="hamburger-line"></span>
-                        </button>
+                    <div class="nav-left">
+                        <div class="language-selector">
+                            <button class="language-trigger" id="languageTrigger" aria-label="Select language">
+                                <span class="flag-icon" id="currentFlag">🇹🇷</span>
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-lang="en">
+                                    <span class="flag-icon">🇬🇧</span>
+                                    <span class="lang-name">English</span>
+                                </button>
+                                <button class="language-option" data-lang="tr">
+                                    <span class="flag-icon">🇹🇷</span>
+                                    <span class="lang-name">Türkçe</span>
+                                </button>
+                            </div>
+                        </div>
+                        <a href="#" class="logo">
+                            <span class="logo-text">ULTASDEV</span>
+                            <span class="logo-dot">.</span>
+                        </a>
                     </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="#home" class="nav-link" data-i18n="nav.home">Ana Sayfa</a></li>
                         <li><a href="#services" class="nav-link" data-i18n="nav.services">Hizmetler</a></li>

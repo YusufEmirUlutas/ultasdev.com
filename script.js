@@ -283,11 +283,20 @@ function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('language', lang);
 
-    // Update language toggle button text
-    const langToggle = document.getElementById('languageToggle');
-    if (langToggle) {
-        langToggle.querySelector('.lang-text').textContent = lang === 'en' ? 'TR' : 'EN';
+    // Update flag icon
+    const currentFlag = document.getElementById('currentFlag');
+    if (currentFlag) {
+        currentFlag.textContent = lang === 'en' ? '🇬🇧' : '🇹🇷';
     }
+
+    // Update selected state in dropdown
+    document.querySelectorAll('.language-option').forEach(option => {
+        if (option.getAttribute('data-lang') === lang) {
+            option.classList.add('selected');
+        } else {
+            option.classList.remove('selected');
+        }
+    });
 
     // Update HTML lang attribute
     document.documentElement.lang = lang;
@@ -311,12 +320,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize language
     setLanguage(currentLang);
 
-    // Language toggle functionality
-    const languageToggle = document.getElementById('languageToggle');
-    if (languageToggle) {
-        languageToggle.addEventListener('click', function() {
-            const newLang = currentLang === 'en' ? 'tr' : 'en';
-            setLanguage(newLang);
+    // Language dropdown functionality
+    const languageTrigger = document.getElementById('languageTrigger');
+    const languageDropdown = document.getElementById('languageDropdown');
+    const languageOptions = document.querySelectorAll('.language-option');
+
+    if (languageTrigger && languageDropdown) {
+        // Toggle dropdown
+        languageTrigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            languageDropdown.classList.toggle('active');
+        });
+
+        // Select language
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+                languageDropdown.classList.remove('active');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!languageTrigger.contains(e.target) && !languageDropdown.contains(e.target)) {
+                languageDropdown.classList.remove('active');
+            }
+        });
+
+        // Close dropdown on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                languageDropdown.classList.remove('active');
+            }
         });
     }
 
