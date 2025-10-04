@@ -79,6 +79,34 @@ body {
     margin-left: 2px;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-toggle {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--primary-black);
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+}
+
+.language-toggle:hover {
+    background: var(--gray-200);
+    border-color: var(--gray-300);
+}
+
+.language-toggle:active {
+    transform: scale(0.95);
+}
+
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -1217,6 +1245,11 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+
+    .language-toggle {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
     }
 
     .hero {
