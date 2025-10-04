@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası - Uza | UltasDev</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .policy-hero {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .policy-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .policy-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+        .policy-date {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+        .policy-content {
+            padding: 60px 0;
+            background: var(--primary-white);
+        }
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+        .policy-section h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        .policy-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin: 2rem 0 1rem;
+        }
+        .policy-section p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .policy-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+        .policy-section ul li {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .highlight-box {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-black);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="nav-left">
+                        <div class="language-selector">
+                            <button class="language-trigger" id="languageTrigger" aria-label="Select language">
+                                <span class="flag-icon" id="currentFlag">🇹🇷</span>
+                            </button>
+                            <div class="language-dropdown" id="languageDropdown">
+                                <button class="language-option" data-lang="en" onclick="window.location.href='privacy-policy.html'">
+                                    <span class="flag-icon">🇬🇧</span>
+                                    <span class="lang-name">English</span>
+                                </button>
+                                <button class="language-option" data-lang="tr" onclick="window.location.href='privacy-policy-tr.html'">
+                                    <span class="flag-icon">🇹🇷</span>
+                                    <span class="lang-name">Türkçe</span>
+                                </button>
+                            </div>
+                        </div>
+                        <a href="../index.html" class="logo">
+                            <span class="logo-text">ULTASDEV</span>
+                            <span class="logo-dot">.</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="../index.html#home" class="nav-link">Ana Sayfa</a></li>
+                        <li><a href="../index.html#services" class="nav-link">Hizmetler</a></li>
+                        <li><a href="../index.html#portfolio" class="nav-link">Portföy</a></li>
+                        <li><a href="../index.html#process" class="nav-link">Süreç</a></li>
+                        <li><a href="../index.html#about" class="nav-link">Hakkımızda</a></li>
+                        <li><a href="../index.html#contact" class="nav-link nav-cta">Başlayın</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="policy-hero">
+        <div class="container">
+            <div class="policy-badge">UZA UYGULAMASI</div>
+            <h1 class="policy-title">Gizlilik Politikası</h1>
+            <p class="policy-date">Son Güncelleme: 4 Ocak 2025</p>
+        </div>
+    </section>
+
+    <section class="policy-content">
+        <div class="policy-container">
+            <div class="policy-section">
+                <h2>1. Giriş</h2>
+                <p>
+                    UltasDev ("biz", "bizim", "tarafımızca") olarak gizliliğinizi korumayı taahhüt ediyoruz. Bu Gizlilik Politikası, Uza mobil uygulamasını ("Uygulama") kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklamaktadır.
+                </p>
+                <p>
+                    Uza'yı kullanarak, bu Gizlilik Politikası'nda açıklanan uygulamaları kabul etmiş olursunuz. Bu politikayı kabul etmiyorsanız, lütfen Uygulamayı kullanmayınız.
+                </p>
+                <div class="highlight-box">
+                    <strong>Önemli:</strong> Uza kullanıcı hesapları veya konum takibi kullanmaz. Verileriniz cihazınızda yerel olarak saklanır ve yalnızca kişisel bulut depolama alanınızla senkronize edilir.
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. Topladığımız Bilgiler</h2>
+
+                <h3>2.1 Kişisel Sağlık Verileri (Yerel Olarak Saklanır)</h3>
+                <p>Aşağıdaki bilgiler cihazınızda yerel olarak toplanır ve saklanır:</p>
+                <ul>
+                    <li><strong>Boy Ölçümleri:</strong> Boy takip verileriniz ve büyüme ilerlemeniz</li>
+                    <li><strong>Antrenman Verileri:</strong> Egzersiz rutinleri, antrenman geçmişi ve ilerleme</li>
+                    <li><strong>Sağlık Bilgileri:</strong> Kişisel sağlık hedefleri ve tercihleri</li>
+                    <li><strong>Yapay Zeka Etkileşimleri:</strong> Kişiselleştirilmiş rehberlik için yapay zeka koçu ile yapılan konuşmalar</li>
+                    <li><strong>Kullanıcı Tercihleri:</strong> Uygulama ayarları, bildirim tercihleri ve özelleştirmeler</li>
+                </ul>
+
+                <h3>2.2 Teknik Bilgiler</h3>
+                <p>Sınırlı teknik bilgileri otomatik olarak toplarız:</p>
+                <ul>
+                    <li><strong>Cihaz Bilgileri:</strong> Cihaz türü, işletim sistemi sürümü, uygulama sürümü</li>
+                    <li><strong>Kullanım Analitikleri:</strong> Uygulama özellik kullanımı, çökme raporları ve performans verileri (anonimleştirilmiş)</li>
+                    <li><strong>Anlık Bildirim Tokenleri:</strong> Bildirimleri etkinleştirmeniz durumunda</li>
+                </ul>
+
+                <h3>2.3 Toplamadığımız Bilgiler</h3>
+                <ul>
+                    <li>❌ Kullanıcı hesapları veya giriş bilgileri</li>
+                    <li>❌ Konum verileri veya GPS bilgileri</li>
+                    <li>❌ Kişi listeleri veya telefon rehberi</li>
+                    <li>❌ Kamera veya fotoğraf galerisi erişimi (açıkça resim seçmediğiniz sürece)</li>
+                    <li>❌ Sosyal medya profilleri</li>
+                    <li>❌ Biyometrik veriler</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. Bilgilerinizi Nasıl Kullanıyoruz</h2>
+                <p>Toplanan bilgileri aşağıdaki amaçlar için kullanıyoruz:</p>
+                <ul>
+                    <li><strong>Temel Özelliklerin Sağlanması:</strong> Boy takibi, antrenman programları ve yapay zeka destekli koçluk</li>
+                    <li><strong>Kişiselleştirme:</strong> Hedefleriniz ve tercihlerinize göre deneyiminizi özelleştirme</li>
+                    <li><strong>Yapay Zeka Koçluğu:</strong> Kişiselleştirilmiş rehberlik sağlamak için sorgularınızı Google'ın Üretken Yapay Zekası aracılığıyla işleme</li>
+                    <li><strong>Uygulama İyileştirme:</strong> Özellikleri geliştirmek ve hataları düzeltmek için anonimleştirilmiş kullanım verilerini analiz etme</li>
+                    <li><strong>Bildirimler:</strong> Hatırlatıcılar ve güncellemeler gönderme (yalnızca kabul ederseniz)</li>
+                    <li><strong>Ödeme İşleme:</strong> Apple App Store veya Google Play Store aracılığıyla abonelikleri yönetme</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. Veri Saklama ve Güvenlik</h2>
+
+                <h3>4.1 Yerel Depolama</h3>
+                <p>
+                    Kişisel sağlık ve antrenman verileriniz öncelikle güvenli, şifreli depolama kullanılarak <strong>cihazınızda yerel olarak saklanır</strong>. Bu, verilerinizin telefonunuzda kaldığı ve bize veya üçüncü taraflara erişilemez olduğu anlamına gelir.
+                </p>
+
+                <h3>4.2 Bulut Senkronizasyonu (İsteğe Bağlı)</h3>
+                <p>
+                    Bulut yedeklemeyi etkinleştirmeyi seçerseniz, verileriniz kişisel bulut depolama alanınızla senkronize edilir:
+                </p>
+                <ul>
+                    <li><strong>iOS:</strong> iCloud (Apple tarafından yönetilir)</li>
+                    <li><strong>Android:</strong> Firebase Firestore (Google tarafından yönetilir)</li>
+                </ul>
+                <p>
+                    Bulut senkronizasyonlu veriler iletim sırasında ve beklemede şifrelenir ve yalnızca kimliği doğrulanmış cihazlarınızdan erişilebilir.
+                </p>
+
+                <h3>4.3 Güvenlik Önlemleri</h3>
+                <ul>
+                    <li>Veri iletimi için endüstri standardı şifreleme (TLS/SSL)</li>
+                    <li>Cihaz düzeyinde şifreleme ile güvenli yerel depolama</li>
+                    <li>Düzenli güvenlik denetimleri ve güncellemeleri</li>
+                    <li>Kullanıcı kişisel bilgilerinin merkezi veritabanı yok</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Not:</strong> Güçlü güvenlik önlemleri uygulamamıza rağmen, hiçbir elektronik depolama yöntemi %100 güvenli değildir. Cihazınızın ve yedekleme kimlik bilgilerinizin güvenliğini sağlamak sizin sorumluluğunuzdadır.
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. Üçüncü Taraf Hizmetleri</h2>
+                <p>Uza, aşağıdaki üçüncü taraf hizmetleri ile entegre çalışır:</p>
+
+                <h3>5.1 Google Üretken Yapay Zekası</h3>
+                <p>
+                    Yapay zeka koçluk özelliğini desteklemek için Google'ın Üretken Yapay Zeka API'sini kullanıyoruz. Yapay zeka koçu ile etkileşime geçtiğinizde, sorularınız ve bağlamınız işlenmek üzere Google'ın sunucularına gönderilir. Bu veriler için Google'ın gizlilik politikası geçerlidir: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
+                </p>
+
+                <h3>5.2 Firebase (Google)</h3>
+                <p>
+                    Firebase hizmetlerini şunlar için kullanıyoruz:
+                </p>
+                <ul>
+                    <li><strong>Firebase Analytics:</strong> Anonimleştirilmiş uygulama kullanım analitikleri</li>
+                    <li><strong>Firebase Firestore:</strong> İsteğe bağlı bulut veri senkronizasyonu</li>
+                    <li><strong>Firebase Cloud Functions:</strong> Abonelik yönetimi için sunucu tarafı işleme</li>
+                </ul>
+                <p>
+                    Firebase gizlilik politikası: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a>
+                </p>
+
+                <h3>5.3 Uygulama Mağazası Ödeme İşlemcileri</h3>
+                <p>
+                    Abonelik ödemeleri şunlar tarafından işlenir:
+                </p>
+                <ul>
+                    <li><strong>Apple App Store:</strong> iOS kullanıcıları için</li>
+                    <li><strong>Google Play Store:</strong> Android kullanıcıları için</li>
+                </ul>
+                <p>
+                    Ödeme bilgilerini toplamıyor veya saklamıyoruz. Tüm ödeme verileri ilgili uygulama mağazaları tarafından yönetilir.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>6. Veri Paylaşımı ve Açıklama</h2>
+                <p>
+                    Kişisel bilgilerinizi satmıyor, kiralamıyor veya takas etmiyoruz. Verileri yalnızca aşağıdaki sınırlı durumlarda paylaşabiliriz:
+                </p>
+                <ul>
+                    <li><strong>İzninizle:</strong> Belirli bilgileri paylaşmamıza açıkça izin verirseniz</li>
+                    <li><strong>Hizmet Sağlayıcılar:</strong> Uygulamanın çalışmasına yardımcı olan güvenilir ortaklarla (örn. yapay zeka için Google, altyapı için Firebase)</li>
+                    <li><strong>Yasal Yükümlülükler:</strong> Kanun, mahkeme emri veya yasal süreç tarafından gerektirilirse</li>
+                    <li><strong>Güvenlik ve Koruma:</strong> UltasDev'in, kullanıcılarımızın veya diğerlerinin haklarını, mülkiyetini veya güvenliğini korumak için</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>7. Gizlilik Haklarınız</h2>
+                <p>Verilerinizle ilgili aşağıdaki haklara sahipsiniz:</p>
+                <ul>
+                    <li><strong>Erişim:</strong> Uygulama aracılığıyla cihazınızda yerel olarak saklanan tüm verileri görüntüleme</li>
+                    <li><strong>Düzeltme:</strong> Bilgilerinizi istediğiniz zaman düzenleme veya güncelleme</li>
+                    <li><strong>Silme:</strong> Uygulama verilerini temizleyerek veya Uygulamayı kaldırarak verilerinizi silme</li>
+                    <li><strong>Dışa Aktarma:</strong> Yedekleme veya aktarma amacıyla verilerinizi dışa aktarma</li>
+                    <li><strong>Analizlerden Çıkma:</strong> Uygulama ayarlarında analitikleri devre dışı bırakma</li>
+                    <li><strong>Bildirim Kontrolü:</strong> Cihaz ayarlarında bildirim tercihlerini yönetme</li>
+                </ul>
+                <p>
+                    Bu hakları kullanmak veya verilerinizle ilgili sorularınız için <a href="mailto:privacy@ultasdev.com">privacy@ultasdev.com</a> adresinden bize ulaşın.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>8. Çocukların Gizliliği</h2>
+                <p>
+                    Uza, 13 yaş ve üzeri kullanıcılar için tasarlanmıştır. 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamıyoruz. Eğer bir ebeveyn veya vasiyseniz ve çocuğunuzun bize kişisel bilgi verdiğine inanıyorsanız, lütfen <a href="mailto:privacy@ultasdev.com">privacy@ultasdev.com</a> adresinden bizimle iletişime geçin ve bu bilgileri sileriz.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>9. Uluslararası Kullanıcılar</h2>
+                <p>
+                    Uza küresel olarak mevcuttur. Verileriniz, hizmet sağlayıcılarımızın faaliyet gösterdiği Amerika Birleşik Devletleri ve Avrupa Birliği dahil olmak üzere farklı ülkelerde işlenebilir ve saklanabilir. Uza'yı kullanarak, bilgilerinizin bu konumlara aktarılmasına izin vermiş olursunuz.
+                </p>
+                <p>
+                    AB kullanıcıları için GDPR dahil olmak üzere, bu Gizlilik Politikası ve geçerli yasalara uygun olarak verilerinizi korumak için uygun güvencelerin mevcut olduğundan emin oluyoruz.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>10. Veri Saklama</h2>
+                <p>
+                    Verilerinizi aşağıdaki şekilde saklıyoruz:
+                </p>
+                <ul>
+                    <li><strong>Yerel Veri:</strong> Siz silene veya Uygulamayı kaldırana kadar cihazınızda saklanır</li>
+                    <li><strong>Bulut Yedekleme:</strong> Bulut sağlayıcınızın politikalarına göre kişisel bulut depolama alanınızda saklanır</li>
+                    <li><strong>Analiz Verileri:</strong> Anonimleştirilmiş analizler 24 aya kadar saklanır</li>
+                    <li><strong>Destek Talepleri:</strong> Müşteri hizmetleri amaçları için 3 yıla kadar saklanır</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>11. Anlık Bildirimler</h2>
+                <p>
+                    Anlık bildirimleri etkinleştirirseniz, size şunları göndereceğiz:
+                </p>
+                <ul>
+                    <li>Antrenman hatırlatıcıları</li>
+                    <li>Ölçüm hatırlatıcıları</li>
+                    <li>İlerleme güncellemeleri</li>
+                    <li>Uygulama güncellemeleri ve özellik duyuruları</li>
+                </ul>
+                <p>
+                    Bildirimleri istediğiniz zaman cihaz ayarlarınızdan devre dışı bırakabilirsiniz. Bildirim tokeninizi başka hiçbir amaç için kullanmıyoruz.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>12. Bu Gizlilik Politikası'ndaki Değişiklikler</h2>
+                <p>
+                    Uygulamalarımızdaki değişiklikleri yansıtmak veya yasal, operasyonel veya düzenleyici nedenlerle bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Önemli değişiklikler yaptığımızda, sizi şunlar aracılığıyla bilgilendireceğiz:
+                </p>
+                <ul>
+                    <li>Uygulama içi bildirim</li>
+                    <li>Bu sayfada yeni bir "Son Güncelleme" tarihiyle güncelleme</li>
+                </ul>
+                <p>
+                    Değişikliklerin yürürlüğe girmesinden sonra Uza'yı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>13. Bize Ulaşın</h2>
+                <p>
+                    Bu Gizlilik Politikası veya verilerinizle ilgili sorularınız, endişeleriniz veya talepleriniz varsa, lütfen bizimle iletişime geçin:
+                </p>
+                <ul>
+                    <li><strong>E-posta:</strong> <a href="mailto:privacy@ultasdev.com">privacy@ultasdev.com</a></li>
+                    <li><strong>Destek E-postası:</strong> <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a></li>
+                    <li><strong>Web Sitesi:</strong> <a href="https://www.ultasdev.com">www.ultasdev.com</a></li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>14. Yasal Uyumluluk</h2>
+
+                <h3>14.1 GDPR (AB Kullanıcıları)</h3>
+                <p>
+                    Avrupa Birliği'ndeki kullanıcılar için Genel Veri Koruma Yönetmeliği (GDPR) ile uyumlu çalışıyoruz. Veri taşınabilirliği, unutulma hakkı ve işlemeye itiraz etme hakkı dahil olmak üzere ek haklara sahipsiniz.
+                </p>
+
+                <h3>14.2 CCPA (Kaliforniya Kullanıcıları)</h3>
+                <p>
+                    Kaliforniya sakinleri, toplanan kişisel bilgi kategorileri ve kullanıldığı amaçlar hakkında bilgi talep etme hakkına sahiptir. Kişisel bilgi satmadığımız için, CCPA'nın "satma" hükümleri geçerli değildir.
+                </p>
+
+                <h3>14.3 KVKK (Türkiye Kullanıcıları)</h3>
+                <p>
+                    Türk kullanıcıların 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamındaki hakları korunmaktadır. Kişisel verilerinizin işlenmesi hakkında erişim, düzeltme, silme ve bilgi talep edebilirsiniz.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>15. Özet</h2>
+                <div class="highlight-box">
+                    <p><strong>Basit bir dille:</strong></p>
+                    <ul>
+                        <li>✅ Sağlık verileriniz SİZİN cihazınızda kalır</li>
+                        <li>✅ Konumunuzu takip etmiyoruz</li>
+                        <li>✅ Hesap kullanmıyoruz - verileriniz özeldir</li>
+                        <li>✅ Yapay zeka koçluğu sorguları Google AI tarafından işlenir</li>
+                        <li>✅ İsteğe bağlı bulut yedekleme, kişisel bulutunuzu kullanır (iCloud/Firebase)</li>
+                        <li>✅ Ödemeler App Store/Play Store tarafından yönetilir</li>
+                        <li>✅ Tüm verilerinizi istediğiniz zaman silebilirsiniz</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html" class="back-button">Ana Sayfaya Dön</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">ULTASDEV.</div>
+                    <p class="footer-tagline">Geleceği inşa ediyoruz, bir uygulama ile bir seferde.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Şirket</h4>
+                        <ul>
+                            <li><a href="../index.html#about">Hakkımızda</a></li>
+                            <li><a href="../index.html#portfolio">Projeler</a></li>
+                            <li><a href="../index.html#process">Süreç</a></li>
+                            <li><a href="../index.html#contact">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Yasal</h4>
+                        <ul>
+                            <li><a href="privacy-policy-tr.html">Gizlilik Politikası</a></li>
+                            <li><a href="terms-of-service.html">Hizmet Şartları</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UltasDev. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
