@@ -18,18 +18,23 @@
                         <span class="logo-text">ULTASDEV</span>
                         <span class="logo-dot">.</span>
                     </a>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
+                    <div class="nav-actions">
+                        <button class="language-toggle" id="languageToggle" aria-label="Switch language">
+                            <span class="lang-text">EN</span>
+                        </button>
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                    </div>
                     <ul class="nav-menu" id="navMenu">
-                        <li><a href="#home" class="nav-link">Ana Sayfa</a></li>
-                        <li><a href="#services" class="nav-link">Hizmetler</a></li>
-                        <li><a href="#portfolio" class="nav-link">Projeler</a></li>
-                        <li><a href="#process" class="nav-link">Süreç</a></li>
-                        <li><a href="#about" class="nav-link">Hakkımızda</a></li>
-                        <li><a href="#contact" class="nav-link nav-cta">Başlayalım</a></li>
+                        <li><a href="#home" class="nav-link" data-i18n="nav.home">Ana Sayfa</a></li>
+                        <li><a href="#services" class="nav-link" data-i18n="nav.services">Hizmetler</a></li>
+                        <li><a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Projeler</a></li>
+                        <li><a href="#process" class="nav-link" data-i18n="nav.process">Süreç</a></li>
+                        <li><a href="#about" class="nav-link" data-i18n="nav.about">Hakkımızda</a></li>
+                        <li><a href="#contact" class="nav-link nav-cta" data-i18n="nav.contact">Başlayalım</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,30 +45,30 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-badge">MOBİL UYGULAMA UZMANLARI</div>
+                    <div class="hero-badge" data-i18n="hero.badge">MOBİL UYGULAMA UZMANLARI</div>
                     <h1 class="hero-title">
-                        Geleceği Tanımlayan
-                        <span class="hero-highlight">Uygulamalar Geliştiriyoruz</span>
+                        <span data-i18n="hero.title.1">Geleceği Tanımlayan</span>
+                        <span class="hero-highlight" data-i18n="hero.title.2">Uygulamalar Geliştiriyoruz</span>
                     </h1>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="hero.description">
                         Vizyonunuzu güçlü mobil deneyimlere dönüştürüyoruz. Kullanıcıların sevdiği ve işletmelerin güvendiği premium iOS ve Android uygulamaları geliştiriyoruz.
                     </p>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary">Projenizi Başlatın</a>
-                        <a href="#portfolio" class="btn btn-secondary">Çalışmalarımız</a>
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero.btn.start">Projenizi Başlatın</a>
+                        <a href="#portfolio" class="btn btn-secondary" data-i18n="hero.btn.work">Çalışmalarımız</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Teslim Edilen Uygulama</div>
+                            <div class="stat-number" data-i18n="hero.stat.1.number">50+</div>
+                            <div class="stat-label" data-i18n="hero.stat.1.label">Teslim Edilen Uygulama</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">2M+</div>
-                            <div class="stat-label">Aktif Kullanıcı</div>
+                            <div class="stat-number" data-i18n="hero.stat.2.number">2M+</div>
+                            <div class="stat-label" data-i18n="hero.stat.2.label">Aktif Kullanıcı</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Müşteri Memnuniyeti</div>
+                            <div class="stat-number" data-i18n="hero.stat.3.number">98%</div>
+                            <div class="stat-label" data-i18n="hero.stat.3.label">Müşteri Memnuniyeti</div>
                         </div>
                     </div>
                 </div>
@@ -159,9 +164,9 @@
         <section id="services" class="services">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-badge">NELER YAPIYORUZ</div>
-                    <h2 class="section-title">Mobil Mükemmellik, Garantili</h2>
-                    <p class="section-description">
+                    <div class="section-badge" data-i18n="services.badge">NELER YAPIYORUZ</div>
+                    <h2 class="section-title" data-i18n="services.title">Mobil Mükemmellik, Garantili</h2>
+                    <p class="section-description" data-i18n="services.description">
                         İşletmenizin ihtiyaçlarına özel uçtan uca mobil uygulama geliştirme hizmetleri
                     </p>
                 </div>
@@ -173,12 +178,12 @@
                                 <line x1="12" y1="18" x2="12.01" y2="18"></line>
                             </svg>
                         </div>
-                        <h3 class="service-title">iOS Geliştirme</h3>
-                        <p class="service-description">Optimal performans ve kullanıcı deneyimi için Swift ve SwiftUI ile geliştirilen native iOS uygulamaları</p>
+                        <h3 class="service-title" data-i18n="services.ios.title">iOS Geliştirme</h3>
+                        <p class="service-description" data-i18n="services.ios.description">Optimal performans ve kullanıcı deneyimi için Swift ve SwiftUI ile geliştirilen native iOS uygulamaları</p>
                         <ul class="service-features">
-                            <li>Swift & SwiftUI</li>
-                            <li>App Store Optimizasyonu</li>
-                            <li>iOS Tasarım Standartları</li>
+                            <li data-i18n="services.ios.feature.1">Swift & SwiftUI</li>
+                            <li data-i18n="services.ios.feature.2">App Store Optimizasyonu</li>
+                            <li data-i18n="services.ios.feature.3">iOS Tasarım Standartları</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -188,12 +193,12 @@
                                 <line x1="12" y1="18" x2="12.01" y2="18"></line>
                             </svg>
                         </div>
-                        <h3 class="service-title">Android Geliştirme</h3>
-                        <p class="service-description">Kotlin ve modern mimari desenler kullanarak yüksek performanslı Android uygulamaları</p>
+                        <h3 class="service-title" data-i18n="services.android.title">Android Geliştirme</h3>
+                        <p class="service-description" data-i18n="services.android.description">Kotlin ve modern mimari desenler kullanarak yüksek performanslı Android uygulamaları</p>
                         <ul class="service-features">
-                            <li>Kotlin & Jetpack Compose</li>
-                            <li>Material Design 3</li>
-                            <li>Play Store Yayınlama</li>
+                            <li data-i18n="services.android.feature.1">Kotlin & Jetpack Compose</li>
+                            <li data-i18n="services.android.feature.2">Material Design 3</li>
+                            <li data-i18n="services.android.feature.3">Play Store Yayınlama</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -202,12 +207,12 @@
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                             </svg>
                         </div>
-                        <h3 class="service-title">Cross-Platform Uygulamalar</h3>
-                        <p class="service-description">React Native ve Flutter ile tek kod tabanından hızlı pazara sunulan çözümler</p>
+                        <h3 class="service-title" data-i18n="services.cross.title">Cross-Platform Uygulamalar</h3>
+                        <p class="service-description" data-i18n="services.cross.description">React Native ve Flutter ile tek kod tabanından hızlı pazara sunulan çözümler</p>
                         <ul class="service-features">
-                            <li>React Native & Flutter</li>
-                            <li>Kod Yeniden Kullanımı</li>
-                            <li>Maliyet Etkin Çözümler</li>
+                            <li data-i18n="services.cross.feature.1">React Native & Flutter</li>
+                            <li data-i18n="services.cross.feature.2">Kod Yeniden Kullanımı</li>
+                            <li data-i18n="services.cross.feature.3">Maliyet Etkin Çözümler</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -218,12 +223,12 @@
                                 <path d="M2 12l10 5 10-5"></path>
                             </svg>
                         </div>
-                        <h3 class="service-title">UI/UX Tasarım</h3>
-                        <p class="service-description">Kullanıcıları memnun eden ve etkileşimi artıran güzel, sezgisel arayüzler</p>
+                        <h3 class="service-title" data-i18n="services.ui.title">UI/UX Tasarım</h3>
+                        <p class="service-description" data-i18n="services.ui.description">Kullanıcıları memnun eden ve etkileşimi artıran güzel, sezgisel arayüzler</p>
                         <ul class="service-features">
-                            <li>Kullanıcı Araştırması</li>
-                            <li>Wireframe & Prototipleme</li>
-                            <li>Tasarım Sistemleri</li>
+                            <li data-i18n="services.ui.feature.1">Kullanıcı Araştırması</li>
+                            <li data-i18n="services.ui.feature.2">Wireframe & Prototipleme</li>
+                            <li data-i18n="services.ui.feature.3">Tasarım Sistemleri</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -234,12 +239,12 @@
                                 <polyline points="2 12 12 17 22 12"></polyline>
                             </svg>
                         </div>
-                        <h3 class="service-title">Backend Geliştirme</h3>
-                        <p class="service-description">Mobil uygulamalarınızı destekleyecek ölçeklenebilir, güvenli backend sistemleri ve API'ler</p>
+                        <h3 class="service-title" data-i18n="services.backend.title">Backend Geliştirme</h3>
+                        <p class="service-description" data-i18n="services.backend.description">Mobil uygulamalarınızı destekleyecek ölçeklenebilir, güvenli backend sistemleri ve API'ler</p>
                         <ul class="service-features">
-                            <li>RESTful & GraphQL API'ler</li>
-                            <li>Bulut Altyapısı</li>
-                            <li>Veritabanı Tasarımı</li>
+                            <li data-i18n="services.backend.feature.1">RESTful & GraphQL API'ler</li>
+                            <li data-i18n="services.backend.feature.2">Bulut Altyapısı</li>
+                            <li data-i18n="services.backend.feature.3">Veritabanı Tasarımı</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -249,12 +254,12 @@
                                 <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
                         </div>
-                        <h3 class="service-title">Bakım & Destek</h3>
-                        <p class="service-description">Uygulamanızın güncel, güvenli ve en iyi performansta kalması için sürekli destek</p>
+                        <h3 class="service-title" data-i18n="services.support.title">Bakım & Destek</h3>
+                        <p class="service-description" data-i18n="services.support.description">Uygulamanızın güncel, güvenli ve en iyi performansta kalması için sürekli destek</p>
                         <ul class="service-features">
-                            <li>Düzenli Güncellemeler</li>
-                            <li>Performans İzleme</li>
-                            <li>7/24 Destek</li>
+                            <li data-i18n="services.support.feature.1">Düzenli Güncellemeler</li>
+                            <li data-i18n="services.support.feature.2">Performans İzleme</li>
+                            <li data-i18n="services.support.feature.3">7/24 Destek</li>
                         </ul>
                     </div>
                 </div>
@@ -264,9 +269,9 @@
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-badge">PROJELERİMİZ</div>
-                    <h2 class="section-title">Son Projelerimiz</h2>
-                    <p class="section-description">
+                    <div class="section-badge" data-i18n="portfolio.badge">PROJELERİMİZ</div>
+                    <h2 class="section-title" data-i18n="portfolio.title">Son Projelerimiz</h2>
+                    <p class="section-description" data-i18n="portfolio.description">
                         Müşterilerimiz için geliştirdiğimiz yenilikçi mobil çözümleri keşfedin
                     </p>
                 </div>
@@ -275,16 +280,16 @@
                         <div class="portfolio-image">
                             <div class="portfolio-placeholder">
                                 <span>UZA</span>
-                                <div class="coming-soon-badge">Yakında</div>
+                                <div class="coming-soon-badge" data-i18n="portfolio.uza.tag.3">Yakında</div>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3>Uza</h3>
-                            <p>Son teknoloji özelliklerle kullanıcı deneyimini yeniden tanımlayan yenilikçi mobil uygulama</p>
+                            <h3 data-i18n="portfolio.uza.title">Uza</h3>
+                            <p data-i18n="portfolio.uza.description">Son teknoloji özelliklerle kullanıcı deneyimini yeniden tanımlayan yenilikçi mobil uygulama</p>
                             <div class="portfolio-tags">
-                                <span class="tag">iOS</span>
-                                <span class="tag">Android</span>
-                                <span class="tag">Yakında</span>
+                                <span class="tag" data-i18n="portfolio.uza.tag.1">iOS</span>
+                                <span class="tag" data-i18n="portfolio.uza.tag.2">Android</span>
+                                <span class="tag" data-i18n="portfolio.uza.tag.3">Yakında</span>
                             </div>
                         </div>
                     </div>
@@ -292,16 +297,16 @@
                         <div class="portfolio-image">
                             <div class="portfolio-placeholder">
                                 <span>STUDIX</span>
-                                <div class="coming-soon-badge">Yakında</div>
+                                <div class="coming-soon-badge" data-i18n="portfolio.studix.tag.3">Yakında</div>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3>StudiX</h3>
-                            <p>Öğrenme deneyimini dönüştürmek için tasarlanan devrim niteliğindeki eğitim platformu</p>
+                            <h3 data-i18n="portfolio.studix.title">StudiX</h3>
+                            <p data-i18n="portfolio.studix.description">Öğrenme deneyimini dönüştürmek için tasarlanan devrim niteliğindeki eğitim platformu</p>
                             <div class="portfolio-tags">
-                                <span class="tag">Eğitim</span>
-                                <span class="tag">Yapay Zeka Destekli</span>
-                                <span class="tag">Yakında</span>
+                                <span class="tag" data-i18n="portfolio.studix.tag.1">Eğitim</span>
+                                <span class="tag" data-i18n="portfolio.studix.tag.2">Yapay Zeka Destekli</span>
+                                <span class="tag" data-i18n="portfolio.studix.tag.3">Yakında</span>
                             </div>
                         </div>
                     </div>
@@ -309,16 +314,16 @@
                         <div class="portfolio-image">
                             <div class="portfolio-placeholder">
                                 <span>BILGECAN</span>
-                                <div class="coming-soon-badge">Yakında</div>
+                                <div class="coming-soon-badge" data-i18n="portfolio.bilgecan.tag.3">Yakında</div>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3>Bilgecan</h3>
-                            <p>Günlük işlere zeka ve verimlilik getiren akıllı asistan uygulaması</p>
+                            <h3 data-i18n="portfolio.bilgecan.title">Bilgecan</h3>
+                            <p data-i18n="portfolio.bilgecan.description">Günlük işlere zeka ve verimlilik getiren akıllı asistan uygulaması</p>
                             <div class="portfolio-tags">
-                                <span class="tag">Yapay Zeka Asistanı</span>
-                                <span class="tag">Verimlilik</span>
-                                <span class="tag">Yakında</span>
+                                <span class="tag" data-i18n="portfolio.bilgecan.tag.1">Yapay Zeka Asistanı</span>
+                                <span class="tag" data-i18n="portfolio.bilgecan.tag.2">Verimlilik</span>
+                                <span class="tag" data-i18n="portfolio.bilgecan.tag.3">Yakında</span>
                             </div>
                         </div>
                     </div>
@@ -329,37 +334,37 @@
         <section id="process" class="process">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-badge">NASIL ÇALIŞIYORUZ</div>
-                    <h2 class="section-title">Geliştirme Sürecimiz</h2>
-                    <p class="section-description">
+                    <div class="section-badge" data-i18n="process.badge">NASIL ÇALIŞIYORUZ</div>
+                    <h2 class="section-title" data-i18n="process.title">Geliştirme Sürecimiz</h2>
+                    <p class="section-description" data-i18n="process.description">
                         Başarılı uygulama teslimatını garanti eden kanıtlanmış metodolojimiz
                     </p>
                 </div>
                 <div class="process-timeline">
                     <div class="process-step">
                         <div class="step-number">01</div>
-                        <h3 class="step-title">Keşif & Strateji</h3>
-                        <p class="step-description">İş hedeflerinizi, hedef kitlenizi ve pazarınızı derinlemesine analiz ederek kazanan bir strateji oluşturuyoruz</p>
+                        <h3 class="step-title" data-i18n="process.step.1.title">Keşif & Strateji</h3>
+                        <p class="step-description" data-i18n="process.step.1.description">İş hedeflerinizi, hedef kitlenizi ve pazarınızı derinlemesine analiz ederek kazanan bir strateji oluşturuyoruz</p>
                     </div>
                     <div class="process-step">
                         <div class="step-number">02</div>
-                        <h3 class="step-title">Tasarım & Prototip</h3>
-                        <p class="step-description">Markanızla uyumlu, sezgisel kullanıcı deneyimleri ve güzel arayüzler oluşturuyoruz</p>
+                        <h3 class="step-title" data-i18n="process.step.2.title">Tasarım & Prototip</h3>
+                        <p class="step-description" data-i18n="process.step.2.description">Markanızla uyumlu, sezgisel kullanıcı deneyimleri ve güzel arayüzler oluşturuyoruz</p>
                     </div>
                     <div class="process-step">
                         <div class="step-number">03</div>
-                        <h3 class="step-title">Geliştirme</h3>
-                        <p class="step-description">En son teknolojileri ve en iyi uygulamaları kullanarak temiz, ölçeklenebilir kod ile uygulamanızı inşa ediyoruz</p>
+                        <h3 class="step-title" data-i18n="process.step.3.title">Geliştirme</h3>
+                        <p class="step-description" data-i18n="process.step.3.description">En son teknolojileri ve en iyi uygulamaları kullanarak temiz, ölçeklenebilir kod ile uygulamanızı inşa ediyoruz</p>
                     </div>
                     <div class="process-step">
                         <div class="step-number">04</div>
-                        <h3 class="step-title">Test & Kalite Kontrol</h3>
-                        <p class="step-description">Kusursuz performans ve kullanıcı deneyimi için tüm cihazlarda kapsamlı testler gerçekleştiriyoruz</p>
+                        <h3 class="step-title" data-i18n="process.step.4.title">Test & Kalite Kontrol</h3>
+                        <p class="step-description" data-i18n="process.step.4.description">Kusursuz performans ve kullanıcı deneyimi için tüm cihazlarda kapsamlı testler gerçekleştiriyoruz</p>
                     </div>
                     <div class="process-step">
                         <div class="step-number">05</div>
-                        <h3 class="step-title">Yayınlama & Destek</h3>
-                        <p class="step-description">Uygulama mağazalarına sorunsuz yayınlama ve sürekli başarı için devam eden destek</p>
+                        <h3 class="step-title" data-i18n="process.step.5.title">Yayınlama & Destek</h3>
+                        <p class="step-description" data-i18n="process.step.5.description">Uygulama mağazalarına sorunsuz yayınlama ve sürekli başarı için devam eden destek</p>
                     </div>
                 </div>
             </div>
@@ -369,12 +374,12 @@
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <div class="section-badge">HAKKIMIZDA</div>
-                        <h2 class="section-title">Dijital Mükemmelliyeti İnşa Ediyoruz</h2>
-                        <p class="about-description">
+                        <div class="section-badge" data-i18n="about.badge">HAKKIMIZDA</div>
+                        <h2 class="section-title" data-i18n="about.title">Dijital Mükemmelliyeti İnşa Ediyoruz</h2>
+                        <p class="about-description" data-i18n="about.description.1">
                             UltasDev olarak, fark yaratan mobil uygulamalar geliştirme konusunda tutkuluyuz. Yılların deneyimi ve yetenekli geliştiriciler, tasarımcılar ve stratejistlerden oluşan ekibimizle fikirleri güçlü dijital ürünlere dönüştürüyoruz.
                         </p>
-                        <p class="about-description">
+                        <p class="about-description" data-i18n="about.description.2">
                             Teknolojinin gerçek dünya sorunlarını çözme ve insan deneyimlerini geliştirme gücüne inanıyoruz. İnşa ettiğimiz her uygulama, hassasiyet, yaratıcılık ve kullanıcı ihtiyaçlarının derin bir anlayışıyla şekilleniyor.
                         </p>
                         <div class="about-features">
@@ -382,44 +387,44 @@
                                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>Çevik Geliştirme Metodolojisi</span>
+                                <span data-i18n="about.feature.1">Çevik Geliştirme Metodolojisi</span>
                             </div>
                             <div class="feature-item">
                                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>Şeffaf İletişim</span>
+                                <span data-i18n="about.feature.2">Şeffaf İletişim</span>
                             </div>
                             <div class="feature-item">
                                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>Lansman Sonrası Destek</span>
+                                <span data-i18n="about.feature.3">Lansman Sonrası Destek</span>
                             </div>
                             <div class="feature-item">
                                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>Güvenlik Odaklı Yaklaşım</span>
+                                <span data-i18n="about.feature.4">Güvenlik Odaklı Yaklaşım</span>
                             </div>
                         </div>
                     </div>
                     <div class="about-stats">
                         <div class="stat-card">
-                            <div class="stat-value">5+</div>
-                            <div class="stat-label">Yıllık Deneyim</div>
+                            <div class="stat-value" data-i18n="about.stat.1.value">5+</div>
+                            <div class="stat-label" data-i18n="about.stat.1.label">Yıllık Deneyim</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">100%</div>
-                            <div class="stat-label">Proje Başarı Oranı</div>
+                            <div class="stat-value" data-i18n="about.stat.2.value">100%</div>
+                            <div class="stat-label" data-i18n="about.stat.2.label">Proje Başarı Oranı</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">7/24</div>
-                            <div class="stat-label">Destek Hizmeti</div>
+                            <div class="stat-value" data-i18n="about.stat.3.value">7/24</div>
+                            <div class="stat-label" data-i18n="about.stat.3.label">Destek Hizmeti</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">15+</div>
-                            <div class="stat-label">Uzman Geliştirici</div>
+                            <div class="stat-value" data-i18n="about.stat.4.value">15+</div>
+                            <div class="stat-label" data-i18n="about.stat.4.label">Uzman Geliştirici</div>
                         </div>
                     </div>
                 </div>
@@ -430,30 +435,30 @@
             <div class="container">
                 <div class="contact-content">
                     <div class="contact-text">
-                        <div class="section-badge">İLETİŞİM</div>
-                        <h2 class="section-title">Uygulamanızı Geliştirmeye Hazır Mısınız?</h2>
-                        <p class="contact-description">
+                        <div class="section-badge" data-i18n="contact.badge">İLETİŞİM</div>
+                        <h2 class="section-title" data-i18n="contact.title">Uygulamanızı Geliştirmeye Hazır Mısınız?</h2>
+                        <p class="contact-description" data-i18n="contact.description">
                             Vizyonunuzu gerçeğe dönüştürmek için nasıl yardımcı olabileceğimizi konuşalım. Ekibimiz birlikte harika şeyler yaratmaya hazır.
                         </p>
                         <div class="contact-info">
-                            <a href="mailto:hello@ultasdev.com" class="contact-link">
+                            <a href="mailto:ultasdevelopment@gmail.com" class="contact-link">
                                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                     <polyline points="22,6 12,13 2,6"></polyline>
                                 </svg>
-                                hello@ultasdev.com
+                                <span data-i18n="contact.email">ultasdevelopment@gmail.com</span>
                             </a>
                             <div class="contact-link">
                                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
-                                Global - Uzaktan Çalışma
+                                <span data-i18n="contact.location">Global - Uzaktan Çalışma</span>
                             </div>
                         </div>
                         <div class="contact-cta">
-                            <a href="mailto:hello@ultasdev.com" class="btn btn-primary">Proje Başlatın</a>
-                            <a href="#portfolio" class="btn btn-secondary">Projelerimizi İnceleyin</a>
+                            <a href="mailto:ultasdevelopment@gmail.com" class="btn btn-primary" data-i18n="contact.btn.start">Proje Başlatın</a>
+                            <a href="#portfolio" class="btn btn-secondary" data-i18n="contact.btn.portfolio">Projelerimizi İnceleyin</a>
                         </div>
                     </div>
                 </div>
@@ -466,38 +471,38 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">ULTASDEV.</div>
-                    <p class="footer-tagline">Geleceği inşa ediyoruz, birer uygulama ile.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Geleceği inşa ediyoruz, birer uygulama ile.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>Şirket</h4>
+                        <h4 data-i18n="footer.company.title">Şirket</h4>
                         <ul>
-                            <li><a href="#about">Hakkımızda</a></li>
-                            <li><a href="#portfolio">Projeler</a></li>
-                            <li><a href="#process">Süreç</a></li>
-                            <li><a href="#contact">İletişim</a></li>
+                            <li><a href="#about" data-i18n="footer.company.about">Hakkımızda</a></li>
+                            <li><a href="#portfolio" data-i18n="footer.company.projects">Projeler</a></li>
+                            <li><a href="#process" data-i18n="footer.company.process">Süreç</a></li>
+                            <li><a href="#contact" data-i18n="footer.company.contact">İletişim</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Hizmetler</h4>
+                        <h4 data-i18n="footer.services.title">Hizmetler</h4>
                         <ul>
-                            <li><a href="#services">iOS Geliştirme</a></li>
-                            <li><a href="#services">Android Geliştirme</a></li>
-                            <li><a href="#services">UI/UX Tasarım</a></li>
-                            <li><a href="#services">Danışmanlık</a></li>
+                            <li><a href="#services" data-i18n="footer.services.ios">iOS Geliştirme</a></li>
+                            <li><a href="#services" data-i18n="footer.services.android">Android Geliştirme</a></li>
+                            <li><a href="#services" data-i18n="footer.services.ui">UI/UX Tasarım</a></li>
+                            <li><a href="#services" data-i18n="footer.services.consulting">Danışmanlık</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Yasal</h4>
+                        <h4 data-i18n="footer.legal.title">Yasal</h4>
                         <ul>
-                            <li><a href="privacy-policy.html">Gizlilik Politikası</a></li>
-                            <li><a href="terms-of-service.html">Kullanım Koşulları</a></li>
+                            <li><a href="uza/privacy-policy.html" data-i18n="footer.legal.privacy">Gizlilik Politikası</a></li>
+                            <li><a href="uza/terms-of-service.html" data-i18n="footer.legal.terms">Kullanım Koşulları</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 UltasDev. Tüm hakları saklıdır.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 UltasDev. Tüm hakları saklıdır.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Twitter">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
