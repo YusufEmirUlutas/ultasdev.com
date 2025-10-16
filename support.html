@@ -3,169 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Uza App</title>
+    <title>Support - Ultas Development</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .support-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        /* Support Page Specific Styles */
+        .support-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, transparent 100%);
         }
+
+        .support-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .support-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
-        .support-header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .support-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+            background: linear-gradient(90deg, var(--primary-black) 0%, var(--gray-600) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .support-section {
-            margin-bottom: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+        .support-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
-        .support-section h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.5em;
+
+        .faq-section {
+            background: var(--primary-white);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--gray-200);
         }
+
+        .faq-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 2rem;
+            color: var(--primary-black);
+        }
+
         .faq-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
         }
+
         .faq-item:last-child {
             border-bottom: none;
         }
+
         .faq-question {
+            font-size: 1.125rem;
             font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
         }
+
         .faq-answer {
-            color: #666;
+            color: var(--gray-600);
             line-height: 1.6;
+            font-size: 0.95rem;
         }
-        .contact-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
+
+        .contact-section {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            border-radius: 16px;
+            padding: 3rem;
             text-align: center;
+            margin-bottom: 3rem;
         }
-        .contact-info h2 {
-            color: white;
-            margin-bottom: 20px;
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1rem;
         }
-        .contact-info a {
-            color: white;
+
+        .contact-description {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gray-900);
+            padding: 1rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 500;
+            color: var(--primary-white);
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: var(--transition);
         }
-        .contact-info a:hover {
-            text-decoration: underline;
+
+        .contact-email:hover {
+            background: var(--gray-800);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
+
+        .contact-email svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .response-time {
+            margin-top: 1.5rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
         .quick-links {
             display: flex;
-            gap: 30px;
             justify-content: center;
-            margin-top: 30px;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
         }
+
         .quick-links a {
-            color: #667eea;
+            color: var(--gray-600);
             text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
         }
+
         .quick-links a:hover {
-            text-decoration: underline;
+            color: var(--primary-black);
         }
-        @media (max-width: 600px) {
-            .support-header h1 {
-                font-size: 2em;
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .support-hero {
+                padding: 100px 0 40px;
             }
-            .support-section {
-                padding: 20px;
+
+            .support-title {
+                font-size: 2rem;
             }
+
+            .support-subtitle {
+                font-size: 1rem;
+            }
+
+            .faq-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .faq-title {
+                font-size: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-email {
+                font-size: 1rem;
+                padding: 0.875rem 1.5rem;
+            }
+
             .quick-links {
                 flex-direction: column;
-                gap: 15px;
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="support-container">
-        <div class="support-header">
-            <h1>Uza Support</h1>
-            <p>We're here to help you on your growth journey</p>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="nav-left">
+                        <a href="index.html" class="logo">
+                            <span class="logo-text">ULTASDEV</span>
+                            <span class="logo-dot">.</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html#home" class="nav-link">Home</a></li>
+                        <li><a href="index.html#services" class="nav-link">Services</a></li>
+                        <li><a href="index.html#portfolio" class="nav-link">Projects</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                        <li><a href="support.html" class="nav-link">Support</a></li>
+                        <li><a href="index.html#contact" class="nav-link nav-cta">Get Started</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="support-hero">
+            <div class="container">
+                <div class="support-content">
+                    <div class="support-header">
+                        <div class="section-badge">SUPPORT CENTER</div>
+                        <h1 class="support-title">How Can We Help?</h1>
+                        <p class="support-subtitle">
+                            Find answers to common questions or get in touch with our support team
+                        </p>
+                    </div>
+
+                    <div class="faq-section">
+                        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How do I get started with my mobile app project?</div>
+                            <div class="faq-answer">Simply reach out to us via email at ultasdevelopment@gmail.com or use the contact form on our website. We'll schedule an initial consultation to discuss your project requirements, timeline, and budget.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What platforms do you develop for?</div>
+                            <div class="faq-answer">We develop native iOS apps using Swift/SwiftUI, native Android apps using Kotlin/Jetpack Compose, and cross-platform solutions using Flutter and React Native. We'll recommend the best approach based on your specific needs.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How long does it take to develop a mobile app?</div>
+                            <div class="faq-answer">Development timelines vary based on project complexity. A simple app typically takes 2-3 months, while more complex applications can take 4-6 months or more. We'll provide a detailed timeline during our initial consultation.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Do you provide post-launch support?</div>
+                            <div class="faq-answer">Yes, we offer comprehensive post-launch support including bug fixes, updates, performance monitoring, and feature enhancements. We have different support packages to suit your needs.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Can you help with App Store/Google Play submission?</div>
+                            <div class="faq-answer">Absolutely! We handle the entire submission process including app store optimization, screenshots, descriptions, and managing the review process for both Apple App Store and Google Play Store.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What is your development process?</div>
+                            <div class="faq-answer">We follow an agile development methodology with regular sprints and client feedback sessions. Our process includes discovery, design, development, testing, and deployment phases with transparent communication throughout.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Do you sign NDAs?</div>
+                            <div class="faq-answer">Yes, we're happy to sign non-disclosure agreements to protect your intellectual property and business ideas. Client confidentiality is extremely important to us.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How do you handle project pricing?</div>
+                            <div class="faq-answer">We offer both fixed-price and hourly pricing models depending on project scope and requirements. We'll provide a detailed quote after understanding your specific needs during our initial consultation.</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-section">
+                        <h2 class="contact-title">Still Have Questions?</h2>
+                        <p class="contact-description">
+                            Our team is ready to help with your mobile app development needs
+                        </p>
+                        <a href="mailto:ultasdevelopment@gmail.com" class="contact-email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            ultasdevelopment@gmail.com
+                        </a>
+                        <p class="response-time">
+                            We typically respond within 24-48 hours
+                        </p>
+                    </div>
+
+                    <div class="quick-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="index.html">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">ULTASDEV.</div>
+                    <p class="footer-tagline">Building the future, one app at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#portfolio">Projects</a></li>
+                            <li><a href="index.html#process">Process</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">iOS Development</a></li>
+                            <li><a href="index.html#services">Android Development</a></li>
+                            <li><a href="index.html#services">UI/UX Design</a></li>
+                            <li><a href="index.html#services">Consulting</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UltasDev. All rights reserved.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="support-section">
-            <h2>Frequently Asked Questions</h2>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
 
-            <div class="faq-item">
-                <div class="faq-question">How do I get started with Uza?</div>
-                <div class="faq-answer">After downloading the app, complete the onboarding process where you'll enter your measurements and goals. The app will create a personalized workout plan based on your profile.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How often should I do the exercises?</div>
-                <div class="faq-answer">For best results, follow your daily workout plan which typically includes morning and evening sessions. Consistency is key to seeing improvements in posture and flexibility.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Can I change my workout schedule?</div>
-                <div class="faq-answer">Yes! You can adjust your workout times and preferences in the Settings section of the app.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Is Uza suitable for all ages?</div>
-                <div class="faq-answer">Uza is designed for users aged 13 and above. However, we recommend consulting with a healthcare professional before starting any new exercise program, especially for users under 18 or those with existing health conditions.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I track my progress?</div>
-                <div class="faq-answer">The app includes a progress tracking feature where you can log your measurements and view your improvement over time through charts and analytics.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">What if I experience discomfort during exercises?</div>
-                <div class="faq-answer">Stop immediately if you feel pain or unusual discomfort. The exercises should create a stretching sensation but never pain. Consult with a healthcare professional if discomfort persists.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I cancel my subscription?</div>
-                <div class="faq-answer">You can manage your subscription through your device's App Store settings. Go to Settings > [Your Name] > Subscriptions, find Uza, and select Cancel Subscription.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Will I definitely grow taller?</div>
-                <div class="faq-answer">Results vary based on individual factors including age, genetics, and consistency. Uza focuses on optimizing posture and spinal health, which can help you reach your maximum potential height.</div>
-            </div>
-        </div>
-
-        <div class="support-section contact-info">
-            <h2>Still Need Help?</h2>
-            <p>Our support team is ready to assist you</p>
-            <p style="margin-top: 20px;">
-                <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a>
-            </p>
-            <p style="margin-top: 15px; font-size: 0.9em;">
-                We typically respond within 24-48 hours
-            </p>
-        </div>
-
-        <div class="quick-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
-            <a href="index.html">Home</a>
-        </div>
-    </div>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
