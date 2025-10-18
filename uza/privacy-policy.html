@@ -150,7 +150,7 @@
         <div class="container">
             <div class="policy-badge">UZA APP</div>
             <h1 class="policy-title">Privacy Policy</h1>
-            <p class="policy-date">Last Updated: January 4, 2025</p>
+            <p class="policy-date">Last Updated: January 18, 2025</p>
         </div>
     </section>
 
@@ -165,30 +165,38 @@
                     By using Uza, you agree to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the App.
                 </p>
                 <div class="highlight-box">
-                    <strong>Important:</strong> Uza does not use user accounts or location tracking. Your data is stored locally on your device and synced to your personal cloud storage only.
+                    <strong>🔒 Privacy First:</strong> Uza stores ALL your personal data (height, weight, age, measurements) ONLY on your device. We do not collect, upload, or store any sensitive personal information on our servers. No user accounts required.
                 </div>
             </div>
 
             <div class="policy-section">
                 <h2>2. Information We Collect</h2>
 
-                <h3>2.1 Personal Health Data (Stored Locally)</h3>
-                <p>The following information is collected and stored locally on your device:</p>
+                <h3>2.1 Personal Data (ON-DEVICE ONLY - Never Transmitted)</h3>
+                <p>The following information is stored <strong>ONLY on your device</strong> using iOS/Android local storage. This data is <strong>NEVER uploaded to our servers or any cloud service</strong>:</p>
                 <ul>
-                    <li><strong>Height Measurements:</strong> Your height tracking data and growth progress</li>
-                    <li><strong>Training Data:</strong> Exercise routines, workout history, and progress</li>
-                    <li><strong>Wellness Information:</strong> Personal wellness goals and preferences</li>
-                    <li><strong>AI Interactions:</strong> Conversations with the AI coach for personalized guidance</li>
-                    <li><strong>User Preferences:</strong> App settings, notification preferences, and customizations</li>
+                    <li><strong>Height Measurements:</strong> Current height, dream height, parental heights, growth tracking</li>
+                    <li><strong>Physical Measurements:</strong> Weight, age, birthdate, shoe size</li>
+                    <li><strong>Personal Attributes:</strong> Gender, ethnicity (used only for local calculations)</li>
+                    <li><strong>Lifestyle Data:</strong> Workout frequency, sleep duration (stored locally)</li>
+                    <li><strong>Training Data:</strong> Exercise routines, workout history, progress (on-device only)</li>
+                    <li><strong>User Preferences:</strong> App settings, notification preferences (on-device only)</li>
                 </ul>
+                <div class="highlight-box">
+                    <strong>⚠️ Critical:</strong> All the above data stays on YOUR device and is deleted when you uninstall the app. We have NO access to this information.
+                </div>
 
-                <h3>2.2 Technical Information</h3>
-                <p>We automatically collect limited technical information:</p>
+                <h3>2.2 Anonymous Analytics (No Personal Data)</h3>
+                <p>We collect <strong>anonymous behavioral data</strong> through Firebase Analytics. This data does NOT include any personal or physical measurements:</p>
                 <ul>
-                    <li><strong>Device Information:</strong> Device type, operating system version, app version</li>
-                    <li><strong>Usage Analytics:</strong> App feature usage, crash reports, and performance data (anonymized)</li>
-                    <li><strong>Push Notification Tokens:</strong> If you enable notifications</li>
+                    <li><strong>Anonymous Events:</strong> Screen views, button clicks, feature usage (NO personal data attached)</li>
+                    <li><strong>Crash Reports:</strong> App crash logs for debugging (anonymized, NO user data)</li>
+                    <li><strong>Performance Data:</strong> App load times, performance metrics (anonymized)</li>
+                    <li><strong>Subscription Status:</strong> Whether user has active subscription (via RevenueCat, NO personal data)</li>
                 </ul>
+                <div class="highlight-box">
+                    <strong>✅ What we do NOT collect in analytics:</strong> NO height, NO weight, NO age, NO gender, NO measurements, NO personal identifiers
+                </div>
 
                 <h3>2.3 Information We Do NOT Collect</h3>
                 <ul>
@@ -217,33 +225,35 @@
             <div class="policy-section">
                 <h2>4. Data Storage and Security</h2>
 
-                <h3>4.1 Local Storage</h3>
+                <h3>4.1 On-Device Storage ONLY</h3>
                 <p>
-                    Your personal health and training data is primarily stored <strong>locally on your device</strong> using secure, encrypted storage. This means your data stays on your phone and is not accessible to us or third parties.
-                </p>
-
-                <h3>4.2 Cloud Sync (Optional)</h3>
-                <p>
-                    If you choose to enable cloud backup, your data is synced to your personal cloud storage:
+                    <strong>ALL your personal data is stored EXCLUSIVELY on your device</strong> using iOS/Android secure local storage (SharedPreferences/UserDefaults). This means:
                 </p>
                 <ul>
-                    <li><strong>iOS:</strong> iCloud (managed by Apple)</li>
-                    <li><strong>Android:</strong> Firebase Firestore (managed by Google)</li>
+                    <li>✅ Your data stays on YOUR phone/tablet forever (until you delete the app)</li>
+                    <li>✅ We have ZERO access to your personal information</li>
+                    <li>✅ No cloud backup, no server upload, no external storage</li>
+                    <li>✅ Data is deleted permanently when you uninstall the app</li>
                 </ul>
+
+                <h3>4.2 No Cloud Sync</h3>
                 <p>
-                    Cloud-synced data is encrypted in transit and at rest, and is only accessible to you on your authenticated devices.
+                    <strong>Important:</strong> Unlike many apps, Uza does NOT sync your personal data to any cloud service. Your height, weight, age, and measurements never leave your device.
                 </p>
+                <div class="highlight-box">
+                    <strong>Why on-device only?</strong> To protect your privacy and comply with Apple's strictest privacy standards. We deliberately chose NOT to use cloud storage for sensitive health data.
+                </div>
 
                 <h3>4.3 Security Measures</h3>
                 <ul>
-                    <li>Industry-standard encryption for data transmission (TLS/SSL)</li>
-                    <li>Secure local storage with device-level encryption</li>
-                    <li>Regular security audits and updates</li>
-                    <li>No central database of user personal information</li>
+                    <li>✅ Device-level encryption (iOS Keychain/Android EncryptedSharedPreferences)</li>
+                    <li>✅ No central database of user information</li>
+                    <li>✅ Anonymous analytics only (TLS/SSL encrypted)</li>
+                    <li>✅ Regular security updates</li>
                 </ul>
 
                 <div class="highlight-box">
-                    <strong>Note:</strong> While we implement strong security measures, no method of electronic storage is 100% secure. You are responsible for maintaining the security of your device and backup credentials.
+                    <strong>Note:</strong> Since your data is stored only on your device, please ensure you keep regular device backups through iOS/Android system backups if you want to preserve your data.
                 </div>
             </div>
 
@@ -251,22 +261,31 @@
                 <h2>5. Third-Party Services</h2>
                 <p>Uza integrates with the following third-party services:</p>
 
-                <h3>5.1 Google Generative AI</h3>
+                <h3>5.1 Firebase Analytics (Google)</h3>
                 <p>
-                    We use Google's Generative AI API to power the AI coaching feature. When you interact with the AI coach, your questions and context are sent to Google's servers for processing. Google's privacy policy applies to this data: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
-                </p>
-
-                <h3>5.2 Firebase (Google)</h3>
-                <p>
-                    We use Firebase services for:
+                    We use Firebase Analytics for <strong>anonymous behavioral tracking ONLY</strong>:
                 </p>
                 <ul>
-                    <li><strong>Firebase Analytics:</strong> Anonymized app usage analytics</li>
-                    <li><strong>Firebase Firestore:</strong> Optional cloud data sync</li>
-                    <li><strong>Firebase Cloud Functions:</strong> Server-side processing for subscription management</li>
+                    <li>✅ Screen views, button clicks, feature usage</li>
+                    <li>✅ Crash reports for debugging</li>
+                    <li>✅ Performance metrics</li>
+                    <li>❌ NO personal data (height, weight, age, gender NOT sent)</li>
                 </ul>
                 <p>
                     Firebase privacy policy: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a>
+                </p>
+
+                <h3>5.2 RevenueCat</h3>
+                <p>
+                    We use RevenueCat for subscription management:
+                </p>
+                <ul>
+                    <li>✅ Purchase receipts from Apple/Google</li>
+                    <li>✅ Subscription status (active/expired/trial)</li>
+                    <li>❌ NO personal data sent to RevenueCat</li>
+                </ul>
+                <p>
+                    RevenueCat privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a>
                 </p>
 
                 <h3>5.3 App Store Payment Processors</h3>
@@ -278,8 +297,16 @@
                     <li><strong>Google Play Store:</strong> For Android users</li>
                 </ul>
                 <p>
-                    We do not collect or store payment information. All payment data is handled by the respective app stores.
+                    We do NOT collect or store payment information. All payment data is handled by the respective app stores.
                 </p>
+
+                <h3>5.4 What We Do NOT Use</h3>
+                <ul>
+                    <li>❌ NO Google Generative AI (no AI chat feature implemented)</li>
+                    <li>❌ NO Firebase Firestore (no cloud database)</li>
+                    <li>❌ NO Firebase Cloud Functions (no server-side processing)</li>
+                    <li>❌ NO user authentication services</li>
+                </ul>
             </div>
 
             <div class="policy-section">
@@ -405,16 +432,17 @@
             <div class="policy-section">
                 <h2>15. Summary</h2>
                 <div class="highlight-box">
-                    <p><strong>In plain language:</strong></p>
+                    <p><strong>🔒 Privacy-First Approach - In Plain Language:</strong></p>
                     <ul>
-                        <li>✅ Your health data stays on YOUR device</li>
-                        <li>✅ We don't track your location</li>
-                        <li>✅ We don't use accounts - your data is private</li>
-                        <li>✅ AI coaching queries are processed by Google AI</li>
-                        <li>✅ Optional cloud backup uses your personal cloud (iCloud/Firebase)</li>
-                        <li>✅ Payments are handled by App Store/Play Store</li>
-                        <li>✅ You can delete all your data anytime</li>
+                        <li>✅ Your height, weight, age, and ALL measurements stay ONLY on your device</li>
+                        <li>✅ We collect ZERO personal data - no cloud sync, no server uploads</li>
+                        <li>✅ We track anonymous app usage only (screen views, clicks) - NO personal info</li>
+                        <li>✅ RevenueCat manages subscriptions - receives NO personal data from us</li>
+                        <li>✅ Payments handled by Apple/Google - we never see your payment info</li>
+                        <li>✅ No user accounts, no login, no tracking - your data is yours alone</li>
+                        <li>✅ Delete the app = all your data is gone (we have no copies)</li>
                     </ul>
+                    <p style="margin-top: 1rem;"><strong>Bottom line:</strong> We built Uza to respect your privacy. Your sensitive health data never leaves your phone.</p>
                 </div>
             </div>
 
