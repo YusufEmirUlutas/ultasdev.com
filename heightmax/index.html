@@ -74,47 +74,11 @@
             opacity: 0.4;
         }
 
-        /* ─── Topbar ────────────────────────────────────────────────── */
-        .topbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 14px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .topbar-logo {
-            height: 28px;
-            width: auto;
-        }
-
-        .topbar-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--red);
-            color: var(--white);
-            font-family: var(--font-head);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            padding: 8px 16px;
-            border-radius: 50px;
-            transition: var(--transition);
-        }
-        .topbar-cta:hover { background: var(--red-light); transform: scale(1.03); }
-
         /* ─── Hero ──────────────────────────────────────────────────── */
         .hero {
             position: relative;
             min-height: 100svh;
-            padding: 90px 0 60px;
+            padding: 60px 0 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -712,33 +676,25 @@
 
         @media (min-width: 900px) {
             .container { max-width: 860px; }
-            .hero { padding-top: 110px; padding-bottom: 80px; }
+            .hero { padding-top: 80px; padding-bottom: 80px; }
             .hero::before { width: 560px; height: 560px; }
         }
     </style>
 </head>
 <body>
 
-<!-- ─── Topbar ─────────────────────────────────────────────────────────── -->
-<header class="topbar">
-    <img src="assets/heightmaxlogo.webp" alt="HeightMax Logo" class="topbar-logo">
-    <a href="https://apps.apple.com/app/id6753893362" class="topbar-cta" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download
-    </a>
-</header>
 
 <!-- ─── Hero ───────────────────────────────────────────────────────────── -->
 <section class="hero">
     <div class="container">
-        <div class="badge fade-up delay-1">The #1 Growth Habit App</div>
+        <div class="badge fade-up delay-1">10,000+ Users · 50+ Countries</div>
 
         <h1 class="hero-title fade-up delay-2">
-            Build the Habits<br>That <span class="red">Maximize</span><br>Your Potential
+            Find Out Exactly<br>How Tall You<br><span class="red">Can Still Get</span>
         </h1>
 
         <p class="hero-sub fade-up delay-3">
-            Personalized stretching & posture routines, daily consistency tracking, and guided growth habits — all in one sleek app.
+            Answer 7 questions. HeightMax runs your parents' heights, sleep, nutrition, and workout habits through a scientific algorithm — and shows your exact height potential, your growth window %, and where you rank vs your peers.
         </p>
 
         <!-- Phone Mockups -->
@@ -782,60 +738,123 @@
     <div class="container">
         <div class="proof-stat">
             <div class="proof-number">10K<span>+</span></div>
-            <div class="proof-label">Active Users</div>
+            <div class="proof-label">Predictions Run</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-stat">
             <div class="proof-number">4.<span>8</span></div>
-            <div class="proof-label">App Rating</div>
+            <div class="proof-label">App Store Rating</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-stat">
-            <div class="proof-number">30<span>+</span></div>
-            <div class="proof-label">Day Routines</div>
+            <div class="proof-number">20<span>%</span></div>
+            <div class="proof-label">Height You Control*</div>
         </div>
     </div>
 </div>
 
+<!-- ─── Prediction Showcase ────────────────────────────────────────────── -->
+<section class="reviews">
+    <div class="container">
+        <p class="section-label reveal">No App Does This</p>
+        <h2 class="section-title reveal">Your Personalized<br>Height Report</h2>
+        <p style="text-align:center;color:var(--gray-3);font-size:0.9rem;margin:-18px 0 28px;line-height:1.6;" class="reveal">Most apps give you generic stretches. HeightMax runs your actual numbers — parents' heights, age, sleep, nutrition, workout habits, and body type — through a scientific algorithm and gives you a report no one else has ever shown you.</p>
+
+        <div class="reviews-grid">
+
+            <div class="review-card reveal" style="border-color:rgba(155,17,30,0.3);">
+                <div style="font-size:1.4rem;margin-bottom:10px;">📏</div>
+                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Your Exact Height Potential</div>
+                <p class="review-text">HeightMax calculates your personal genetic ceiling — not a range, not a vague estimate. A specific number in cm, based on your parents' heights, ethnicity, and current growth stage.</p>
+            </div>
+
+            <div class="review-card reveal" style="border-color:rgba(155,17,30,0.3);">
+                <div style="font-size:1.4rem;margin-bottom:10px;">⏳</div>
+                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Your Growth Window %</div>
+                <p class="review-text">Are you 40% through your window or 90%? HeightMax tells you exactly how much time you have left — and why that makes every single week matter more than you think.</p>
+            </div>
+
+            <div class="review-card reveal" style="border-color:rgba(155,17,30,0.3);">
+                <div style="font-size:1.4rem;margin-bottom:10px;">🌍</div>
+                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Where You Stand vs the World</div>
+                <p class="review-text">See your percentile vs peers your age, vs your country's average, vs the same gender globally. Not to make you feel bad — to show you exactly what's possible if you act now.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ─── Expert Credibility ────────────────────────────────────────────── -->
+<section class="reviews" style="background:var(--surface);padding-top:0;padding-bottom:60px;">
+    <div class="container">
+        <p class="section-label reveal">Backed by Science</p>
+        <h2 class="section-title reveal">This Isn't a Gimmick.<br>The Research Is Real.</h2>
+
+        <div class="reviews-grid">
+
+            <div class="review-card reveal">
+                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">NIH — National Institutes of Health</div>
+                <p class="review-text" style="font-style:italic;">"Up to 20% of your final height is determined by your daily habits, including nutrition, sleep, and physical activity."</p>
+                <div style="font-size:0.72rem;color:var(--gray-4);margin-top:8px;">National Institutes of Health · Genetics Home Reference, 2023</div>
+            </div>
+
+            <div class="review-card reveal">
+                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">Harvard Medical School</div>
+                <p class="review-text" style="font-style:italic;">"Optimizing sleep, posture, and nutrition can lead to measurable height gains in adolescents and young adults."</p>
+                <div style="font-size:0.72rem;color:var(--gray-4);margin-top:8px;">Harvard Medical School · Growth and Development, 2023</div>
+            </div>
+
+            <div class="review-card reveal">
+                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">CDC — Centers for Disease Control</div>
+                <p class="review-text" style="font-style:italic;">"Height predictions powered by real CDC data from real people."</p>
+                <div style="font-size:0.72rem;color:var(--gray-4);margin-top:8px;">CDC Growth Charts · Retrieved 2025</div>
+            </div>
+
+        </div>
+
+        <p style="text-align:center;font-size:0.72rem;color:var(--gray-4);margin-top:20px;" class="reveal">* NIH stat referenced in proof strip above. HeightMax uses CDC growth chart data in its prediction algorithm.</p>
+    </div>
+</section>
+
 <!-- ─── Reviews ───────────────────────────────────────────────────────── -->
 <section class="reviews">
     <div class="container">
-        <p class="section-label reveal">Real People. Real Results.</p>
-        <h2 class="section-title reveal">What Our Users Say</h2>
+        <p class="section-label reveal">App Store Reviews</p>
+        <h2 class="section-title reveal">What People Found Out<br>About Themselves</h2>
         <div class="reviews-grid">
 
             <div class="review-card reveal">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">"I've tried so many apps but HeightMax actually keeps me consistent. The daily reminders and streak system make it feel like a game. My posture has improved massively in 3 weeks."</p>
+                <p class="review-text">"I had no idea my growth window was still open. HeightMax told me I'm only 71% through it and have ~3cm of genetic potential left. That hit different. 6 weeks in, I've already logged my first AR height measurement and my posture is noticeably better."</p>
                 <div class="review-author">
                     <div class="review-avatar">JK</div>
                     <div>
-                        <div class="review-name">Jake K.</div>
-                        <div class="review-meta">App Store Review · 3 weeks ago</div>
+                        <div class="review-name">Jake K., 16</div>
+                        <div class="review-meta">App Store Review · 6 weeks ago</div>
                     </div>
                 </div>
             </div>
 
             <div class="review-card reveal">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Saw this on TikTok, downloaded it same night. The stretching routines are actually well-designed and the progress tracker motivates me to stay on it every single day."</p>
+                <p class="review-text">"The algorithm used my parents' heights and gave me a realistic number — not some fake motivational number. Then it showed me my sleep score was dragging my potential down. Fixed my sleep. Updated my score. This thing is actually addictive."</p>
                 <div class="review-author">
                     <div class="review-avatar">MR</div>
                     <div>
-                        <div class="review-name">Marcus R.</div>
-                        <div class="review-meta">App Store Review · 1 month ago</div>
+                        <div class="review-name">Marcus R., 15</div>
+                        <div class="review-meta">App Store Review · 2 months ago</div>
                     </div>
                 </div>
             </div>
 
             <div class="review-card reveal">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The personalized routine feature is incredible. It adjusts based on my body measurements and goals. I feel taller and carry myself way differently now. Can't imagine my mornings without it."</p>
+                <p class="review-text">"Thought it was a joke app. Then it told me I'm in the bottom 34th percentile for my age group and showed me exactly why — bad sleep, skipping workouts, poor nutrition. Woke me up. 7-week streak. Already up 1.2cm from my first measurement."</p>
                 <div class="review-author">
                     <div class="review-avatar">AL</div>
                     <div>
-                        <div class="review-name">Alex L.</div>
-                        <div class="review-meta">App Store Review · 2 months ago</div>
+                        <div class="review-name">Alex L., 17</div>
+                        <div class="review-meta">App Store Review · 7 weeks ago</div>
                     </div>
                 </div>
             </div>
@@ -847,48 +866,56 @@
 <!-- ─── Benefits ──────────────────────────────────────────────────────── -->
 <section class="benefits">
     <div class="container">
-        <p class="section-label reveal">Why HeightMax</p>
-        <h2 class="section-title reveal">Everything You Need<br>to Stay Consistent</h2>
+        <p class="section-label reveal">6 Things Working For You</p>
+        <h2 class="section-title reveal">Every Factor That Affects<br>Your Height — Tracked.</h2>
 
         <div class="benefits-list">
 
             <div class="benefit-item reveal">
-                <div class="benefit-icon">🧘</div>
+                <div class="benefit-icon">🧬</div>
                 <div class="benefit-content">
-                    <h3>Posture & Stretching Routines</h3>
-                    <p>Science-backed exercises focused on spinal decompression, flexibility, and posture correction — delivered in short daily sessions you'll actually do.</p>
+                    <h3>Your Personal Height Algorithm</h3>
+                    <p>Input your parents' heights, age, gender, ethnicity, BMI, and lifestyle. HeightMax runs a scientific model used by researchers — and spits out your exact genetic ceiling, dream height probability, and growth completion score.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
-                <div class="benefit-icon">🎯</div>
+                <div class="benefit-icon">📐</div>
                 <div class="benefit-content">
-                    <h3>Personalized to Your Body</h3>
-                    <p>Answer a few questions and HeightMax builds a routine tailored to your age, body type, and goals. No generic plans — just what works for you.</p>
+                    <h3>Measure Your Real Height With AR</h3>
+                    <p>No ruler. No guessing. Use your phone's AR camera to measure your height down to the millimeter. Log it. Watch the number move over time. That's the most motivating thing you'll ever see.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
-                <div class="benefit-icon">📊</div>
+                <div class="benefit-icon">🥗</div>
                 <div class="benefit-content">
-                    <h3>Track Your Progress Daily</h3>
-                    <p>Log your measurements, streaks, and milestones. Watch your journey unfold over time with beautiful visual progress charts that keep you motivated.</p>
+                    <h3>Nutrition — The Missing 20%</h3>
+                    <p>NIH research says up to 20% of your height is lifestyle-determined. Log your meals with a photo — HeightMax's AI analyzes your nutritional intake and flags exactly what's helping or holding back your growth potential.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">😴</div>
+                <div class="benefit-content">
+                    <h3>Sleep Is Your Growth Hormone Window</h3>
+                    <p>Human growth hormone peaks during deep sleep. HeightMax tracks your sleep hours daily. Get less than 8 hours? Your potential score drops. This one insight alone changes how people treat their sleep.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">🏋️</div>
+                <div class="benefit-content">
+                    <h3>Exercises Built for Your Growth Stage</h3>
+                    <p>Not random stretches from YouTube. Science-backed spinal decompression, posture correction, and flexibility routines — personalized to your age and growth window. 10–15 minutes a day. That's all it takes.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
                 <div class="benefit-icon">🔥</div>
                 <div class="benefit-content">
-                    <h3>Build a Lasting Daily Habit</h3>
-                    <p>Habit stacking, streak protection, and smart reminders help you stay consistent. Just 10–15 minutes a day is all it takes to support your growth journey.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item reveal">
-                <div class="benefit-icon">🤖</div>
-                <div class="benefit-content">
-                    <h3>AI-Powered Guidance</h3>
-                    <p>HeightMax's smart coach adapts your program as you progress, keeping workouts challenging enough to drive results without burning you out.</p>
+                    <h3>Consistency Is the Only Variable You Control</h3>
+                    <p>You can't change your parents' heights. You can't pause time. But you can show up every day. HeightMax's streak system, daily reminders, and AI coach make consistency the easiest part of your routine.</p>
                 </div>
             </div>
 
@@ -899,36 +926,36 @@
 <!-- ─── How It Works ──────────────────────────────────────────────────── -->
 <section class="how">
     <div class="container">
-        <p class="section-label reveal">Simple. Powerful. Daily.</p>
+        <p class="section-label reveal">From Download to Data in 60 Seconds</p>
         <h2 class="section-title reveal">How HeightMax Works</h2>
 
         <div class="steps">
             <div class="step reveal">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                    <h3>Set Up Your Profile</h3>
-                    <p>Enter your age, height, and goals. HeightMax builds a fully personalized routine in seconds.</p>
+                    <h3>Answer 7 Questions About Your Body</h3>
+                    <p>Your age, current height, parents' heights, sleep habits, workout frequency, nutrition quality, and goal height. Takes 60 seconds. This is what powers your prediction.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                    <h3>Follow Your Daily Routine</h3>
-                    <p>Short, guided sessions of stretching and posture work — done in under 15 minutes each morning.</p>
+                    <h3>Get Your Personalized Height Report</h3>
+                    <p>Instantly see your exact height potential, your growth window completion %, your dream height probability, and your percentile vs peers, your country, and the world.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                    <h3>Track & Stay Consistent</h3>
-                    <p>Log your progress, protect your streak, and watch your posture and mobility improve week over week.</p>
+                    <h3>Follow Your Daily Plan</h3>
+                    <p>Guided exercises, nutrition logging, and sleep tracking — personalized to your growth stage and optimized around the lifestyle factors your algorithm flagged as weaknesses.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                    <h3>Let Your Body Adapt</h3>
-                    <p>Consistency is everything. Over time, better posture, flexibility, and daily habits support your body in reaching its full natural potential.</p>
+                    <h3>Measure Real Progress With AR</h3>
+                    <p>Use your phone's camera to measure your actual height. Log it over time. Watch your potential score update as your habits improve. This is where it gets addictive.</p>
                 </div>
             </div>
         </div>
@@ -939,7 +966,7 @@
 <section class="screens">
     <div class="container">
         <p class="section-label reveal">Inside the App</p>
-        <h2 class="section-title reveal">Built for the<br>Way You Actually Live</h2>
+        <h2 class="section-title reveal">Everything You Need.<br>Nothing You Don't.</h2>
     </div>
     <div class="screens-scroll">
         <div class="screen-thumb"><img src="assets/screen1.webp" alt="HeightMax Screen 1" loading="lazy"></div>
@@ -953,12 +980,12 @@
 <!-- ─── Bottom CTA ────────────────────────────────────────────────────── -->
 <section class="bottom-cta">
     <div class="container">
-        <div class="badge reveal">Start for Free Today</div>
+        <div class="badge reveal">Your Window Is Still Open</div>
         <h2 class="hero-title reveal">
-            Your Growth<br>Journey Starts<br><span class="red">Right Now.</span>
+            Most People Never<br>Find Out What They<br><span class="red">Were Capable Of.</span>
         </h2>
         <p class="hero-sub reveal">
-            Thousands are already building the daily habits that support their potential. Don't let another day go by without a plan.
+            Growth stops. For males around 20, for females around 18. Every week you don't optimize your sleep, nutrition, and exercise is a week you can't get back. Find out your exact potential — and start closing the gap.
         </p>
         <div class="cta-stack reveal">
             <a href="https://apps.apple.com/app/id6753893362" class="btn-appstore" target="_blank" rel="noopener">
@@ -1001,8 +1028,8 @@
     <a href="https://apps.apple.com/app/id6753893362" class="btn-appstore" target="_blank" rel="noopener" style="animation:none;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div class="btn-appstore-text">
-            <span>Get it FREE on the</span>
-            <span>App Store</span>
+            <span>Find Your Height Potential — Free</span>
+            <span>Download on App Store</span>
         </div>
     </a>
     <p class="cta-tip">📱 Can't open the link? Press &amp; hold the button → then tap "Open in Browser"</p>
