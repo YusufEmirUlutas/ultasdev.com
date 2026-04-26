@@ -496,44 +496,105 @@
             line-height: 1.55;
         }
 
+        /* ─── Features Grid ─────────────────────────────────────────── */
+        .features {
+            padding: 60px 0;
+            background: var(--black);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 16px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: rgba(155,17,30,0.4);
+            background: var(--surface2);
+        }
+
+        .feature-card-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-card-tag {
+            display: inline-block;
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--red-light);
+            background: rgba(155,17,30,0.1);
+            border: 1px solid rgba(155,17,30,0.2);
+            padding: 3px 8px;
+            border-radius: 50px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .feature-card p {
+            font-size: 0.78rem;
+            color: var(--gray-3);
+            line-height: 1.55;
+        }
+
         /* ─── Screenshots Scroll ────────────────────────────────────── */
         .screens {
-            padding: 60px 0;
+            padding: 60px 0 40px;
             background: var(--surface);
             overflow: hidden;
         }
 
         .screens-scroll {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             overflow-x: auto;
-            padding: 10px 20px 20px;
+            padding: 10px 24px 28px;
             scrollbar-width: none;
             -ms-overflow-style: none;
             scroll-snap-type: x mandatory;
+            align-items: flex-start;
         }
 
         .screens-scroll::-webkit-scrollbar { display: none; }
 
         .screen-thumb {
             flex-shrink: 0;
-            width: 160px;
-            height: 290px;
-            border-radius: 20px;
+            width: 180px;
+            border-radius: 24px;
             overflow: hidden;
-            border: 1px solid var(--border);
             scroll-snap-align: start;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            filter: drop-shadow(0 12px 28px rgba(0,0,0,0.55));
             transition: var(--transition);
         }
 
-        .screen-thumb:hover { transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,0.6); }
+        .screen-thumb:hover {
+            filter: drop-shadow(0 16px 36px rgba(0,0,0,0.75));
+            transform: translateY(-5px);
+        }
 
         .screen-thumb img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
+            height: auto;
+            display: block;
         }
 
         /* ─── Bottom CTA ─────────────────────────────────────────────── */
@@ -570,8 +631,6 @@
             padding: 28px 20px;
             text-align: center;
         }
-
-        .footer-logo { height: 24px; margin: 0 auto 14px; }
 
         .footer-links {
             display: flex;
@@ -694,7 +753,7 @@
         </h1>
 
         <p class="hero-sub fade-up delay-3">
-            HeightMax runs a full biological assessment — your puberty stage, parents' heights, shoe size, sleep, nutrition, and sports — and calculates your exact height potential with 98% accuracy. Then builds your daily plan to capture every centimeter of it.
+            HeightMax runs a full biological assessment — your puberty stage, parents' heights, shoe size, sleep, nutrition, and sports — and calculates your exact height potential. Then builds your personal daily plan to capture every centimeter of it.
         </p>
 
         <!-- Phone Mockups -->
@@ -737,13 +796,13 @@
 <div class="proof-strip">
     <div class="container">
         <div class="proof-stat">
-            <div class="proof-number">98<span>%</span></div>
-            <div class="proof-label">Prediction Accuracy</div>
+            <div class="proof-number">12<span>+</span></div>
+            <div class="proof-label">Exercise Categories</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-stat">
             <div class="proof-number">4.<span>8</span></div>
-            <div class="proof-label">App Store Rating</div>
+            <div class="proof-label">App Rating</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-stat">
@@ -819,7 +878,7 @@
 <!-- ─── Reviews ───────────────────────────────────────────────────────── -->
 <section class="reviews">
     <div class="container">
-        <p class="section-label reveal">App Store Reviews</p>
+        <p class="section-label reveal">Reviews</p>
         <h2 class="section-title reveal">The Moment They Realized<br>They Still Had Time</h2>
         <div class="reviews-grid">
 
@@ -830,7 +889,7 @@
                     <div class="review-avatar">JK</div>
                     <div>
                         <div class="review-name">Jake K., 16</div>
-                        <div class="review-meta">App Store Review · 6 weeks ago</div>
+                        <div class="review-meta">HeightMax User · 6 weeks ago</div>
                     </div>
                 </div>
             </div>
@@ -842,7 +901,7 @@
                     <div class="review-avatar">MR</div>
                     <div>
                         <div class="review-name">Marcus R., 15</div>
-                        <div class="review-meta">App Store Review · 2 months ago</div>
+                        <div class="review-meta">HeightMax User · 2 months ago</div>
                     </div>
                 </div>
             </div>
@@ -854,7 +913,7 @@
                     <div class="review-avatar">AL</div>
                     <div>
                         <div class="review-name">Alex L., 17</div>
-                        <div class="review-meta">App Store Review · 7 weeks ago</div>
+                        <div class="review-meta">HeightMax User · 7 weeks ago</div>
                     </div>
                 </div>
             </div>
@@ -882,8 +941,8 @@
             <div class="benefit-item reveal">
                 <div class="benefit-icon">🔮</div>
                 <div class="benefit-content">
-                    <h3>98% Accurate Height Prediction</h3>
-                    <p>Mid-parental height formula. Ethnicity adjustments. Shoe size indicator (large shoe = high potential). Relatives' heights. BMI. All factored into one number: your exact genetic ceiling in cm, with 98% precision — and how close you are to hitting it.</p>
+                    <h3>Science-Based Height Prediction</h3>
+                    <p>Mid-parental height formula. Ethnicity adjustments. Shoe size indicator (large shoe = high potential). Relatives' heights. BMI. All factored into one number: your exact genetic ceiling in cm — and how close you are to hitting it.</p>
                 </div>
             </div>
 
@@ -941,7 +1000,7 @@
                 <div class="step-num">2</div>
                 <div class="step-body">
                     <h3>Get Your Personalized Height Report</h3>
-                    <p>Instantly see: your exact height potential in cm, your growth window completion %, your dream height probability, your growth plate status, and your 4-way percentile ranking vs age peers, your country, same gender, and global population. 98% accuracy.</p>
+                    <p>Instantly see: your exact height potential in cm, your growth window completion %, your dream height probability, your growth plate status, and your 4-way percentile ranking vs age peers, your country, same gender, and global population.</p>
                 </div>
             </div>
             <div class="step reveal">
@@ -958,6 +1017,46 @@
                     <p>Use the built-in AR tool to measure your real height down to the millimeter — no ruler, no guessing. Log it over time and watch your potential score update as your habits improve. The streak system makes every day count.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Features ─────────────────────────────────────────────────────── -->
+<section class="features">
+    <div class="container">
+        <p class="section-label reveal">What's Inside</p>
+        <h2 class="section-title reveal">Four Tools.<br>One Growth System.</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card reveal">
+                <span class="feature-card-icon">🏋️</span>
+                <span class="feature-card-tag">Exercise Plans</span>
+                <h3>100+ Guided Workouts</h3>
+                <p>Spine, hanging, yoga, posture, fascia — 12 categories built around your biological stage and growth window.</p>
+            </div>
+
+            <div class="feature-card reveal">
+                <span class="feature-card-icon">🥗</span>
+                <span class="feature-card-tag">AI Meal Analysis</span>
+                <h3>Photo Your Food. Get Instant Feedback.</h3>
+                <p>AI scans your meal and tells you exactly how it helps or hurts your growth — in seconds.</p>
+            </div>
+
+            <div class="feature-card reveal">
+                <span class="feature-card-icon">😴</span>
+                <span class="feature-card-tag">Sleep Tracking</span>
+                <h3>Optimize the 10PM–2AM Window</h3>
+                <p>Log your sleep daily. Hit the 9–12.5hr target. Capture the growth hormone peak that happens while you sleep.</p>
+            </div>
+
+            <div class="feature-card reveal">
+                <span class="feature-card-icon">🤖</span>
+                <span class="feature-card-tag">AI Coach</span>
+                <h3>24/7 Personalized Guidance</h3>
+                <p>Ask anything, get a plan. Your AI coach adapts as you improve and keeps you accountable every single day.</p>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1009,17 +1108,16 @@
 
 <!-- ─── Footer ────────────────────────────────────────────────────────── -->
 <footer class="footer">
-    <img src="assets/heightmaxlogo.webp" alt="HeightMax" class="footer-logo">
+    <p class="footer-copy">
+        © 2025 HeightMax by UltasDev. All rights reserved.<br>
+        HeightMax supports your daily growth habits through posture and stretching routines.<br>Individual results vary. This app does not guarantee height growth.
+    </p>
     <div class="footer-links">
         <a href="/uza/privacy-policy.html">Privacy Policy</a>
         <a href="/uza/terms-of-service.html">Terms of Service</a>
         <a href="/support.html">Support</a>
         <a href="/">UltasDev</a>
     </div>
-    <p class="footer-copy">
-        © 2025 HeightMax by UltasDev. All rights reserved.<br>
-        HeightMax supports your daily growth habits through posture and stretching routines.<br>Individual results vary. This app does not guarantee height growth.
-    </p>
 </footer>
 
 <!-- ─── Sticky Bottom Bar ──────────────────────────────────────────────── -->
