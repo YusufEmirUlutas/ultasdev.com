@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>HeightMax — Support Your Growth Journey</title>
+    <meta name="description" content="HeightMax helps you build better daily habits through personalized stretching, posture routines, and progress tracking. Start your growth journey today.">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HeightMax — Support Your Growth Journey">
+    <meta property="og:description" content="Build better daily habits. Personalized posture & stretching routines. Track your progress every day.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ultasdev.com/heightmax">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ─── Reset & Variables ─────────────────────────────────────── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --red:        #9B111E;
+            --red-light:  #C41C2C;
+            --red-dark:   #700C16;
+            --red-glow:   rgba(155, 17, 30, 0.35);
+            --black:      #000000;
+            --surface:    #0E0E0E;
+            --surface2:   #181818;
+            --surface3:   #242424;
+            --border:     rgba(255,255,255,0.08);
+            --white:      #FFFFFF;
+            --gray-1:     #F5F5F5;
+            --gray-2:     #CCCCCC;
+            --gray-3:     #999999;
+            --gray-4:     #555555;
+            --font-main:  'Poppins', -apple-system, sans-serif;
+            --font-head:  'Space Grotesk', -apple-system, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius:     16px;
+        }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ─── Noise Overlay ─────────────────────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        /* ─── Topbar ────────────────────────────────────────────────── */
+        .topbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .topbar-logo {
+            height: 28px;
+            width: auto;
+        }
+
+        .topbar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--red);
+            color: var(--white);
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        .topbar-cta:hover { background: var(--red-light); transform: scale(1.03); }
+
+        /* ─── Hero ──────────────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            min-height: 100svh;
+            padding: 90px 0 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Radial red glow behind hero */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360px;
+            height: 360px;
+            background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero .container { position: relative; z-index: 1; }
+
+        .badge {
+            display: inline-block;
+            font-family: var(--font-head);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red-light);
+            border: 1px solid rgba(196,28,44,0.4);
+            background: rgba(155,17,30,0.12);
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: var(--font-head);
+            font-size: clamp(2.4rem, 9vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+        }
+
+        .hero-title .red { color: var(--red-light); }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: var(--gray-2);
+            line-height: 1.65;
+            margin-bottom: 36px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ─── Phone Mockup ──────────────────────────────────────────── */
+        .phone-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 36px;
+            height: 340px;
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 160px;
+            height: 330px;
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            border-radius: 34px;
+            padding: 6px;
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.1),
+                0 25px 60px rgba(0,0,0,0.7),
+                0 0 40px var(--red-glow);
+            z-index: 3;
+            flex-shrink: 0;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Floating side phones */
+        .phone-side {
+            position: absolute;
+            width: 130px;
+            height: 268px;
+            background: linear-gradient(145deg, #161616, #000);
+            border-radius: 28px;
+            padding: 5px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            top: 50%;
+            z-index: 2;
+        }
+
+        .phone-side-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 23px;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        .phone-side-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .phone-left {
+            left: 0;
+            transform: translateY(-50%) translateX(-20px) rotate(-5deg);
+            opacity: 0.7;
+        }
+
+        .phone-right {
+            right: 0;
+            transform: translateY(-50%) translateX(20px) rotate(5deg);
+            opacity: 0.7;
+        }
+
+        /* ─── CTA Buttons ────────────────────────────────────────────── */
+        .cta-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        .btn-appstore {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--red);
+            color: var(--white);
+            font-family: var(--font-head);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 16px 28px;
+            border-radius: 14px;
+            transition: var(--transition);
+            border: 2px solid var(--red-light);
+            box-shadow: 0 8px 32px var(--red-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-appstore::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+            pointer-events: none;
+        }
+
+        .btn-appstore:active { transform: scale(0.97); }
+        .btn-appstore:hover { background: var(--red-light); box-shadow: 0 12px 40px rgba(155,17,30,0.5); transform: translateY(-2px); }
+
+        .btn-appstore svg { flex-shrink: 0; }
+
+        .btn-appstore-text { text-align: left; line-height: 1.2; }
+        .btn-appstore-text span:first-child { display: block; font-size: 0.65rem; font-weight: 500; opacity: 0.85; letter-spacing: 0.05em; text-transform: uppercase; }
+        .btn-appstore-text span:last-child { display: block; font-size: 1rem; font-weight: 700; }
+
+        .cta-tip {
+            font-size: 0.72rem;
+            color: var(--gray-3);
+            text-align: center;
+            line-height: 1.4;
+            padding: 0 8px;
+        }
+
+        .btn-android {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--surface2);
+            color: var(--gray-2);
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 14px 24px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .btn-android:hover { border-color: rgba(255,255,255,0.2); background: var(--surface3); }
+
+        .btn-android-text { text-align: left; line-height: 1.3; }
+        .btn-android-text span:first-child { display: block; font-size: 0.62rem; font-weight: 500; opacity: 0.7; letter-spacing: 0.04em; text-transform: uppercase; }
+        .btn-android-text span:last-child { display: block; font-size: 0.85rem; font-weight: 600; }
+
+        /* ─── Social Proof Strip ─────────────────────────────────────── */
+        .proof-strip {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 28px 0;
+            text-align: center;
+        }
+
+        .proof-strip .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .proof-stat { text-align: center; }
+        .proof-number {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .proof-number span { color: var(--red-light); }
+        .proof-label { font-size: 0.72rem; color: var(--gray-3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+
+        .proof-divider { width: 1px; height: 40px; background: var(--border); }
+
+        /* ─── Reviews ────────────────────────────────────────────────── */
+        .reviews {
+            padding: 60px 0;
+            background: var(--black);
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red-light);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.6rem, 6vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .review-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .review-stars {
+            color: #FFB800;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--gray-2);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--red-dark), var(--red-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .review-name { font-size: 0.82rem; font-weight: 600; color: var(--white); }
+        .review-meta { font-size: 0.72rem; color: var(--gray-4); }
+
+        /* ─── Benefits ───────────────────────────────────────────────── */
+        .benefits {
+            padding: 60px 0;
+            background: var(--surface);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(155,17,30,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px;
+            transition: var(--transition);
+        }
+
+        .benefit-item:hover { border-color: rgba(155,17,30,0.4); background: var(--surface3); }
+
+        .benefit-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(155,17,30,0.15);
+            border: 1px solid rgba(155,17,30,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+
+        .benefit-content h3 {
+            font-family: var(--font-head);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .benefit-content p {
+            font-size: 0.82rem;
+            color: var(--gray-3);
+            line-height: 1.55;
+        }
+
+        /* ─── How It Works ───────────────────────────────────────────── */
+        .how {
+            padding: 60px 0;
+            background: var(--black);
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 28px;
+            bottom: 28px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--red), transparent);
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .step-num {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--red);
+            color: var(--white);
+            font-family: var(--font-head);
+            font-size: 0.9rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 16px var(--red-glow);
+        }
+
+        .step-body h3 {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            padding-top: 8px;
+        }
+
+        .step-body p {
+            font-size: 0.84rem;
+            color: var(--gray-3);
+            line-height: 1.55;
+        }
+
+        /* ─── Screenshots Scroll ────────────────────────────────────── */
+        .screens {
+            padding: 60px 0;
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .screens-scroll {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding: 10px 20px 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+
+        .screens-scroll::-webkit-scrollbar { display: none; }
+
+        .screen-thumb {
+            flex-shrink: 0;
+            width: 160px;
+            height: 290px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            scroll-snap-align: start;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            transition: var(--transition);
+        }
+
+        .screen-thumb:hover { transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,0.6); }
+
+        .screen-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* ─── Bottom CTA ─────────────────────────────────────────────── */
+        .bottom-cta {
+            padding: 70px 0 80px;
+            background: var(--black);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bottom-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(155,17,30,0.2) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .bottom-cta .container { position: relative; z-index: 1; }
+
+        .bottom-cta .hero-title { font-size: clamp(2rem, 8vw, 3rem); margin-bottom: 16px; }
+
+        .bottom-cta .hero-sub { margin-bottom: 36px; }
+
+        /* ─── Footer ─────────────────────────────────────────────────── */
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .footer-logo { height: 24px; margin: 0 auto 14px; }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            font-size: 0.78rem;
+            color: var(--gray-4);
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--gray-2); }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            color: var(--gray-4);
+            line-height: 1.5;
+        }
+
+        /* ─── Sticky Bottom Bar (mobile) ─────────────────────────────── */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 200;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 12px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sticky-bar.visible { transform: translateY(0); }
+
+        .sticky-bar-dismiss {
+            position: absolute;
+            top: -16px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.75rem;
+            color: var(--gray-3);
+        }
+
+        /* ─── Animations ─────────────────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 8px 32px var(--red-glow); }
+            50%       { box-shadow: 0 8px 48px rgba(155,17,30,0.6); }
+        }
+
+        .btn-appstore { animation: pulse-red 3s ease-in-out infinite; }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        /* ─── Observed fade-in (JS) ──────────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ─── Desktop stretch (centered card feel) ────────────────────── */
+        @media (min-width: 600px) {
+            .container { max-width: 540px; }
+            .hero-title { font-size: 3.4rem; }
+            .phone-mockup { width: 190px; height: 390px; }
+            .phone-left { left: 40px; }
+            .phone-right { right: 40px; }
+            .phone-wrap { height: 400px; }
+        }
+
+        @media (min-width: 900px) {
+            .container { max-width: 860px; }
+            .hero { padding-top: 110px; padding-bottom: 80px; }
+            .hero::before { width: 560px; height: 560px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── Topbar ─────────────────────────────────────────────────────────── -->
+<header class="topbar">
+    <img src="assets/heightmaxlogo.webp" alt="HeightMax Logo" class="topbar-logo">
+    <a href="https://apps.apple.com/app/id6753893362" class="topbar-cta" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download
+    </a>
+</header>
+
+<!-- ─── Hero ───────────────────────────────────────────────────────────── -->
+<section class="hero">
+    <div class="container">
+        <div class="badge fade-up delay-1">The #1 Growth Habit App</div>
+
+        <h1 class="hero-title fade-up delay-2">
+            Build the Habits<br>That <span class="red">Maximize</span><br>Your Potential
+        </h1>
+
+        <p class="hero-sub fade-up delay-3">
+            Personalized stretching & posture routines, daily consistency tracking, and guided growth habits — all in one sleek app.
+        </p>
+
+        <!-- Phone Mockups -->
+        <div class="phone-wrap fade-up delay-3">
+            <div class="phone-side phone-left">
+                <div class="phone-side-screen">
+                    <img src="assets/screen2.webp" alt="HeightMax App Screen" loading="lazy">
+                </div>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <img src="assets/screen1.webp" alt="HeightMax App Main Screen" loading="eager">
+                </div>
+            </div>
+            <div class="phone-side phone-right">
+                <div class="phone-side-screen">
+                    <img src="assets/screen3.webp" alt="HeightMax App Screen" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-stack fade-up delay-4">
+            <a href="https://apps.apple.com/app/id6753893362" class="btn-appstore" target="_blank" rel="noopener">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div class="btn-appstore-text">
+                    <span>Download on the</span>
+                    <span>App Store</span>
+                </div>
+            </a>
+
+            <p class="cta-tip">⚠️ If link NOT working — Tap it and HOLD it down to open it in browser.</p>
+
+            <a href="https://www.tiktok.com/@heightmaxapp" class="btn-android" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2"/></svg>
+                <div class="btn-android-text">
+                    <span>Android Coming Soon</span>
+                    <span>DM us on TikTok → @heightmaxapp</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Social Proof Strip ────────────────────────────────────────────── -->
+<div class="proof-strip">
+    <div class="container">
+        <div class="proof-stat">
+            <div class="proof-number">10K<span>+</span></div>
+            <div class="proof-label">Active Users</div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+            <div class="proof-number">4.<span>8</span></div>
+            <div class="proof-label">App Rating</div>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+            <div class="proof-number">30<span>+</span></div>
+            <div class="proof-label">Day Routines</div>
+        </div>
+    </div>
+</div>
+
+<!-- ─── Reviews ───────────────────────────────────────────────────────── -->
+<section class="reviews">
+    <div class="container">
+        <p class="section-label reveal">Real People. Real Results.</p>
+        <h2 class="section-title reveal">What Our Users Say</h2>
+        <div class="reviews-grid">
+
+            <div class="review-card reveal">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I've tried so many apps but HeightMax actually keeps me consistent. The daily reminders and streak system make it feel like a game. My posture has improved massively in 3 weeks."</p>
+                <div class="review-author">
+                    <div class="review-avatar">JK</div>
+                    <div>
+                        <div class="review-name">Jake K.</div>
+                        <div class="review-meta">App Store Review · 3 weeks ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Saw this on TikTok, downloaded it same night. The stretching routines are actually well-designed and the progress tracker motivates me to stay on it every single day."</p>
+                <div class="review-author">
+                    <div class="review-avatar">MR</div>
+                    <div>
+                        <div class="review-name">Marcus R.</div>
+                        <div class="review-meta">App Store Review · 1 month ago</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The personalized routine feature is incredible. It adjusts based on my body measurements and goals. I feel taller and carry myself way differently now. Can't imagine my mornings without it."</p>
+                <div class="review-author">
+                    <div class="review-avatar">AL</div>
+                    <div>
+                        <div class="review-name">Alex L.</div>
+                        <div class="review-meta">App Store Review · 2 months ago</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ─── Benefits ──────────────────────────────────────────────────────── -->
+<section class="benefits">
+    <div class="container">
+        <p class="section-label reveal">Why HeightMax</p>
+        <h2 class="section-title reveal">Everything You Need<br>to Stay Consistent</h2>
+
+        <div class="benefits-list">
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">🧘</div>
+                <div class="benefit-content">
+                    <h3>Posture & Stretching Routines</h3>
+                    <p>Science-backed exercises focused on spinal decompression, flexibility, and posture correction — delivered in short daily sessions you'll actually do.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                    <h3>Personalized to Your Body</h3>
+                    <p>Answer a few questions and HeightMax builds a routine tailored to your age, body type, and goals. No generic plans — just what works for you.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-content">
+                    <h3>Track Your Progress Daily</h3>
+                    <p>Log your measurements, streaks, and milestones. Watch your journey unfold over time with beautiful visual progress charts that keep you motivated.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">🔥</div>
+                <div class="benefit-content">
+                    <h3>Build a Lasting Daily Habit</h3>
+                    <p>Habit stacking, streak protection, and smart reminders help you stay consistent. Just 10–15 minutes a day is all it takes to support your growth journey.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item reveal">
+                <div class="benefit-icon">🤖</div>
+                <div class="benefit-content">
+                    <h3>AI-Powered Guidance</h3>
+                    <p>HeightMax's smart coach adapts your program as you progress, keeping workouts challenging enough to drive results without burning you out.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ─── How It Works ──────────────────────────────────────────────────── -->
+<section class="how">
+    <div class="container">
+        <p class="section-label reveal">Simple. Powerful. Daily.</p>
+        <h2 class="section-title reveal">How HeightMax Works</h2>
+
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h3>Set Up Your Profile</h3>
+                    <p>Enter your age, height, and goals. HeightMax builds a fully personalized routine in seconds.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h3>Follow Your Daily Routine</h3>
+                    <p>Short, guided sessions of stretching and posture work — done in under 15 minutes each morning.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h3>Track & Stay Consistent</h3>
+                    <p>Log your progress, protect your streak, and watch your posture and mobility improve week over week.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h3>Let Your Body Adapt</h3>
+                    <p>Consistency is everything. Over time, better posture, flexibility, and daily habits support your body in reaching its full natural potential.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Screenshots ───────────────────────────────────────────────────── -->
+<section class="screens">
+    <div class="container">
+        <p class="section-label reveal">Inside the App</p>
+        <h2 class="section-title reveal">Built for the<br>Way You Actually Live</h2>
+    </div>
+    <div class="screens-scroll">
+        <div class="screen-thumb"><img src="assets/screen1.webp" alt="HeightMax Screen 1" loading="lazy"></div>
+        <div class="screen-thumb"><img src="assets/screen2.webp" alt="HeightMax Screen 2" loading="lazy"></div>
+        <div class="screen-thumb"><img src="assets/screen3.webp" alt="HeightMax Screen 3" loading="lazy"></div>
+        <div class="screen-thumb"><img src="assets/screen4.webp" alt="HeightMax Screen 4" loading="lazy"></div>
+        <div class="screen-thumb"><img src="assets/screen5.webp" alt="HeightMax Screen 5" loading="lazy"></div>
+    </div>
+</section>
+
+<!-- ─── Bottom CTA ────────────────────────────────────────────────────── -->
+<section class="bottom-cta">
+    <div class="container">
+        <div class="badge reveal">Start for Free Today</div>
+        <h2 class="hero-title reveal">
+            Your Growth<br>Journey Starts<br><span class="red">Right Now.</span>
+        </h2>
+        <p class="hero-sub reveal">
+            Thousands are already building the daily habits that support their potential. Don't let another day go by without a plan.
+        </p>
+        <div class="cta-stack reveal">
+            <a href="https://apps.apple.com/app/id6753893362" class="btn-appstore" target="_blank" rel="noopener">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div class="btn-appstore-text">
+                    <span>Download on the</span>
+                    <span>App Store</span>
+                </div>
+            </a>
+            <p class="cta-tip">⚠️ If link NOT working — Tap it and HOLD it down to open it in browser.</p>
+            <a href="https://www.tiktok.com/@heightmaxapp" class="btn-android" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.98a8.2 8.2 0 0 0 4.79 1.52V7.05a4.85 4.85 0 0 1-1.02-.36z"/></svg>
+                <div class="btn-android-text">
+                    <span>Android Coming Soon</span>
+                    <span>DM us on TikTok to become a test user</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────────────────────── -->
+<footer class="footer">
+    <img src="assets/heightmaxlogo.webp" alt="HeightMax" class="footer-logo">
+    <div class="footer-links">
+        <a href="/uza/privacy-policy.html">Privacy Policy</a>
+        <a href="/uza/terms-of-service.html">Terms of Service</a>
+        <a href="/support.html">Support</a>
+        <a href="/">UltasDev</a>
+    </div>
+    <p class="footer-copy">
+        © 2025 HeightMax by UltasDev. All rights reserved.<br>
+        HeightMax supports your daily growth habits through posture and stretching routines.<br>Individual results vary. This app does not guarantee height growth.
+    </p>
+</footer>
+
+<!-- ─── Sticky Bottom Bar ──────────────────────────────────────────────── -->
+<div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar-dismiss" id="stickyDismiss" onclick="dismissSticky()">✕</div>
+    <a href="https://apps.apple.com/app/id6753893362" class="btn-appstore" target="_blank" rel="noopener" style="animation:none;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="btn-appstore-text">
+            <span>Get it FREE on the</span>
+            <span>App Store</span>
+        </div>
+    </a>
+    <p class="cta-tip" style="margin-top:4px;">⚠️ If link NOT working — Tap it and HOLD it down to open it in browser.</p>
+</div>
+
+<script>
+    // ── Intersection Observer for scroll reveal ──────────────────────
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Sticky bar appears after scrolling 60% of hero ───────────────
+    const stickyBar  = document.getElementById('stickyBar');
+    let stickyDismissed = false;
+
+    function dismissSticky() {
+        stickyDismissed = true;
+        stickyBar.classList.remove('visible');
+    }
+
+    window.addEventListener('scroll', () => {
+        if (stickyDismissed) return;
+        const scrolled = window.scrollY;
+        const heroH    = document.querySelector('.hero').offsetHeight;
+        if (scrolled > heroH * 0.6) {
+            stickyBar.classList.add('visible');
+        } else {
+            stickyBar.classList.remove('visible');
+        }
+    }, { passive: true });
+</script>
+
+</body>
+</html>
