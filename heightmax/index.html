@@ -180,79 +180,40 @@
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 12px;
             margin: 0 auto 36px;
-            height: 340px;
         }
 
         .phone-mockup {
             position: relative;
-            width: 160px;
-            height: 330px;
-            background: linear-gradient(145deg, #1a1a1a, #000);
-            border-radius: 34px;
-            padding: 6px;
-            box-shadow:
-                0 0 0 1px rgba(255,255,255,0.1),
-                0 25px 60px rgba(0,0,0,0.7),
-                0 0 40px var(--red-glow);
             z-index: 3;
             flex-shrink: 0;
+            filter: drop-shadow(0 24px 48px rgba(0,0,0,0.7)) drop-shadow(0 0 24px var(--red-glow));
         }
 
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 28px;
-            overflow: hidden;
-            background: #111;
+        .phone-mockup img {
+            width: 170px;
+            height: auto;
+            display: block;
         }
 
-        .phone-screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-
-        /* Floating side phones */
         .phone-side {
-            position: absolute;
-            width: 130px;
-            height: 268px;
-            background: linear-gradient(145deg, #161616, #000);
-            border-radius: 28px;
-            padding: 5px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            top: 50%;
+            position: relative;
             z-index: 2;
+            flex-shrink: 0;
+            filter: drop-shadow(0 16px 32px rgba(0,0,0,0.6));
         }
 
-        .phone-side-screen {
-            width: 100%;
-            height: 100%;
-            border-radius: 23px;
-            overflow: hidden;
-            background: #0a0a0a;
+        .phone-side img {
+            width: 128px;
+            height: auto;
+            display: block;
+            opacity: 0.82;
         }
 
-        .phone-side-screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-
-        .phone-left {
-            left: 0;
-            transform: translateY(-50%) translateX(-20px) rotate(-5deg);
-            opacity: 0.7;
-        }
-
-        .phone-right {
-            right: 0;
-            transform: translateY(-50%) translateX(20px) rotate(5deg);
-            opacity: 0.7;
-        }
+        .phone-left { transform: rotate(-4deg) translateY(12px); }
+        .phone-right { transform: rotate(4deg) translateY(12px); }
 
         /* ─── CTA Buttons ────────────────────────────────────────────── */
         .cta-stack {
@@ -302,11 +263,15 @@
         .btn-appstore-text span:last-child { display: block; font-size: 1rem; font-weight: 700; }
 
         .cta-tip {
-            font-size: 0.72rem;
-            color: var(--gray-3);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #f0c040;
             text-align: center;
-            line-height: 1.4;
-            padding: 0 8px;
+            line-height: 1.45;
+            padding: 8px 12px;
+            background: rgba(240, 192, 64, 0.08);
+            border: 1px solid rgba(240, 192, 64, 0.2);
+            border-radius: 10px;
         }
 
         .btn-android {
@@ -779,19 +744,13 @@
         <!-- Phone Mockups -->
         <div class="phone-wrap fade-up delay-3">
             <div class="phone-side phone-left">
-                <div class="phone-side-screen">
-                    <img src="assets/screen2.webp" alt="HeightMax App Screen" loading="lazy">
-                </div>
+                <img src="assets/screen2.webp" alt="HeightMax App Screen" loading="lazy">
             </div>
             <div class="phone-mockup">
-                <div class="phone-screen">
-                    <img src="assets/screen1.webp" alt="HeightMax App Main Screen" loading="eager">
-                </div>
+                <img src="assets/screen1.webp" alt="HeightMax App Main Screen" loading="eager">
             </div>
             <div class="phone-side phone-right">
-                <div class="phone-side-screen">
-                    <img src="assets/screen3.webp" alt="HeightMax App Screen" loading="lazy">
-                </div>
+                <img src="assets/screen3.webp" alt="HeightMax App Screen" loading="lazy">
             </div>
         </div>
 
@@ -805,13 +764,13 @@
                 </div>
             </a>
 
-            <p class="cta-tip">⚠️ If link NOT working — Tap it and HOLD it down to open it in browser.</p>
+            <p class="cta-tip">📱 Can't open the link? Press &amp; hold the button → then tap "Open in Browser"</p>
 
-            <a href="https://www.tiktok.com/@heightmaxapp" class="btn-android" target="_blank" rel="noopener">
+            <a href="https://www.tiktok.com/@heightmax_app" class="btn-android" target="_blank" rel="noopener">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2"/></svg>
                 <div class="btn-android-text">
                     <span>Android Coming Soon</span>
-                    <span>DM us on TikTok → @heightmaxapp</span>
+                    <span>DM us on TikTok → @heightmax_app</span>
                 </div>
             </a>
         </div>
@@ -1009,8 +968,8 @@
                     <span>App Store</span>
                 </div>
             </a>
-            <p class="cta-tip">⚠️ If link NOT working — Tap it and HOLD it down to open it in browser.</p>
-            <a href="https://www.tiktok.com/@heightmaxapp" class="btn-android" target="_blank" rel="noopener">
+            <p class="cta-tip">📱 Can't open the link? Press &amp; hold the button → then tap "Open in Browser"</p>
+            <a href="https://www.tiktok.com/@heightmax_app" class="btn-android" target="_blank" rel="noopener">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.98a8.2 8.2 0 0 0 4.79 1.52V7.05a4.85 4.85 0 0 1-1.02-.36z"/></svg>
                 <div class="btn-android-text">
                     <span>Android Coming Soon</span>
@@ -1046,7 +1005,7 @@
             <span>App Store</span>
         </div>
     </a>
-    <p class="cta-tip" style="margin-top:4px;">⚠️ If link NOT working — Tap it and HOLD it down to open it in browser.</p>
+    <p class="cta-tip">📱 Can't open the link? Press &amp; hold the button → then tap "Open in Browser"</p>
 </div>
 
 <script>
