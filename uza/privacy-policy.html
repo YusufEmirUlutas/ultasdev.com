@@ -148,9 +148,9 @@
 
     <section class="policy-hero">
         <div class="container">
-            <div class="policy-badge">UZA APP</div>
+            <div class="policy-badge">HeightMax</div>
             <h1 class="policy-title">Privacy Policy</h1>
-            <p class="policy-date">Last Updated: January 18, 2025</p>
+            <p class="policy-date">Last Updated: June 2, 2026</p>
         </div>
     </section>
 
@@ -186,16 +186,16 @@
                     <strong>⚠️ Critical:</strong> All the above data stays on YOUR device and is deleted when you uninstall the app. We have NO access to this information.
                 </div>
 
-                <h3>2.2 Anonymous Analytics (No Personal Data)</h3>
-                <p>We collect <strong>anonymous behavioral data</strong> through Firebase Analytics. This data does NOT include any personal or physical measurements:</p>
+                <h3>2.2 Anonymous Analytics & Technical Data</h3>
+                <p>We collect <strong>anonymous behavioral data</strong> and technical logs to improve the App:</p>
                 <ul>
-                    <li><strong>Anonymous Events:</strong> Screen views, button clicks, feature usage (NO personal data attached)</li>
-                    <li><strong>Crash Reports:</strong> App crash logs for debugging (anonymized, NO user data)</li>
-                    <li><strong>Performance Data:</strong> App load times, performance metrics (anonymized)</li>
-                    <li><strong>Subscription Status:</strong> Whether user has active subscription (via RevenueCat, NO personal data)</li>
+                    <li><strong>Firebase Analytics:</strong> Screen views, button clicks, feature usage (NO personal physical data attached).</li>
+                    <li><strong>Firebase Crashlytics:</strong> Anonymous crash reports and stability logs to help us fix bugs.</li>
+                    <li><strong>Meta (Facebook) SDK:</strong> Anonymous attribution data to measure the effectiveness of our marketing campaigns.</li>
+                    <li><strong>RevenueCat:</strong> Subscription status and purchase receipts (NO personal data attached).</li>
                 </ul>
                 <div class="highlight-box">
-                    <strong>✅ What we do NOT collect in analytics:</strong> NO height, NO weight, NO age, NO gender, NO measurements, NO personal identifiers
+                    <strong>✅ What we do NOT collect in analytics:</strong> NO height, NO weight, NO age, NO gender, NO measurements, NO personal identifiers.
                 </div>
 
                 <h3>2.3 Information We Do NOT Collect</h3>
@@ -213,12 +213,13 @@
                 <h2>3. How We Use Your Information</h2>
                 <p>We use the collected information for the following purposes:</p>
                 <ul>
-                    <li><strong>Provide Core Features:</strong> Height tracking, training programs, and AI-powered coaching</li>
-                    <li><strong>Personalization:</strong> Customizing your experience based on your goals and preferences</li>
-                    <li><strong>AI Coaching:</strong> Processing your queries through Google's Generative AI to provide personalized guidance</li>
-                    <li><strong>App Improvement:</strong> Analyzing anonymized usage data to enhance features and fix bugs</li>
-                    <li><strong>Notifications:</strong> Sending reminders and updates (only if you opt-in)</li>
-                    <li><strong>Payment Processing:</strong> Managing subscriptions through Apple App Store or Google Play Store</li>
+                    <li><strong>Provide Core Features:</strong> Height tracking, training programs, and AI-powered coaching.</li>
+                    <li><strong>Personalization:</strong> Customizing your experience based on your goals and preferences.</li>
+                    <li><strong>AI Coaching:</strong> Processing your queries through Google's Generative AI to provide personalized guidance.</li>
+                    <li><strong>App Improvement:</strong> Analyzing anonymized usage data and crash reports to enhance features and fix bugs.</li>
+                    <li><strong>Marketing Attribution:</strong> Using anonymous identifiers to understand app acquisition sources.</li>
+                    <li><strong>Notifications:</strong> Sending reminders and updates (only if you opt-in).</li>
+                    <li><strong>Payment Processing:</strong> Managing subscriptions through Apple App Store or Google Play Store.</li>
                 </ul>
             </div>
 
@@ -227,222 +228,86 @@
 
                 <h3>4.1 On-Device Storage ONLY</h3>
                 <p>
-                    <strong>ALL your personal data is stored EXCLUSIVELY on your device</strong> using iOS/Android secure local storage (SharedPreferences/UserDefaults). This means:
+                    <strong>ALL your personal data is stored EXCLUSIVELY on your device</strong>. This means:
                 </p>
                 <ul>
-                    <li>✅ Your data stays on YOUR phone/tablet forever (until you delete the app)</li>
-                    <li>✅ We have ZERO access to your personal information</li>
-                    <li>✅ No cloud backup, no server upload, no external storage</li>
-                    <li>✅ Data is deleted permanently when you uninstall the app</li>
+                    <li>✅ Your data stays on YOUR phone/tablet (until you delete the app).</li>
+                    <li>✅ We have ZERO access to your personal information.</li>
+                    <li>✅ No cloud sync, no server upload, no external storage for physical data.</li>
+                    <li>✅ Data is deleted permanently when you uninstall the app.</li>
                 </ul>
 
-                <h3>4.2 No Cloud Sync</h3>
-                <p>
-                    <strong>Important:</strong> Unlike many apps, HeightMax does NOT sync your personal data to any cloud service. Your height, weight, age, and measurements never leave your device.
-                </p>
-                <div class="highlight-box">
-                    <strong>Why on-device only?</strong> To protect your privacy and comply with Apple's strictest privacy standards. We deliberately chose NOT to use cloud storage for sensitive health data.
-                </div>
-
-                <h3>4.3 Security Measures</h3>
+                <h3>4.2 Security Measures</h3>
                 <ul>
-                    <li>✅ Device-level encryption (iOS Keychain/Android EncryptedSharedPreferences)</li>
-                    <li>✅ No central database of user information</li>
-                    <li>✅ Anonymous analytics only (TLS/SSL encrypted)</li>
-                    <li>✅ Regular security updates</li>
+                    <li>✅ Device-level encryption (iOS Keychain/Android EncryptedSharedPreferences).</li>
+                    <li>✅ No central database of user health information.</li>
+                    <li>✅ Anonymous analytics only (TLS/SSL encrypted).</li>
                 </ul>
-
-                <div class="highlight-box">
-                    <strong>Note:</strong> Since your data is stored only on your device, please ensure you keep regular device backups through iOS/Android system backups if you want to preserve your data.
-                </div>
             </div>
 
             <div class="policy-section">
                 <h2>5. Third-Party Services</h2>
                 <p>HeightMax integrates with the following third-party services:</p>
 
-                <h3>5.1 Firebase Analytics (Google)</h3>
+                <h3>5.1 Firebase (Google)</h3>
                 <p>
-                    We use Firebase Analytics for <strong>anonymous behavioral tracking ONLY</strong>:
-                </p>
-                <ul>
-                    <li>✅ Screen views, button clicks, feature usage</li>
-                    <li>✅ Crash reports for debugging</li>
-                    <li>✅ Performance metrics</li>
-                    <li>❌ NO personal data (height, weight, age, gender NOT sent)</li>
-                </ul>
-                <p>
+                    We use <strong>Firebase Analytics</strong> for anonymous behavioral tracking and <strong>Firebase Crashlytics</strong> for stability monitoring.
                     Firebase privacy policy: <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a>
                 </p>
 
-                <h3>5.2 RevenueCat</h3>
+                <h3>5.2 Meta (Facebook)</h3>
                 <p>
-                    We use RevenueCat for subscription management:
+                    We use the Meta SDK for attribution and marketing performance measurement. This helps us understand which advertisements led you to download the App.
+                    Meta privacy policy: <a href="https://www.facebook.com/about/privacy" target="_blank">https://www.facebook.com/about/privacy</a>
                 </p>
-                <ul>
-                    <li>✅ Purchase receipts from Apple/Google</li>
-                    <li>✅ Subscription status (active/expired/trial)</li>
-                    <li>❌ NO personal data sent to RevenueCat</li>
-                </ul>
+
+                <h3>5.3 RevenueCat</h3>
                 <p>
+                    We use RevenueCat for subscription management. It receives purchase receipts from Apple/Google and your subscription status.
                     RevenueCat privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a>
                 </p>
 
-                <h3>5.3 App Store Payment Processors</h3>
+                <h3>5.4 Google Generative AI</h3>
                 <p>
-                    Subscription payments are processed by:
+                    Our AI coaching feature uses Google's Gemini API. Your queries are sent to Google for processing to provide AI responses. We do not send your personal measurements (height, weight, etc.) to the AI unless you explicitly include them in your chat message.
                 </p>
-                <ul>
-                    <li><strong>Apple App Store:</strong> For iOS users</li>
-                    <li><strong>Google Play Store:</strong> For Android users</li>
-                </ul>
-                <p>
-                    We do NOT collect or store payment information. All payment data is handled by the respective app stores.
-                </p>
-
-                <h3>5.4 What We Do NOT Use</h3>
-                <ul>
-                    <li>❌ NO Google Generative AI (no AI chat feature implemented)</li>
-                    <li>❌ NO Firebase Firestore (no cloud database)</li>
-                    <li>❌ NO Firebase Cloud Functions (no server-side processing)</li>
-                    <li>❌ NO user authentication services</li>
-                </ul>
             </div>
 
             <div class="policy-section">
-                <h2>6. Data Sharing and Disclosure</h2>
-                <p>
-                    We do not sell, rent, or trade your personal information. We may share data only in the following limited circumstances:
-                </p>
-                <ul>
-                    <li><strong>With Your Consent:</strong> If you explicitly authorize us to share specific information</li>
-                    <li><strong>Service Providers:</strong> With trusted partners who help operate the App (e.g., Google for AI, Firebase for infrastructure)</li>
-                    <li><strong>Legal Obligations:</strong> If required by law, court order, or legal process</li>
-                    <li><strong>Safety and Protection:</strong> To protect the rights, property, or safety of UltasDev, our users, or others</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>7. Your Privacy Rights</h2>
+                <h2>6. Your Privacy Rights</h2>
                 <p>You have the following rights regarding your data:</p>
                 <ul>
-                    <li><strong>Access:</strong> View all data stored locally on your device through the App</li>
-                    <li><strong>Correction:</strong> Edit or update your information at any time</li>
-                    <li><strong>Deletion:</strong> Delete your data by clearing app data or uninstalling the App</li>
-                    <li><strong>Export:</strong> Export your data for backup or transfer purposes</li>
-                    <li><strong>Opt-Out of Analytics:</strong> Disable analytics in app settings</li>
-                    <li><strong>Notification Control:</strong> Manage notification preferences in device settings</li>
+                    <li><strong>Access:</strong> View all data stored locally on your device through the App.</li>
+                    <li><strong>Correction:</strong> Edit or update your information at any time.</li>
+                    <li><strong>Deletion:</strong> Delete your data by clearing app data or uninstalling the App.</li>
+                    <li><strong>Opt-Out:</strong> Manage analytics and tracking consent within the App settings or device settings.</li>
                 </ul>
                 <p>
-                    To exercise these rights or for questions about your data, contact us at <a href="mailto:privacy@ultasdev.com">privacy@ultasdev.com</a>
+                    For questions about your data, contact us at <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a>
                 </p>
             </div>
 
             <div class="policy-section">
-                <h2>8. Children's Privacy</h2>
-                <p>
-                    HeightMax is designed for users aged 13 and above. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:privacy@ultasdev.com">privacy@ultasdev.com</a>, and we will delete such information.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>9. International Users</h2>
-                <p>
-                    HeightMax is available globally. Your data may be processed and stored in different countries, including the United States and the European Union, where our service providers operate. By using HeightMax, you consent to the transfer of your information to these locations.
-                </p>
-                <p>
-                    We ensure appropriate safeguards are in place to protect your data in accordance with this Privacy Policy and applicable laws, including GDPR for EU users.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>10. Data Retention</h2>
-                <p>
-                    We retain your data as follows:
-                </p>
-                <ul>
-                    <li><strong>Local Data:</strong> Stored on your device until you delete it or uninstall the App</li>
-                    <li><strong>Cloud Backup:</strong> Retained in your personal cloud storage according to your cloud provider's policies</li>
-                    <li><strong>Analytics Data:</strong> Anonymized analytics are retained for up to 24 months</li>
-                    <li><strong>Support Inquiries:</strong> Retained for up to 3 years for customer service purposes</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>11. Push Notifications</h2>
-                <p>
-                    If you enable push notifications, we will send you:
-                </p>
-                <ul>
-                    <li>Training reminders</li>
-                    <li>Measurement reminders</li>
-                    <li>Progress updates</li>
-                    <li>App updates and feature announcements</li>
-                </ul>
-                <p>
-                    You can disable notifications at any time in your device settings. We do not use your notification token for any other purpose.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>12. Changes to This Privacy Policy</h2>
-                <p>
-                    We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make significant changes, we will notify you through:
-                </p>
-                <ul>
-                    <li>In-app notification</li>
-                    <li>Update on this page with a new "Last Updated" date</li>
-                </ul>
-                <p>
-                    Your continued use of HeightMax after changes take effect constitutes acceptance of the updated policy.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>13. Contact Us</h2>
+                <h2>7. Contact Us</h2>
                 <p>
                     If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:
                 </p>
                 <ul>
-                    <li><strong>Email:</strong> <a href="mailto:privacy@ultasdev.com">privacy@ultasdev.com</a></li>
-                    <li><strong>Support Email:</strong> <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a></li>
                     <li><strong>Website:</strong> <a href="https://www.ultasdev.com">www.ultasdev.com</a></li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2>14. Legal Compliance</h2>
-
-                <h3>14.1 GDPR (EU Users)</h3>
-                <p>
-                    For users in the European Union, we comply with the General Data Protection Regulation (GDPR). You have additional rights including data portability, the right to be forgotten, and the right to object to processing.
-                </p>
-
-                <h3>14.2 CCPA (California Users)</h3>
-                <p>
-                    California residents have the right to request information about the categories of personal information collected and the purposes for which it is used. Since we do not sell personal information, CCPA's "do not sell" provisions do not apply.
-                </p>
-
-                <h3>14.3 KVKK (Turkish Users)</h3>
-                <p>
-                    Turkish users' rights under Law No. 6698 on the Protection of Personal Data (KVKK) are protected. You may request access, correction, deletion, and information about your personal data processing.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>15. Summary</h2>
+                <h2>8. Summary</h2>
                 <div class="highlight-box">
-                    <p><strong>🔒 Privacy-First Approach - In Plain Language:</strong></p>
+                    <p><strong>🔒 Privacy-First Approach:</strong></p>
                     <ul>
-                        <li>✅ Your height, weight, age, and ALL measurements stay ONLY on your device</li>
-                        <li>✅ We collect ZERO personal data - no cloud sync, no server uploads</li>
-                        <li>✅ We track anonymous app usage only (screen views, clicks) - NO personal info</li>
-                        <li>✅ RevenueCat manages subscriptions - receives NO personal data from us</li>
-                        <li>✅ Payments handled by Apple/Google - we never see your payment info</li>
-                        <li>✅ No user accounts, no login, no tracking - your data is yours alone</li>
-                        <li>✅ Delete the app = all your data is gone (we have no copies)</li>
+                        <li>✅ Your health measurements stay ONLY on your device.</li>
+                        <li>✅ We collect ZERO personal data on our servers.</li>
+                        <li>✅ We use anonymous analytics to improve the app.</li>
+                        <li>✅ You are in full control of your data.</li>
                     </ul>
-                    <p style="margin-top: 1rem;"><strong>Bottom line:</strong> We built HeightMax to respect your privacy. Your sensitive health data never leaves your phone.</p>
                 </div>
             </div>
 
@@ -479,7 +344,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 UltasDev. All rights reserved.</p>
+                <p>&copy; 2026 UltasDev. All rights reserved.</p>
             </div>
         </div>
     </footer>
