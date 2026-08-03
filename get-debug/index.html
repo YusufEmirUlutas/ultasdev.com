@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppLink diagnostics</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#000000">
+
+    <script src="/assets/applink.js"></script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --red:      #9B111E;
+            --green:    #2ECC71;
+            --amber:    #f0c040;
+            --black:    #000000;
+            --surface:  #0E0E0E;
+            --surface2: #181818;
+            --surface3: #242424;
+            --border:   rgba(255,255,255,0.10);
+            --white:    #FFFFFF;
+            --gray-1:   #F5F5F5;
+            --gray-3:   #999999;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.55;
+            padding: 20px 16px calc(40px + env(safe-area-inset-bottom, 0px));
+            max-width: 620px;
+            margin: 0 auto;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        h1 { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+        .sub { font-size: 0.8rem; color: var(--gray-3); margin-bottom: 22px; }
+
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 15px;
+            margin-bottom: 14px;
+        }
+
+        h2 {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--gray-3);
+            font-weight: 700;
+            margin-bottom: 11px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.8rem;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .row:last-child { border-bottom: 0; }
+        .row dt { color: var(--gray-3); flex: 0 0 auto; }
+        .row dd { font-family: var(--mono); text-align: right; word-break: break-word; }
+
+        .yes { color: var(--green); font-weight: 700; }
+        .no  { color: #666; }
+
+        .ua {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            line-height: 1.5;
+            color: var(--gray-1);
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 10px;
+            word-break: break-all;
+            -webkit-user-select: all;
+            user-select: all;
+        }
+
+        .ladder { font-family: var(--mono); font-size: 0.78rem; }
+        .ladder li { margin-left: 18px; padding: 3px 0; }
+        .ladder li::marker { color: var(--red); }
+
+        button, .btn {
+            display: block;
+            width: 100%;
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--surface2);
+            color: var(--gray-1);
+            cursor: pointer;
+            margin-bottom: 8px;
+            -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+        }
+        button:active { background: var(--surface3); }
+        button .id { font-family: var(--mono); font-size: 0.72rem; color: var(--gray-3); display: block; }
+        button.primary { background: var(--red); color: #fff; border-color: var(--red); text-align: center; }
+        button.primary .id { color: rgba(255,255,255,0.72); }
+
+        .log {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            line-height: 1.6;
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 10px;
+            max-height: 260px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .log .t { color: #666; }
+        .log .ok { color: var(--green); }
+        .log .warn { color: var(--amber); }
+        .log .fire { color: #7fb3ff; }
+
+        .note {
+            font-size: 0.76rem;
+            color: var(--gray-3);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>AppLink diagnostics</h1>
+<p class="sub">Open this inside the app you want to test, then fire each strategy one at a time and watch the log.</p>
+
+<section>
+    <h2>User agent</h2>
+    <div class="ua" id="ua"></div>
+</section>
+
+<section>
+    <h2>Environment</h2>
+    <dl id="env"></dl>
+</section>
+
+<section>
+    <h2>Detection</h2>
+    <dl id="detect"></dl>
+</section>
+
+<section>
+    <h2>Ladder for this device</h2>
+    <ol class="ladder" id="ladder"></ol>
+    <p class="note">Rung 1 fires on the real CTA tap. The rest appear as buttons in the fallback sheet, so each keeps its own user gesture.</p>
+</section>
+
+<section>
+    <h2>Fire one strategy</h2>
+    <div id="strategies"></div>
+    <p class="note">Tapping a button below fires that strategy alone. If the screen leaves this page, the log records it as an app switch — that is the one you want.</p>
+</section>
+
+<section>
+    <h2>Baseline controls</h2>
+    <a class="btn" id="plainLink" href="#">Plain &lt;a href&gt; to the store <span class="id">no JavaScript involved</span></a>
+    <button type="button" id="runFull">Run the full ladder <span class="id">exactly what the CTA does</span></button>
+</section>
+
+<section>
+    <h2>Event log</h2>
+    <div class="log" id="log"></div>
+    <button type="button" class="primary" id="copy" style="margin-top:10px;">Copy diagnostics</button>
+    <button type="button" id="clear">Clear log</button>
+</section>
+
+<script>
+(function () {
+    'use strict';
+
+    var started = Date.now();
+    var logEl = document.getElementById('log');
+    var lines = [];
+
+    function stamp() {
+        return '+' + String(Date.now() - started).padStart(5, ' ') + 'ms';
+    }
+
+    function log(message, kind) {
+        var line = stamp() + '  ' + message;
+        lines.push(line);
+        var span = document.createElement('div');
+        var time = document.createElement('span');
+        time.className = 't';
+        time.textContent = stamp() + '  ';
+        span.appendChild(time);
+        var body = document.createElement('span');
+        if (kind) body.className = kind;
+        body.textContent = message;
+        span.appendChild(body);
+        logEl.appendChild(span);
+        logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function row(list, label, value, boolish) {
+        var dt = document.createElement('dt');
+        dt.textContent = label;
+        var dd = document.createElement('dd');
+        if (boolish) {
+            dd.textContent = value ? 'yes' : 'no';
+            dd.className = value ? 'yes' : 'no';
+        } else {
+            dd.textContent = value === '' || value === null || typeof value === 'undefined' ? '—' : String(value);
+        }
+        var wrap = document.createElement('div');
+        wrap.className = 'row';
+        wrap.appendChild(dt);
+        wrap.appendChild(dd);
+        list.appendChild(wrap);
+    }
+
+    /* ── Environment + detection readout ─────────────────────────────── */
+
+    var ua = navigator.userAgent || '';
+    document.getElementById('ua').textContent = ua;
+
+    var envList = document.getElementById('env');
+    row(envList, 'navigator.platform', navigator.platform || '');
+    row(envList, 'maxTouchPoints', navigator.maxTouchPoints || 0);
+    row(envList, 'standalone', navigator.standalone === true, true);
+    row(envList, 'screen', window.screen.width + '×' + window.screen.height);
+    row(envList, 'referrer', document.referrer || '');
+
+    var detectList = document.getElementById('detect');
+    row(detectList, 'platform', AppLink.detectPlatform());
+    row(detectList, 'app', AppLink.detectApp() || 'none');
+    row(detectList, 'channel', AppLink.detectChannel());
+    row(detectList, 'isIOS', AppLink.isIOS(), true);
+    row(detectList, 'isAndroid', AppLink.isAndroid(), true);
+    row(detectList, 'isInstagramInApp', AppLink.isInstagramInApp(), true);
+    row(detectList, 'isFacebookInApp', AppLink.isFacebookInApp(), true);
+    row(detectList, 'isTikTokInApp', AppLink.isTikTokInApp(), true);
+    row(detectList, 'isGenericWebView', AppLink.isGenericWebView(), true);
+    row(detectList, 'isInAppBrowser', AppLink.isInAppBrowser(), true);
+
+    var chain = AppLink.ladder();
+    var ladderList = document.getElementById('ladder');
+    chain.forEach(function (id) {
+        var li = document.createElement('li');
+        li.textContent = id;
+        ladderList.appendChild(li);
+    });
+
+    var storeUrl = AppLink.storeUrl();
+    var plain = document.getElementById('plainLink');
+    plain.setAttribute('href', storeUrl);
+    plain.addEventListener('click', function () { log('tapped plain <a href> → ' + storeUrl, 'fire'); });
+
+    /* ── Live app-switch watching ────────────────────────────────────── */
+
+    var pending = null;
+
+    function armWatch(label) {
+        pending = { label: label, at: Date.now(), switched: false };
+        setTimeout(function () {
+            if (pending && pending.label === label && !pending.switched) {
+                log('✗ ' + label + ' — no app switch after 1500ms', 'warn');
+                pending = null;
+            }
+        }, 1500);
+    }
+
+    function noteSwitch(reason) {
+        if (pending && !pending.switched) {
+            pending.switched = true;
+            log('✓ APP SWITCHED after ' + pending.label + ' (' + reason + ', ' +
+                (Date.now() - pending.at) + 'ms)', 'ok');
+            pending = null;
+        } else {
+            log('event: ' + reason);
+        }
+    }
+
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) noteSwitch('visibilitychange → hidden');
+        else log('visibilitychange → visible (back on this page)');
+    });
+    window.addEventListener('pagehide', function () { noteSwitch('pagehide'); });
+    window.addEventListener('blur', function () { noteSwitch('blur'); });
+    window.addEventListener('focus', function () { log('focus (back on this page)'); });
+
+    /* ── One button per strategy ─────────────────────────────────────── */
+
+    var host = document.getElementById('strategies');
+    AppLink.strategies.forEach(function (id) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        var label = document.createElement('span');
+        label.textContent = AppLink.strategyLabel(id);
+        var sub = document.createElement('span');
+        sub.className = 'id';
+        sub.textContent = id + (chain.indexOf(id) === 0 ? '  ← rung 1 here' : '');
+        button.appendChild(label);
+        button.appendChild(sub);
+        button.addEventListener('click', function () {
+            log('firing ' + id, 'fire');
+            armWatch(id);
+            var ok = AppLink.fire(id);
+            if (!ok) log('✗ ' + id + ' refused synchronously (window.open blocked)', 'warn');
+        });
+        host.appendChild(button);
+    });
+
+    document.getElementById('runFull').addEventListener('click', function () {
+        log('running full ladder: ' + chain.join(' → '), 'fire');
+        armWatch('full ladder');
+        AppLink.go({});
+    });
+
+    /* ── Export ──────────────────────────────────────────────────────── */
+
+    document.getElementById('copy').addEventListener('click', function () {
+        var report = [
+            'AppLink diagnostics',
+            'url: ' + window.location.href,
+            'ua: ' + ua,
+            'platform: ' + AppLink.detectPlatform(),
+            'app: ' + (AppLink.detectApp() || 'none'),
+            'channel: ' + AppLink.detectChannel(),
+            'inApp: ' + AppLink.isInAppBrowser(),
+            'standalone: ' + (navigator.standalone === true),
+            'navigator.platform: ' + (navigator.platform || ''),
+            'maxTouchPoints: ' + (navigator.maxTouchPoints || 0),
+            'ladder: ' + chain.join(' → '),
+            '',
+            'log:',
+            lines.join('\n')
+        ].join('\n');
+        var button = this;
+        AppLink.copy(report).then(function (ok) {
+            button.textContent = ok ? 'Copied — paste it anywhere' : 'Copy failed — select the log manually';
+        });
+    });
+
+    document.getElementById('clear').addEventListener('click', function () {
+        lines = [];
+        logEl.textContent = '';
+        log('log cleared');
+    });
+
+    log('ready — ' + AppLink.detectPlatform() + ' / ' + (AppLink.detectApp() || 'real browser'));
+    log('ladder: ' + chain.join(' → '));
+}());
+</script>
+
+</body>
+</html>

@@ -13,6 +13,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ultasdev.com/heightmax">
 
+    <!-- Store-link escape for social in-app browsers. Loaded blocking so the
+         platform classes land on <html> before first paint. -->
+    <script src="/assets/applink.js"></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,6 +207,10 @@
             margin-top: 4px;
         }
 
+        /* The manual escape hint only means anything inside an in-app browser. */
+        .cta-tip { display: none; }
+        html.applink-inapp .cta-tip { display: block; }
+
         .btn-android {
             display: flex;
             align-items: center;
@@ -224,6 +232,21 @@
         .btn-android-text { text-align: left; line-height: 1.3; }
         .btn-android-text span:first-child { display: block; font-size: 0.62rem; font-weight: 500; opacity: 0.7; letter-spacing: 0.04em; text-transform: uppercase; }
         .btn-android-text span:last-child { display: block; font-size: 0.85rem; font-weight: 600; }
+
+        /* ─── Platform-aware store CTAs ───────────────────────────────────
+           assets/applink.js stamps applink-ios / applink-android /
+           applink-desktop onto <html> before first paint. Must come after
+           .btn-android above, which also sets display and would otherwise win
+           on equal specificity. With JS off, only the App Store badge shows —
+           the safe default, since iOS is where the in-app block happens. */
+        .cta-store--ios { display: inline-block; }
+        .cta-store--ios img { width: 180px; height: auto; display: block; }
+        .cta-store--android { display: none; }
+
+        html.applink-android .cta-store--ios { display: none; }
+        html.applink-android .cta-store--android { display: flex; }
+        /* Desktop visitors may own either phone, so offer both. */
+        html.applink-desktop .cta-store--android { display: flex; }
 
         /* ─── Social Proof Strip ─────────────────────────────────────── */
         .proof-strip {
@@ -630,6 +653,7 @@
             padding: 12px 20px 20px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 8px;
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -721,19 +745,23 @@
 
         <!-- CTA Buttons -->
         <div class="cta-stack fade-up delay-3">
-            <a href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-bottom: 10px;">
-                <img src="assets/app-store-badge.svg" alt="Download on the App Store" style="width: 180px; height: auto; display: block;">
+            <a class="cta-store cta-store--ios" data-applink rel="noopener"
+               href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362"
+               aria-label="Download HeightMax on the App Store">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
             </a>
 
-            <p class="cta-tip">If App Store doesn't open inside TikTok, tap ⋯ and choose Open in Browser.</p>
-
-            <a href="https://www.tiktok.com/@heightmax_app" class="btn-android" target="_blank" rel="noopener noreferrer">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2"/></svg>
+            <a class="cta-store cta-store--android btn-android" data-applink rel="noopener"
+               href="https://play.google.com/store/apps/details?id=com.uza.apple"
+               aria-label="Get HeightMax on Google Play">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 3.2v17.6a1 1 0 0 0 1.5.87l14.4-8.8a1 1 0 0 0 0-1.74L5.5 2.33A1 1 0 0 0 4 3.2z"/></svg>
                 <div class="btn-android-text">
-                    <span>Android Coming Soon</span>
-                    <span>DM us on TikTok → @heightmax_app</span>
+                    <span>Get it on</span>
+                    <span>Google Play</span>
                 </div>
             </a>
+
+            <p class="cta-tip">Tap above — if the store doesn't open, we'll show you a one-tap way out.</p>
         </div>
 
         <!-- Phone Mockups -->
@@ -1046,17 +1074,23 @@
             Growth plates close for good — around 16–18 for females, 18–21 for males. After that, the window is gone. Right now you still have time. Find out exactly how much — and what your body needs to make the most of every week that's left.
         </p>
         <div class="cta-stack reveal">
-            <a href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-bottom: 10px;">
-                <img src="assets/app-store-badge.svg" alt="Download on the App Store" style="width: 180px; height: auto; display: block;">
+            <a class="cta-store cta-store--ios" data-applink rel="noopener"
+               href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362"
+               aria-label="Download HeightMax on the App Store">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
             </a>
-            <p class="cta-tip">If App Store doesn't open inside TikTok, tap ⋯ and choose Open in Browser.</p>
-            <a href="https://www.tiktok.com/@heightmax_app" class="btn-android" target="_blank" rel="noopener noreferrer">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.98a8.2 8.2 0 0 0 4.79 1.52V7.05a4.85 4.85 0 0 1-1.02-.36z"/></svg>
+
+            <a class="cta-store cta-store--android btn-android" data-applink rel="noopener"
+               href="https://play.google.com/store/apps/details?id=com.uza.apple"
+               aria-label="Get HeightMax on Google Play">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 3.2v17.6a1 1 0 0 0 1.5.87l14.4-8.8a1 1 0 0 0 0-1.74L5.5 2.33A1 1 0 0 0 4 3.2z"/></svg>
                 <div class="btn-android-text">
-                    <span>Android Coming Soon</span>
-                    <span>DM us on TikTok to become a test user</span>
+                    <span>Get it on</span>
+                    <span>Google Play</span>
                 </div>
             </a>
+
+            <p class="cta-tip">Tap above — if the store doesn't open, we'll show you a one-tap way out.</p>
         </div>
     </div>
 </section>
@@ -1078,10 +1112,20 @@
 <!-- ─── Sticky Bottom Bar ──────────────────────────────────────────────── -->
 <div class="sticky-bar" id="stickyBar" style="border-top: none;">
     <div class="sticky-bar-dismiss" id="stickyDismiss" onclick="dismissSticky()">✕</div>
-    <a href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-bottom: 10px;">
-        <img src="assets/app-store-badge.svg" alt="Download on the App Store" style="width: 180px; height: auto; display: block;">
+    <a class="cta-store cta-store--ios" data-applink rel="noopener"
+       href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362"
+       aria-label="Download HeightMax on the App Store">
+        <img src="assets/app-store-badge.svg" alt="Download on the App Store">
     </a>
-    <p class="cta-tip">If App Store doesn't open inside TikTok, tap ⋯ and choose Open in Browser.</p>
+    <a class="cta-store cta-store--android btn-android" data-applink rel="noopener"
+       href="https://play.google.com/store/apps/details?id=com.uza.apple"
+       aria-label="Get HeightMax on Google Play">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 3.2v17.6a1 1 0 0 0 1.5.87l14.4-8.8a1 1 0 0 0 0-1.74L5.5 2.33A1 1 0 0 0 4 3.2z"/></svg>
+        <div class="btn-android-text">
+            <span>Get it on</span>
+            <span>Google Play</span>
+        </div>
+    </a>
 </div>
 
 <script>

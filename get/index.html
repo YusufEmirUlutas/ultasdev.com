@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Get HeightMax</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Download HeightMax.">
+
+    <script src="/assets/applink.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --red:      #9B111E;
+            --red-glow: rgba(155, 17, 30, 0.35);
+            --black:    #000000;
+            --surface:  #0E0E0E;
+            --surface3: #242424;
+            --border:   rgba(255,255,255,0.08);
+            --white:    #FFFFFF;
+            --gray-1:   #F5F5F5;
+            --gray-3:   #999999;
+            --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-head: 'Space Grotesk', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 20px calc(28px + env(safe-area-inset-bottom, 0px));
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .wrap { width: 100%; max-width: 340px; }
+
+        .mark {
+            width: 74px; height: 74px;
+            margin: 0 auto 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 34px var(--red-glow);
+            background: var(--surface);
+        }
+        .mark img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+        h1 {
+            font-family: var(--font-head);
+            font-size: 1.45rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+        h1 span { color: var(--red); }
+
+        .status {
+            font-size: 0.88rem;
+            color: var(--gray-3);
+            min-height: 2.6em;
+            margin-bottom: 20px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 13px; height: 13px;
+            margin-right: 7px;
+            vertical-align: -2px;
+            border: 2px solid rgba(255,255,255,0.18);
+            border-top-color: var(--red);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .status.is-ready .spinner { display: none; }
+        .status.is-ready { color: var(--gray-1); font-weight: 600; }
+
+        .cta {
+            display: block;
+            width: 100%;
+            border: 0;
+            cursor: pointer;
+            font: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: var(--font-head);
+            padding: 16px;
+            border-radius: 14px;
+            background: var(--red);
+            color: #fff;
+            margin-bottom: 10px;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 8px 28px var(--red-glow);
+        }
+        .cta:active { transform: translateY(1px); }
+
+        .secondary {
+            display: block;
+            width: 100%;
+            border: 1px solid var(--border);
+            background: var(--surface3);
+            color: var(--gray-1);
+            font: inherit;
+            font-size: 0.86rem;
+            font-weight: 600;
+            padding: 13px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hint {
+            font-size: 0.76rem;
+            color: var(--gray-3);
+            margin-top: 18px;
+            line-height: 1.55;
+        }
+
+        .foot {
+            font-size: 0.68rem;
+            color: #555;
+            margin-top: 26px;
+        }
+        .foot a { color: #777; text-decoration: none; }
+
+        noscript .cta { text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="mark"><img src="/heightmax/assets/heightmaxlogo.webp" alt="HeightMax"></div>
+
+    <h1>Get <span>HeightMax</span></h1>
+
+    <p class="status" id="status"><span class="spinner"></span>Opening the store…</p>
+
+    <button type="button" class="cta" id="primary">Open the store</button>
+    <button type="button" class="secondary" id="copy">Copy the download link</button>
+
+    <p class="hint" id="hint"></p>
+
+    <noscript>
+        <p class="hint">
+            <a class="cta" href="https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362">App Store</a>
+            <a class="secondary" href="https://play.google.com/store/apps/details?id=com.uza.apple">Google Play</a>
+        </p>
+    </noscript>
+
+    <p class="foot">HeightMax by <a href="/">UltasDev</a></p>
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ── Per-channel links ───────────────────────────────────────────────
+       Every entry currently points at the RAW canonical store URLs. That is
+       deliberate: iOS opens the App Store silently only for a direct
+       apps.apple.com URL, and shows an "Open this page in App Store?" prompt
+       for anything that arrives through a 301. When you add AppsFlyer OneLink
+       or Branch, put the attribution URL in `track` — the page will fire it as
+       a background beacon and still escape using the raw store URL, so
+       attribution is matched probabilistically without costing you the
+       zero-prompt path. `default` covers visitors with no ?src= param, and it
+       is intentionally neutral rather than aliased to one channel.          */
+    var CHANNELS = {
+        'default':  { track: null },
+        'tiktok':   { track: null },
+        'instagram':{ track: null },
+        'threads':  { track: null },
+        'facebook': { track: null },
+        'youtube':  { track: null },
+        'x':        { track: null },
+        'bio':      { track: null }
+    };
+
+    var IOS_URL = 'https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362';
+    var ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.uza.apple';
+    var DESKTOP_URL = '/heightmax/';
+    var READY_AFTER = 1800;
+
+    var statusEl = document.getElementById('status');
+    var primaryEl = document.getElementById('primary');
+    var copyEl = document.getElementById('copy');
+    var hintEl = document.getElementById('hint');
+
+    function param(name) {
+        var match = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.search);
+        return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')).toLowerCase() : '';
+    }
+
+    var src = param('src');
+    var channel = Object.prototype.hasOwnProperty.call(CHANNELS, src) ? src : 'default';
+    var track = CHANNELS[channel].track;
+
+    var decision = AppLink.route();
+    var platform = decision.platform;
+    var app = decision.app;
+    var inApp = AppLink.isInAppBrowser();
+    var storeUrl = platform === 'android' ? ANDROID_URL : IOS_URL;
+
+    // Where a 'replace' decision should land. Desktop never uses the
+    // attribution link — it is a real browser reading a landing page.
+    var TARGETS = {
+        desktop: DESKTOP_URL,
+        ios: track || IOS_URL,
+        android: track || ANDROID_URL
+    };
+
+    /* A click beacon, only meaningful once `track` is filled in. keepalive so
+       it survives the navigation that follows immediately after. */
+    function beacon() {
+        if (!track) return;
+        try {
+            fetch(track, { mode: 'no-cors', keepalive: true, credentials: 'omit' }).catch(function () {});
+        } catch (err) { /* nothing to do — attribution is best-effort */ }
+    }
+
+    function markReady(message) {
+        statusEl.className = 'status is-ready';
+        statusEl.textContent = message;
+    }
+
+    primaryEl.addEventListener('click', function () {
+        beacon();
+        AppLink.go({ url: storeUrl });
+    });
+
+    copyEl.addEventListener('click', function () {
+        AppLink.copy(storeUrl).then(function (ok) {
+            copyEl.textContent = ok ? 'Copied — paste it in Safari or Chrome' : 'Long-press the link to copy';
+        });
+    });
+
+    /* ── Route ───────────────────────────────────────────────────────── */
+
+    primaryEl.textContent = platform === 'android' ? 'Open Google Play' : 'Open the App Store';
+    hintEl.textContent = inApp ? AppLink.manualHint(app) : '';
+
+    if (decision.mode === 'replace') {
+        if (decision.target !== 'desktop') beacon();
+        window.location.replace(TARGETS[decision.target]);
+    } else {
+        beacon();
+        AppLink.fire(decision.strategy);
+    }
+
+    /* The page is its own fallback: if nothing took over, say so plainly. */
+    AppLink.watchForSwitch(READY_AFTER, function () {
+        markReady('Store didn\'t open? Tap below.');
+    });
+}());
+</script>
+
+</body>
+</html>
