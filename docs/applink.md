@@ -1,9 +1,16 @@
 # AppLink — store links that survive in-app browsers
 
 TikTok, Instagram, Facebook, Messenger and Threads render links in an embedded
-webview that **cancels navigation to the app stores**. A plain
-`<a href="https://apps.apple.com/...">` tap does nothing at all. That is the bug
-this code exists to work around.
+webview that **blocks navigation to the app stores**. A plain
+`<a href="https://apps.apple.com/...">` tap either does nothing or raises an
+error. That is the bug this code exists to work around.
+
+Two different causes hide behind that one symptom, and they need opposite fixes:
+
+- **Meta apps** block it *technically*. A custom URL scheme escapes to Safari
+  and the store opens. Fixable in code.
+- **TikTok** blocks it *by policy*, for non-Business accounts. No scheme works.
+  See the TikTok section below before changing anything there.
 
 ## Files
 
@@ -38,14 +45,43 @@ Worst case is one extra tap on an on-theme sheet. Nothing dead-ends.
 |---|---|
 | Instagram / Threads, iOS | `instagram://extbrowser` → `x-safari-` → `itms-apps://` |
 | Facebook / Messenger, iOS | `x-safari-` → `itms-apps://` |
-| **TikTok, iOS** | `itms-apps://` → `x-safari-` |
+| **TikTok, iOS** | **nothing — instructions only** |
 | Any Android webview | `intent://` → `market://` → plain https |
 | Real browsers | untouched — the `href` already works |
 
-TikTok is the uncertain one. Instagram's `extbrowser` scheme and Facebook's
-`x-safari-` are documented and known to work; **TikTok publishes no escape
-scheme at all**, so its ladder is a best guess. Use `/get-debug/` to find out
-what actually happens.
+## TikTok is a policy block, not a technical one
+
+This is the important thing to understand before touching the TikTok path
+again.
+
+TikTok **deliberately blocks App Store links for non-Business accounts**. It has
+done so since March 2023, and the block covers creator bios *and* link-in-bio
+services like Linktree. The error it shows is
+[literally "action cannot be completed"](https://techcrunch.com/2023/03/08/tiktok-begins-blocking-links-to-app-store-pages-from-creators-bios/).
+
+Because TikTok inspects the *destination*, no URL scheme defeats it.
+`itms-apps://`, `x-safari-https://apps.apple.com/…` and a plain `<a href>` all
+produce the same error. Three separate attempts in this repo's history failed
+this way before the cause was understood.
+
+So the TikTok ladder is **empty on purpose**. Firing something that is
+guaranteed to fail is worse than firing nothing: the visitor sees TikTok's error
+and concludes the site is broken. Instead they get the two-step "tap ⋯ → Open in
+browser" instructions immediately. Once they are in Safari, `/get/` redirects to
+the store normally, because nothing is blocking it there.
+
+**The only way to restore true one-tap on TikTok is a TikTok Business account**,
+which is permitted to link to app store pages and gets a native "Download app"
+button. That is a business decision, not a code change — Business accounts are
+restricted to TikTok's Commercial Music Library and cannot use trending sounds.
+
+### The relay idea, untested
+
+`ios-safari-relay` escapes to Safari carrying `ultasdev.com/get/` instead of the
+store URL, on the theory that TikTok only objects to Apple destinations. It is
+**not on any ladder** and a test enforces that. It exists only as a button on
+`/get-debug/`. Promote it to rung 1 for TikTok only if the diagnostics log
+actually shows it switching apps on a real device.
 
 ## Why the store URL must stay raw
 
@@ -101,5 +137,7 @@ user agent, every detection flag, the computed ladder, and a button per
 strategy. Fire them one at a time and read the event log: `✓ APP SWITCHED`
 means that strategy works in that app. "Copy diagnostics" exports the lot.
 
-This is the only way to confirm TikTok's behaviour — it cannot be reproduced in
-a desktop browser.
+This cannot be reproduced in a desktop browser. If you are testing the relay
+hypothesis, the button to press is **"Open in Safari via ultasdev.com"** —
+`✓ APP SWITCHED` in the log means it beats the policy block and should be
+promoted to rung 1 for TikTok in `ladder()`.

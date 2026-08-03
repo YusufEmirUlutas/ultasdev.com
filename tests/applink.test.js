@@ -95,11 +95,30 @@ test('Instagram and Threads on iOS lead with the extbrowser escape', () => {
     assert.deepStrictEqual(AppLink.ladder({ ua: UA.threadsIOS, env: PHONE_ENV }), expected);
 });
 
-test('TikTok on iOS leads with itms-apps, then the Safari hop', () => {
-    assert.deepStrictEqual(
-        AppLink.ladder({ ua: UA.tiktokIOS, env: PHONE_ENV }),
-        ['ios-itms-apps', 'ios-safari-scheme']
-    );
+test('TikTok on iOS fires nothing at all', () => {
+    // TikTok blocks App Store destinations as policy for non-Business
+    // accounts. Any attempt raises its "action cannot be completed" error,
+    // which looks to the visitor like a broken site. Instructions only.
+    assert.deepStrictEqual(AppLink.ladder({ ua: UA.tiktokIOS, env: PHONE_ENV }), []);
+});
+
+test('the untested relay strategy is exposed but on no default ladder', () => {
+    assert.ok(AppLink.strategies.includes('ios-safari-relay'), 'must be firable from /get-debug/');
+    assert.notStrictEqual(AppLink.strategyLabel('ios-safari-relay'), 'ios-safari-relay');
+    for (const key of Object.keys(UA)) {
+        for (const env of [PHONE_ENV, DESKTOP_ENV, IPAD_ENV, {}]) {
+            assert.ok(
+                !AppLink.ladder({ ua: UA[key], env }).includes('ios-safari-relay'),
+                `${key}: unverified strategy must not ship on a default ladder`
+            );
+        }
+    }
+});
+
+test('the relay points at our own domain, never the store', () => {
+    // The whole point: the navigation TikTok inspects must not be apps.apple.com.
+    assert.ok(!/apple\.com/.test(AppLink.config.relay), 'relay must not target Apple');
+    assert.match(AppLink.config.relay, /^https:\/\/ultasdev\.com\//);
 });
 
 test('Facebook and Messenger on iOS lead with the Safari scheme', () => {
@@ -160,8 +179,14 @@ test('route(): Instagram and Threads escape without needing a gesture', () => {
     }
 });
 
-test('route(): TikTok and other iOS webviews try the App Store scheme', () => {
-    for (const key of ['tiktokIOS', 'facebookIOS', 'messengerIOS']) {
+test('route(): TikTok on iOS shows instructions and fires nothing', () => {
+    const decision = AppLink.route({ ua: UA.tiktokIOS, env: PHONE_ENV });
+    assert.strictEqual(decision.mode, 'manual');
+    assert.strictEqual(decision.strategy, undefined, 'must not attempt a blocked navigation');
+});
+
+test('route(): other iOS webviews still try the App Store scheme', () => {
+    for (const key of ['facebookIOS', 'messengerIOS']) {
         const decision = AppLink.route({ ua: UA[key], env: PHONE_ENV });
         assert.strictEqual(decision.mode, 'escape', key);
         assert.strictEqual(decision.strategy, 'ios-itms-apps', key);
@@ -185,6 +210,8 @@ test('route(): every decision is actionable', () => {
                 assert.ok(targets.includes(decision.target), `${key}: bad target ${decision.target}`);
             } else if (decision.mode === 'escape') {
                 assert.ok(AppLink.strategies.includes(decision.strategy), `${key}: bad strategy`);
+            } else if (decision.mode === 'manual') {
+                assert.ok(AppLink.manualHint(decision.app).length > 0, `${key}: no instructions`);
             } else {
                 assert.fail(`${key}: unknown mode ${decision.mode}`);
             }

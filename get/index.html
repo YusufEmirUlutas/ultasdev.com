@@ -135,6 +135,20 @@
         }
         .foot a { color: #777; text-decoration: none; }
 
+        /* Shown only when the host app blocks the store outright (TikTok). */
+        .steps {
+            display: none;
+            text-align: left;
+            margin: 0 0 20px;
+            padding: 0 0 0 22px;
+            font-size: 0.92rem;
+            line-height: 1.85;
+            color: var(--gray-1);
+        }
+        .steps.is-on { display: block; }
+        .steps li::marker { color: var(--red); font-weight: 700; }
+        .steps b { color: #fff; font-weight: 700; }
+
         noscript .cta { text-decoration: none; }
     </style>
 </head>
@@ -146,6 +160,12 @@
     <h1>Get <span>HeightMax</span></h1>
 
     <p class="status" id="status"><span class="spinner"></span>Opening the store…</p>
+
+    <ol class="steps" id="steps">
+        <li>Tap <b>⋯</b> at the top right</li>
+        <li>Choose <b>“Open in browser”</b></li>
+        <li>The App Store opens by itself</li>
+    </ol>
 
     <button type="button" class="cta" id="primary">Open the store</button>
     <button type="button" class="secondary" id="copy">Copy the download link</button>
@@ -234,6 +254,17 @@
         statusEl.textContent = message;
     }
 
+    /* The host blocks the store destination, so there is no button that can
+       work. Say so plainly and show the two taps that do. */
+    function showManualSteps() {
+        markReady(app === 'tiktok'
+            ? 'TikTok doesn’t allow App Store links in its browser.'
+            : 'This app blocks store links.');
+        document.getElementById('steps').classList.add('is-on');
+        primaryEl.style.display = 'none';
+        hintEl.textContent = '';
+    }
+
     primaryEl.addEventListener('click', function () {
         beacon();
         AppLink.go({ url: storeUrl });
@@ -253,15 +284,26 @@
     if (decision.mode === 'replace') {
         if (decision.target !== 'desktop') beacon();
         window.location.replace(TARGETS[decision.target]);
-    } else {
+    } else if (decision.mode === 'escape') {
         beacon();
         AppLink.fire(decision.strategy);
+    } else {
+        // 'manual' — TikTok blocks the destination outright. Firing anything
+        // just shows its "action cannot be completed" error, so go straight to
+        // the instructions. Once the visitor reopens this same URL in Safari,
+        // route() returns 'replace' and the store opens on its own.
+        beacon();
+        showManualSteps();
     }
 
-    /* The page is its own fallback: if nothing took over, say so plainly. */
-    AppLink.watchForSwitch(READY_AFTER, function () {
-        markReady('Store didn\'t open? Tap below.');
-    });
+    /* The page is its own fallback: if something was fired and nothing took
+       over, say so plainly. In 'manual' mode nothing was fired and the steps
+       are already on screen, so leave that message alone. */
+    if (decision.mode === 'escape') {
+        AppLink.watchForSwitch(READY_AFTER, function () {
+            markReady('Store didn\'t open? Tap below.');
+        });
+    }
 }());
 </script>
 

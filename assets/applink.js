@@ -41,6 +41,11 @@
         android: 'https://play.google.com/store/apps/details?id=com.uza.apple',
         androidPackage: 'com.uza.apple',
         desktop: 'https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362',
+        // A page on OUR domain that redirects to the store once it is running
+        // in a real browser. TikTok blocks apps.apple.com destinations but has
+        // no reason to block ultasdev.com, so relaying through here is the one
+        // escape shape that has not already been proven to fail.
+        relay: 'https://ultasdev.com/get/?src=tiktok',
         // How long to wait for an app switch before showing the fallback sheet.
         switchTimeout: 1400
     };
@@ -192,10 +197,13 @@
                 return ['ios-instagram-extbrowser', 'ios-safari-scheme', 'ios-itms-apps'];
             }
             if (app === 'tiktok') {
-                // TikTok publishes no escape scheme. itms-apps goes straight to
-                // the App Store app with no prompt when the host allows it;
-                // the Safari hop is the backup.
-                return ['ios-itms-apps', 'ios-safari-scheme'];
+                // Deliberately empty. TikTok blocks App Store destinations as
+                // POLICY for non-Business accounts, not as a webview quirk —
+                // any navigation toward apps.apple.com raises TikTok's own
+                // "action cannot be completed" error, which is worse than
+                // useless because it reads to the visitor as a broken site.
+                // See docs/applink.md. Instructions only, no doomed attempt.
+                return [];
             }
             return ['ios-safari-scheme', 'ios-itms-apps'];
         }
@@ -234,9 +242,16 @@
             return base;
         }
 
-        // TikTok and friends publish no gesture-free escape. Trying the direct
-        // App Store scheme costs nothing if the host drops it, and the page
-        // stays behind as the fallback.
+        // TikTok blocks the destination by policy, so there is nothing to fire.
+        // Show the "open in browser" instructions instead — once the visitor is
+        // in Safari this same page redirects to the store normally.
+        if (app === 'tiktok') {
+            base.mode = 'manual';
+            return base;
+        }
+
+        // Other iOS webviews publish no gesture-free escape, but nothing blocks
+        // the destination either, so the direct scheme is worth a try.
         if (isInAppBrowser(ua, env)) {
             base.mode = 'escape';
             base.strategy = 'ios-itms-apps';
@@ -251,6 +266,7 @@
     var LABELS = {
         'ios-instagram-extbrowser': 'Open in Safari',
         'ios-safari-scheme': 'Open in Safari',
+        'ios-safari-relay': 'Open in Safari via ultasdev.com',
         'ios-itms-apps': 'Open the App Store app',
         'ios-direct': 'Open the App Store',
         'android-intent': 'Open Google Play',
@@ -289,6 +305,20 @@
         'ios-itms-apps': function (cfg) {
             window.location.href = itmsFrom(cfg.ios);
             return true;
+        },
+        // Escapes to Safari carrying OUR url rather than the store's, so the
+        // navigation TikTok inspects is ultasdev.com. Safari then does the
+        // store redirect where nothing is blocking it. UNVERIFIED on a real
+        // device — exposed for testing on /get-debug/, not on any default
+        // ladder. Promote it only once the log shows it switching apps.
+        'ios-safari-relay': function (cfg) {
+            var win = null;
+            try {
+                win = window.open('x-safari-' + cfg.relay, '_blank');
+            } catch (err) {
+                return false;
+            }
+            return win !== null && typeof win !== 'undefined';
         },
         'ios-direct': function (cfg) {
             window.location.href = cfg.ios;
@@ -417,6 +447,10 @@
         'background:var(--red,#9B111E);color:#fff;-webkit-tap-highlight-color:transparent}',
         '.applink-btn:active{opacity:.85}',
         '.applink-btn--ghost{background:var(--surface3,#242424);color:var(--gray-1,#F5F5F5)}',
+        '.applink-steps{margin:0 0 18px;padding:0 0 0 20px;font-size:.88rem;line-height:1.75;',
+        'color:var(--gray-1,#F5F5F5)}',
+        '.applink-steps li{margin-bottom:2px}',
+        '.applink-steps li::marker{color:var(--red,#9B111E);font-weight:700}',
         '.applink-hint{font-size:.8rem;line-height:1.55;color:var(--gray-3,#999);margin:14px 0 0;text-align:center}',
         '.applink-hint b{color:var(--gray-1,#F5F5F5);font-weight:600}',
         '.applink-close{display:block;width:100%;background:none;border:0;color:var(--gray-4,#555);',
@@ -503,20 +537,47 @@
         grip.className = 'applink-grip';
         sheet.appendChild(grip);
 
+        var remaining = chain.slice(index);
+        var cursor = index;
+        // No strategies left to offer means the host blocks the destination
+        // outright (TikTok). Lead with the instructions instead of pretending
+        // there is a button that will work.
+        var manualOnly = remaining.length === 0;
+
         var title = document.createElement('p');
         title.className = 'applink-title';
-        title.textContent = 'One more tap to open the store';
+        title.textContent = manualOnly
+            ? 'Open this page in your browser'
+            : 'One more tap to open the store';
         sheet.appendChild(title);
 
         var status = document.createElement('p');
         status.className = 'applink-status';
-        status.textContent = app
-            ? 'This in-app browser blocked the store link. Pick one of these instead:'
-            : 'Your browser blocked the store link. Pick one of these instead:';
+        if (manualOnly) {
+            status.textContent = app === 'tiktok'
+                ? 'TikTok doesn\'t allow App Store links inside its browser. Two taps and you\'re there:'
+                : 'This app blocks store links. Open the page in your browser to continue:';
+        } else {
+            status.textContent = app
+                ? 'This in-app browser blocked the store link. Pick one of these instead:'
+                : 'Your browser blocked the store link. Pick one of these instead:';
+        }
         sheet.appendChild(status);
 
-        var remaining = chain.slice(index);
-        var cursor = index;
+        if (manualOnly) {
+            var steps = document.createElement('ol');
+            steps.className = 'applink-steps';
+            [
+                'Tap ⋯ at the top right of this screen',
+                'Choose “Open in browser”',
+                'The App Store opens by itself'
+            ].forEach(function (text) {
+                var step = document.createElement('li');
+                step.textContent = text;
+                steps.appendChild(step);
+            });
+            sheet.appendChild(steps);
+        }
 
         function addStrategyButton(id) {
             var button = document.createElement('button');
@@ -553,10 +614,12 @@
         });
         sheet.appendChild(copyButton);
 
-        var hint = document.createElement('p');
-        hint.className = 'applink-hint';
-        hint.textContent = manualHint(app);
-        sheet.appendChild(hint);
+        if (!manualOnly) {
+            var hint = document.createElement('p');
+            hint.className = 'applink-hint';
+            hint.textContent = manualHint(app);
+            sheet.appendChild(hint);
+        }
 
         var close = document.createElement('button');
         close.type = 'button';
