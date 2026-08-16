@@ -58,7 +58,7 @@
                 <li>sleep duration and quality, meal names and quantities, nutrition estimates and goals, workouts, completed plan days, streaks, and weekly reports; and</li>
                 <li>language, units, notification choices, and other App preferences.</li>
             </ul>
-            <p>Most of this information is held in ordinary local App storage protected by your device and operating-system security. AI chat history and the current daily AI anti-abuse token use platform secure storage. HeightMax does not operate account-based cloud sync.</p>
+            <p>Most of this information is held in ordinary local App storage protected by your device and operating-system security. The current daily AI anti-abuse token uses platform secure storage. AI chat messages are not stored at all: they exist only in memory while the App is running and are gone once you close it. HeightMax does not operate account-based cloud sync.</p>
             <h3>2.1 Camera and AR Measurement</h3>
             <p>HeightMax requests camera access only when you open AR height measurement. The AR session is processed on the device; HeightMax does not upload camera images or video through this feature.</p>
             <h3>2.2 Backup and Import</h3>
@@ -79,7 +79,7 @@
                 <li><strong>Security and abuse prevention:</strong> Firebase App Check integrity and network metadata plus a random day-scoped token that is not derived from an advertising or hardware identifier.</li>
             </ul>
             <p>HeightMax does not automatically attach your locally stored height measurements, birth date, sex, estimate, sleep history, workout history, or nutrition history to AI Coach requests. If you type such information into a message or meal name, it is included in the request you choose to submit.</p>
-            <p>Normal prompts and responses are not stored in HeightMax's application database, and shared cross-user AI response caching is disabled. Up to 100 chat messages are retained locally in platform secure storage until replaced by the rolling limit or removed when you reset HeightMax. Google may process or retain request data under its applicable terms, security controls, and data-governance documentation.</p>
+            <p>Normal prompts and responses are not stored in HeightMax's application database, and shared cross-user AI response caching is disabled. Chat messages are held only in memory for the current session and are not written to your device; closing the App discards them. Google may process or retain request data under its applicable terms, security controls, and data-governance documentation.</p>
             <h3>3.2 Reporting an AI Response</h3>
             <p>If you explicitly report an AI response and confirm the action, HeightMax stores the reported response, language, model name, report time, and expiry time for safety review. We do not attach your original question, conversation history, HeightMax account information, or anti-abuse identifier. A reported response may itself repeat information from the conversation. Reports become eligible for deletion after 30 days and are removed by a daily cleanup job.</p>
             <h3>3.3 AI Abuse-Prevention Records</h3>
@@ -118,7 +118,7 @@
         <div class="policy-section">
             <h2>6. Retention and Deletion</h2>
             <ul>
-                <li><strong>Local content:</strong> remains until you delete records or use Reset HeightMax. Reset deletes HeightMax-managed local content, secure AI history, and the daily AI token. It does not cancel your subscription and preserves RevenueCat's pseudonymous accountless purchaser identifier so paid access can be restored.</li>
+                <li><strong>Local content:</strong> remains until you delete records or use Reset HeightMax. Reset deletes HeightMax-managed local content and the daily AI token, and discards the current conversation. It does not cancel your subscription and preserves RevenueCat's pseudonymous accountless purchaser identifier so paid access can be restored.</li>
                 <li><strong>Uninstall and platform copies:</strong> uninstalling alone may not remove operating-system backups, user-created exports, or platform secure-storage remnants.</li>
                 <li><strong>AI abuse records and reports:</strong> become eligible for deletion after eight and 30 days respectively and are removed by daily cleanup.</li>
                 <li><strong>Provider and support records:</strong> analytics, diagnostics, attribution, purchases, and support data follow operational, legal, and provider retention requirements.</li>
@@ -129,7 +129,7 @@
         <div class="policy-section"><h2>7. Your Choices and Rights</h2><ul>
             <li>view, correct, or delete local records in the App;</li>
             <li>export or replace supported local data through Backup &amp; Restore;</li>
-            <li>reset HeightMax data, which also clears locally stored chat history and withdraws AI consent;</li>
+            <li>reset HeightMax data, which also discards the current conversation and withdraws AI consent;</li>
             <li>turn the online AI coach and AI meal analysis on or off at any time under Settings, without losing the App's built-in coach answers or manual meal logging;</li>
             <li>control camera, notification, and tracking permissions through operating-system permission prompts and device settings; and</li>
             <li>contact us to exercise privacy rights available under your local law.</li>
@@ -137,7 +137,7 @@
 
         <div class="policy-section"><h2>8. Children</h2><p>HeightMax is not intended for children under 13. Do not use the App or submit information if you are under 13. If you believe a child under 13 has provided information through HeightMax, contact us so we can evaluate and respond appropriately. Users under the age of legal majority should use HeightMax only with permission from a parent or legal guardian.</p></div>
 
-        <div class="policy-section"><h2>9. Security</h2><p>We use reasonable technical and organizational safeguards, including encrypted transport, App integrity checks, restricted database fields, limited retention for AI safety and abuse records, and secure device storage for chat history. No storage or transmission system can be guaranteed completely secure.</p></div>
+        <div class="policy-section"><h2>9. Security</h2><p>We use reasonable technical and organizational safeguards, including encrypted transport, App integrity checks, restricted database fields, limited retention for AI safety and abuse records, and keeping chat messages in memory only. No storage or transmission system can be guaranteed completely secure.</p></div>
 
         <div class="policy-section"><h2>10. Changes to This Policy</h2><p>We may update this Privacy Policy as HeightMax, service providers, or legal requirements change. We will update the date above and provide additional notice where required for a material change.</p></div>
 
