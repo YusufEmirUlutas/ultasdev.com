@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-language-fixed="true">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,348 +7,144 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
-        .policy-hero {
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .policy-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-        }
-        .policy-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-        }
-        .policy-date {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-        }
-        .policy-content {
-            padding: 60px 0;
-            background: var(--primary-white);
-        }
-        .policy-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .policy-section {
-            margin-bottom: 3rem;
-        }
-        .policy-section h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gray-200);
-        }
-        .policy-section h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin: 2rem 0 1rem;
-        }
-        .policy-section p {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .policy-section ul {
-            margin: 1rem 0 1rem 2rem;
-        }
-        .policy-section ul li {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            margin-top: 2rem;
-        }
-        .back-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        .highlight-box {
-            background: var(--gray-100);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--primary-black);
-        }
+        .policy-hero { background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%); padding: 120px 0 60px; text-align: center; }
+        .policy-badge { display: inline-block; padding: 0.4rem 1rem; background: var(--primary-black); color: var(--primary-white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; margin-bottom: 1rem; }
+        .policy-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--primary-black); }
+        .policy-date { color: var(--gray-500); font-size: 0.95rem; }
+        .policy-content { padding: 60px 0; background: var(--primary-white); }
+        .policy-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .policy-section { margin-bottom: 3rem; }
+        .policy-section h2 { font-size: 1.75rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; color: var(--primary-black); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gray-200); }
+        .policy-section h3 { font-size: 1.25rem; font-weight: 600; color: var(--gray-700); margin: 2rem 0 1rem; }
+        .policy-section p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1rem; }
+        .policy-section ul { margin: 1rem 0 1rem 2rem; }
+        .policy-section li { color: var(--gray-600); line-height: 1.8; margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--gray-100); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--primary-black); }
+        .back-button { display: inline-block; padding: 0.875rem 2rem; background: var(--primary-black); color: var(--primary-white); text-decoration: none; border-radius: 50px; font-weight: 600; transition: var(--transition); margin-top: 2rem; }
+        .back-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="nav-left">
-                        <div class="language-selector">
-                            <button class="language-trigger" id="languageTrigger" aria-label="Select language">
-                                <span class="flag-icon" id="currentFlag">🇬🇧</span>
-                            </button>
-                            <div class="language-dropdown" id="languageDropdown">
-                                <button class="language-option" data-lang="en" onclick="window.location.href='privacy-policy.html'">
-                                    <span class="flag-icon">🇬🇧</span>
-                                    <span class="lang-name">English</span>
-                                </button>
-                                <button class="language-option" data-lang="tr" onclick="window.location.href='privacy-policy-tr.html'">
-                                    <span class="flag-icon">🇹🇷</span>
-                                    <span class="lang-name">Türkçe</span>
-                                </button>
-                            </div>
-                        </div>
-                        <a href="../index.html" class="logo">
-                            <span class="logo-text">ULTASDEV</span>
-                            <span class="logo-dot">.</span>
-                        </a>
-                    </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="../index.html#home" class="nav-link">Home</a></li>
-                        <li><a href="../index.html#services" class="nav-link">Services</a></li>
-                        <li><a href="../index.html#portfolio" class="nav-link">Portfolio</a></li>
-                        <li><a href="../index.html#process" class="nav-link">Process</a></li>
-                        <li><a href="../index.html#about" class="nav-link">About</a></li>
-                        <li><a href="../index.html#contact" class="nav-link nav-cta">Get Started</a></li>
-                    </ul>
-                </div>
+    <header class="header"><nav class="navbar"><div class="container"><div class="nav-wrapper">
+        <div class="nav-left"><div class="language-selector">
+            <button class="language-trigger" id="languageTrigger" aria-label="Select language"><span class="flag-icon" id="currentFlag">🇬🇧</span></button>
+            <div class="language-dropdown" id="languageDropdown">
+                <button class="language-option" data-lang="en" onclick="window.location.href='privacy-policy.html'"><span class="flag-icon">🇬🇧</span><span class="lang-name">English</span></button>
+                <button class="language-option" data-lang="tr" onclick="window.location.href='privacy-policy-tr.html'"><span class="flag-icon">🇹🇷</span><span class="lang-name">Türkçe</span></button>
             </div>
-        </nav>
-    </header>
+        </div><a href="../index.html" class="logo"><span class="logo-text">ULTASDEV</span><span class="logo-dot">.</span></a></div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+        <ul class="nav-menu" id="navMenu"><li><a href="../index.html#home" class="nav-link">Home</a></li><li><a href="../index.html#services" class="nav-link">Services</a></li><li><a href="../index.html#portfolio" class="nav-link">Portfolio</a></li><li><a href="../index.html#process" class="nav-link">Process</a></li><li><a href="../index.html#about" class="nav-link">About</a></li><li><a href="../index.html#contact" class="nav-link nav-cta">Get Started</a></li></ul>
+    </div></div></nav></header>
 
-    <section class="policy-hero">
-        <div class="container">
-            <div class="policy-badge">HeightMax</div>
-            <h1 class="policy-title">Privacy Policy</h1>
-            <p class="policy-date">Last Updated: June 2, 2026</p>
+    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Privacy Policy</h1><p class="policy-date">Effective and Last Updated: August 16, 2026</p></div></section>
+
+    <section class="policy-content"><div class="policy-container">
+        <div class="policy-section">
+            <h2>1. Scope and Overview</h2>
+            <p>UltasDev ("we," "our," or "us") provides the HeightMax mobile application (the "App"). This Privacy Policy explains what the App stores locally, what it transmits when you use connected features, why that processing occurs, and the choices available to you.</p>
+            <div class="highlight-box"><strong>Important summary:</strong> HeightMax does not require or provide a user account. Most height, wellness, and activity information is stored in App storage on your device. Limited data is transmitted when you invoke AI features and to service providers for analytics, crash diagnostics, advertising attribution, subscription management, and App security, as explained below.</div>
+            <p>This material update clarifies HeightMax's paid-only service, AI processing, safety reports, local backup feature, platform backups, and age requirement.</p>
         </div>
-    </section>
 
-    <section class="policy-content">
-        <div class="policy-container">
-            <div class="policy-section">
-                <h2>1. Introduction</h2>
-                <p>
-                    UltasDev ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the HeightMax mobile application ("the App").
-                </p>
-                <p>
-                    By using HeightMax, you agree to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the App.
-                </p>
-                <div class="highlight-box">
-                    <strong>🔒 Privacy First:</strong> HeightMax stores ALL your personal data (height, weight, age, measurements) ONLY on your device. We do not collect, upload, or store any sensitive personal information on our servers. No user accounts required.
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2>2. Information We Collect</h2>
-
-                <h3>2.1 Personal Data (ON-DEVICE ONLY - Never Transmitted)</h3>
-                <p>The following information is stored <strong>ONLY on your device</strong> using iOS/Android local storage. This data is <strong>NEVER uploaded to our servers or any cloud service</strong>:</p>
-                <ul>
-                    <li><strong>Height Measurements:</strong> Current height, dream height, parental heights, growth tracking</li>
-                    <li><strong>Physical Measurements:</strong> Weight, age, birthdate, shoe size</li>
-                    <li><strong>Personal Attributes:</strong> Gender, ethnicity (used only for local calculations)</li>
-                    <li><strong>Lifestyle Data:</strong> Workout frequency, sleep duration (stored locally)</li>
-                    <li><strong>Training Data:</strong> Exercise routines, workout history, progress (on-device only)</li>
-                    <li><strong>User Preferences:</strong> App settings, notification preferences (on-device only)</li>
-                </ul>
-                <div class="highlight-box">
-                    <strong>⚠️ Critical:</strong> All the above data stays on YOUR device and is deleted when you uninstall the app. We have NO access to this information.
-                </div>
-
-                <h3>2.2 Anonymous Analytics & Technical Data</h3>
-                <p>We collect <strong>anonymous behavioral data</strong> and technical logs to improve the App:</p>
-                <ul>
-                    <li><strong>Firebase Analytics:</strong> Screen views, button clicks, feature usage (NO personal physical data attached).</li>
-                    <li><strong>Firebase Crashlytics:</strong> Anonymous crash reports and stability logs to help us fix bugs.</li>
-                    <li><strong>Meta (Facebook) SDK:</strong> Anonymous attribution data to measure the effectiveness of our marketing campaigns.</li>
-                    <li><strong>RevenueCat:</strong> Subscription status and purchase receipts (NO personal data attached).</li>
-                </ul>
-                <div class="highlight-box">
-                    <strong>✅ What we do NOT collect in analytics:</strong> NO height, NO weight, NO age, NO gender, NO measurements, NO personal identifiers.
-                </div>
-
-                <h3>2.3 Information We Do NOT Collect</h3>
-                <ul>
-                    <li>❌ User accounts or login credentials</li>
-                    <li>❌ Location data or GPS information</li>
-                    <li>❌ Contact lists or phone book</li>
-                    <li>❌ Camera or photo gallery access (unless you explicitly select images)</li>
-                    <li>❌ Social media profiles</li>
-                    <li>❌ Biometric data</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>3. How We Use Your Information</h2>
-                <p>We use the collected information for the following purposes:</p>
-                <ul>
-                    <li><strong>Provide Core Features:</strong> Height tracking, training programs, and AI-powered coaching.</li>
-                    <li><strong>Personalization:</strong> Customizing your experience based on your goals and preferences.</li>
-                    <li><strong>AI Coaching:</strong> Processing your queries through Google's Generative AI to provide personalized guidance.</li>
-                    <li><strong>App Improvement:</strong> Analyzing anonymized usage data and crash reports to enhance features and fix bugs.</li>
-                    <li><strong>Marketing Attribution:</strong> Using anonymous identifiers to understand app acquisition sources.</li>
-                    <li><strong>Notifications:</strong> Sending reminders and updates (only if you opt-in).</li>
-                    <li><strong>Payment Processing:</strong> Managing subscriptions through Apple App Store or Google Play Store.</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>4. Data Storage and Security</h2>
-
-                <h3>4.1 On-Device Storage ONLY</h3>
-                <p>
-                    <strong>ALL your personal data is stored EXCLUSIVELY on your device</strong>. This means:
-                </p>
-                <ul>
-                    <li>✅ Your data stays on YOUR phone/tablet (until you delete the app).</li>
-                    <li>✅ We have ZERO access to your personal information.</li>
-                    <li>✅ No cloud sync, no server upload, no external storage for physical data.</li>
-                    <li>✅ Data is deleted permanently when you uninstall the app.</li>
-                </ul>
-
-                <h3>4.2 Security Measures</h3>
-                <ul>
-                    <li>✅ Device-level encryption (iOS Keychain/Android EncryptedSharedPreferences).</li>
-                    <li>✅ No central database of user health information.</li>
-                    <li>✅ Anonymous analytics only (TLS/SSL encrypted).</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>5. Third-Party Services</h2>
-                <p>HeightMax integrates with the following third-party services:</p>
-
-                <h3>5.1 Firebase (Google)</h3>
-                <p>
-                    We use <strong>Firebase Analytics</strong> for anonymous behavioral tracking and <strong>Firebase Crashlytics</strong> for stability monitoring.
-                    Firebase privacy policy: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">https://firebase.google.com/support/privacy</a>
-                </p>
-
-                <h3>5.2 Meta (Facebook)</h3>
-                <p>
-                    We use the Meta SDK for attribution and marketing performance measurement. This helps us understand which advertisements led you to download the App.
-                    Meta privacy policy: <a href="https://www.facebook.com/about/privacy" target="_blank" rel="noopener noreferrer">https://www.facebook.com/about/privacy</a>
-                </p>
-
-                <h3>5.3 RevenueCat</h3>
-                <p>
-                    We use RevenueCat for subscription management. It receives purchase receipts from Apple/Google and your subscription status.
-                    RevenueCat privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">https://www.revenuecat.com/privacy</a>
-                </p>
-
-                <h3>5.4 Google Generative AI</h3>
-                <p>
-                    Our AI coaching feature uses Google's Gemini API. Your queries are sent to Google for processing to provide AI responses. We do not send your personal measurements (height, weight, etc.) to the AI unless you explicitly include them in your chat message.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>6. Your Privacy Rights</h2>
-                <p>You have the following rights regarding your data:</p>
-                <ul>
-                    <li><strong>Access:</strong> View all data stored locally on your device through the App.</li>
-                    <li><strong>Correction:</strong> Edit or update your information at any time.</li>
-                    <li><strong>Deletion:</strong> Delete your data by clearing app data or uninstalling the App.</li>
-                    <li><strong>Opt-Out:</strong> Manage analytics and tracking consent within the App settings or device settings.</li>
-                </ul>
-                <p>
-                    For questions about your data, contact us at <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a>
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>7. Contact Us</h2>
-                <p>
-                    If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:
-                </p>
-                <ul>
-                    <li><strong>Email:</strong> <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a></li>
-                    <li><strong>Website:</strong> <a href="https://www.ultasdev.com">www.ultasdev.com</a></li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>8. Summary</h2>
-                <div class="highlight-box">
-                    <p><strong>🔒 Privacy-First Approach:</strong></p>
-                    <ul>
-                        <li>✅ Your health measurements stay ONLY on your device.</li>
-                        <li>✅ We collect ZERO personal data on our servers.</li>
-                        <li>✅ We use anonymous analytics to improve the app.</li>
-                        <li>✅ You are in full control of your data.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="../index.html" class="back-button">Back to Home</a>
-            </div>
+        <div class="policy-section">
+            <h2>2. Information Stored on Your Device</h2>
+            <p>Depending on what you enter or use, HeightMax may store the following locally:</p>
+            <ul>
+                <li>first name, birth date, country, sex or gender, ethnicity, current and target height, weight, parental heights, shoe size, family answers, sports, puberty and lifestyle answers, and last-year growth;</li>
+                <li>height measurements, dates, and notes;</li>
+                <li>sleep duration and quality, meal names and quantities, nutrition estimates and goals, workouts, completed plan days, streaks, and weekly reports; and</li>
+                <li>language, units, notification choices, and other App preferences.</li>
+            </ul>
+            <p>Most of this information is held in ordinary local App storage protected by your device and operating-system security. AI chat history and the current daily AI anti-abuse token use platform secure storage. HeightMax does not operate account-based cloud sync.</p>
+            <h3>2.1 Camera and AR Measurement</h3>
+            <p>HeightMax requests camera access only when you open AR height measurement. The AR session is processed on the device; HeightMax does not upload camera images or video through this feature.</p>
+            <h3>2.2 Backup and Import</h3>
+            <p>You may create a HeightMax backup through the system share sheet. This is a user-initiated, <strong>unencrypted JSON file</strong> that can contain local onboarding answers, measurements and notes, sleep logs, meals and nutrition estimates, workout and streak history, weekly-update state, language, and unit preferences. It excludes subscriptions and payments, analytics, device notification state, paywall state, AI chat history, and AI quota state.</p>
+            <p>HeightMax does not upload this export. A destination you choose in the system share sheet may be a third-party or cloud service. Import reads a file you select locally and replaces the supported local HeightMax data sections.</p>
+            <p>Apple or Android backup and device-transfer services may copy ordinary App data according to your device and platform settings. Those copies are controlled by the platform, not HeightMax, and are not HeightMax cloud sync.</p>
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">ULTASDEV.</div>
-                    <p class="footer-tagline">Building the future, one app at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="../index.html#about">About</a></li>
-                            <li><a href="../index.html#portfolio">Projects</a></li>
-                            <li><a href="../index.html#process">Process</a></li>
-                            <li><a href="../index.html#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 UltasDev. All rights reserved.</p>
-            </div>
+        <div class="policy-section">
+            <h2>3. Information Transmitted from the App</h2>
+            <h3>3.1 AI Coach and Meal Analysis</h3>
+            <p>HeightMax uses Firebase Cloud Functions and Google Cloud Vertex AI, using a Gemini model, for AI coaching and optional meal analysis.</p>
+            <ul>
+                <li><strong>AI Coach:</strong> the message you submit, your preferred language, and up to four recent messages from the conversation.</li>
+                <li><strong>Meal Analysis:</strong> the meal name, amount, unit, and preferred language you submit.</li>
+                <li><strong>Security and abuse prevention:</strong> Firebase App Check integrity and network metadata plus a random day-scoped token that is not derived from an advertising or hardware identifier.</li>
+            </ul>
+            <p>HeightMax does not automatically attach your locally stored height measurements, birth date, sex, estimate, sleep history, workout history, or nutrition history to AI Coach requests. If you type such information into a message or meal name, it is included in the request you choose to submit.</p>
+            <p>Normal prompts and responses are not stored in HeightMax's application database, and shared cross-user AI response caching is disabled. Up to 100 chat messages are retained locally in platform secure storage until replaced by the rolling limit or removed when you reset HeightMax. Google may process or retain request data under its applicable terms, security controls, and data-governance documentation.</p>
+            <h3>3.2 Reporting an AI Response</h3>
+            <p>If you explicitly report an AI response and confirm the action, HeightMax stores the reported response, language, model name, report time, and expiry time for safety review. We do not attach your original question, conversation history, HeightMax account information, or anti-abuse identifier. A reported response may itself repeat information from the conversation. Reports become eligible for deletion after 30 days and are removed by a daily cleanup job.</p>
+            <h3>3.3 AI Abuse-Prevention Records</h3>
+            <p>The server hashes a caller key and stores request counts, a quota category, the App ID, and timestamps. The caller key normally uses the random day-scoped token; if unavailable, the service may fall back to an IP-derived key before hashing. Records become eligible for deletion after eight days and are removed by a daily cleanup job.</p>
+            <h3>3.4 Analytics and Diagnostics</h3>
+            <p>Firebase Analytics is enabled by default and uses a pseudonymous App-instance identifier. HeightMax records events such as screen and tab opens, onboarding steps, sessions and days since install, paywall and purchase lifecycle actions, product/package/paywall identifiers, transaction identifiers, price, currency, subscription period type, purchase failure codes or messages, workout plan/completion metrics, streak milestones, occurrence and timing of measurements, AI-feature use and report outcomes, notification interactions, and feature completion.</p>
+            <p>HeightMax's custom analytics events do not include chat or reported-response text, meal contents, height values, birth date, age, sex, sleep values, exercise names or identifiers, repetitions, or sets. Firebase Crashlytics may process crash reports, stack traces, diagnostic logs, and device, operating-system, and App technical data. Firebase Remote Config and App Check may process App-instance, configuration, integrity, network, and IP metadata.</p>
+            <h3>3.5 Attribution</h3>
+            <p>Meta tools measure App activation and marketing attribution. They may process a Meta App/device identifier, App events, device and network information, and—only when platform settings and permission allow—advertising identifiers. On iOS, advertising tracking and identifier access follow your App Tracking Transparency choice.</p>
+            <h3>3.6 Purchases and Subscriptions</h3>
+            <p>Apple and Google process payment details, product IDs, receipts, transactions, and subscription status under your App-store account. RevenueCat processes product IDs, receipts, transactions, entitlement and subscription status, a RevenueCat-generated pseudonymous accountless purchaser/App-user identifier, Firebase App-instance ID, Meta anonymous ID, tracking-consent status, and available device or advertising identifiers when enabled and permitted. HeightMax does not intentionally attach your height, birth date, measurements, sleep, meals, or chat values, and does not receive your full payment-card details.</p>
+            <h3>3.7 Support Communications</h3>
+            <p>If you contact us, we receive your email address, message, and any other information you choose to provide so we can respond and maintain appropriate support records.</p>
         </div>
-    </footer>
 
+        <div class="policy-section"><h2>4. How We Use Information</h2><ul>
+            <li>provide, personalize on-device, maintain, and secure HeightMax;</li>
+            <li>process AI requests and user-confirmed safety reports;</li>
+            <li>manage paid access, purchases, restorations, and subscription status;</li>
+            <li>measure use, diagnose crashes, prevent abuse, and improve reliability;</li>
+            <li>measure marketing attribution where permitted; and</li>
+            <li>respond to support, safety, and legal requests.</li>
+        </ul></div>
+
+        <div class="policy-section">
+            <h2>5. Service Providers and Transfers</h2>
+            <ul>
+                <li><strong>Google Firebase and Google Cloud Vertex AI:</strong> cloud functions, Firestore, AI processing, App Check, Remote Config, analytics, crash reporting, abuse records, and confirmed AI-response reports. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase privacy information</a> and the <a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">Google Cloud Privacy Notice</a>.</li>
+                <li><strong>Meta:</strong> App-event measurement and marketing attribution. See the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.</li>
+                <li><strong>RevenueCat:</strong> subscription and entitlement management. See the <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a>.</li>
+                <li><strong>Apple and Google:</strong> App distribution, purchases, platform backups, device transfer, and permissions under your platform account and settings.</li>
+            </ul>
+            <p>Providers may process information in countries other than your own. Applicable provider terms and legally required transfer safeguards govern that processing.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>6. Retention and Deletion</h2>
+            <ul>
+                <li><strong>Local content:</strong> remains until you delete records or use Reset HeightMax. Reset deletes HeightMax-managed local content, secure AI history, and the daily AI token. It does not cancel your subscription and preserves RevenueCat's pseudonymous accountless purchaser identifier so paid access can be restored.</li>
+                <li><strong>Uninstall and platform copies:</strong> uninstalling alone may not remove operating-system backups, user-created exports, or platform secure-storage remnants.</li>
+                <li><strong>AI abuse records and reports:</strong> become eligible for deletion after eight and 30 days respectively and are removed by daily cleanup.</li>
+                <li><strong>Provider and support records:</strong> analytics, diagnostics, attribution, purchases, and support data follow operational, legal, and provider retention requirements.</li>
+            </ul>
+            <p>Reset HeightMax does not erase records already held by Apple, Google, Firebase, Meta, or RevenueCat under their policies, or files and backups outside the App.</p>
+        </div>
+
+        <div class="policy-section"><h2>7. Your Choices and Rights</h2><ul>
+            <li>view, correct, or delete local records in the App;</li>
+            <li>export or replace supported local data through Backup &amp; Restore;</li>
+            <li>reset HeightMax data, which also clears locally stored chat history;</li>
+            <li>control camera, notification, and tracking permissions through operating-system permission prompts and device settings; and</li>
+            <li>contact us to exercise privacy rights available under your local law.</li>
+        </ul><p>Because HeightMax has no account system and some server records are deliberately pseudonymous, we may not be able to identify a particular record as yours without information from the relevant provider. We may need to verify a request before acting on it.</p></div>
+
+        <div class="policy-section"><h2>8. Children</h2><p>HeightMax is not intended for children under 13. Do not use the App or submit information if you are under 13. If you believe a child under 13 has provided information through HeightMax, contact us so we can evaluate and respond appropriately. Users under the age of legal majority should use HeightMax only with permission from a parent or legal guardian.</p></div>
+
+        <div class="policy-section"><h2>9. Security</h2><p>We use reasonable technical and organizational safeguards, including encrypted transport, App integrity checks, restricted database fields, limited retention for AI safety and abuse records, and secure device storage for chat history. No storage or transmission system can be guaranteed completely secure.</p></div>
+
+        <div class="policy-section"><h2>10. Changes to This Policy</h2><p>We may update this Privacy Policy as HeightMax, service providers, or legal requirements change. We will update the date above and provide additional notice where required for a material change.</p></div>
+
+        <div class="policy-section"><h2>11. Contact Us</h2><p>For privacy questions or requests, contact <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> or visit <a href="https://www.ultasdev.com">www.ultasdev.com</a>.</p></div>
+
+        <div class="highlight-box"><strong>Summary:</strong> No HeightMax account is required. Core height and wellness records are stored locally, subject to operating-system backups and user-directed exports. AI input is transmitted only when you invoke an AI feature. HeightMax also uses pseudonymous analytics, diagnostics, attribution, subscription, and security services. HeightMax does not sell your locally stored height or wellness records.</div>
+        <div style="text-align: center; margin-top: 3rem;"><a href="../index.html" class="back-button">Back to Home</a></div>
+    </div></section>
+
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-brand"><div class="footer-logo">ULTASDEV.</div><p class="footer-tagline">Building the future, one app at a time.</p></div><div class="footer-links"><div class="footer-column"><h4>Company</h4><ul><li><a href="../index.html#about">About</a></li><li><a href="../index.html#portfolio">Projects</a></li><li><a href="../index.html#process">Process</a></li><li><a href="../index.html#contact">Contact</a></li></ul></div><div class="footer-column"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div></div></div><div class="footer-bottom"><p>&copy; 2026 UltasDev. All rights reserved.</p></div></div></footer>
     <script src="../script.js"></script>
 </body>
 </html>

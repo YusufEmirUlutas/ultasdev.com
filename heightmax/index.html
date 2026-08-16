@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>HeightMax — Support Your Growth Journey</title>
-    <meta name="description" content="HeightMax helps you build better daily habits through personalized stretching, posture routines, and progress tracking. Start your growth journey today.">
+    <title>HeightMax — Height Tracking &amp; Daily Wellness</title>
+    <meta name="description" content="HeightMax helps you record height measurements, follow daily posture and movement routines, log sleep and meals, and review progress over time.">
     <meta name="theme-color" content="#000000">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="HeightMax — Support Your Growth Journey">
-    <meta property="og:description" content="Build better daily habits. Personalized posture & stretching routines. Track your progress every day.">
+    <meta property="og:title" content="HeightMax — Height Tracking &amp; Daily Wellness">
+    <meta property="og:description" content="Record measurements, build consistent wellness habits, and review your progress in one place.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ultasdev.com/heightmax">
 
-    <!-- Store-link escape for social in-app browsers. Loaded blocking so the
-         platform classes land on <html> before first paint. -->
+    <!-- Preserve the iOS social-webview escape. Android visitors never see a
+         store CTA on this page because the only CTA markup is iOS-only and is
+         hidden as soon as AppLink stamps the platform class. -->
     <script src="/assets/applink.js"></script>
 
     <!-- Fonts -->
@@ -233,20 +234,12 @@
         .btn-android-text span:first-child { display: block; font-size: 0.62rem; font-weight: 500; opacity: 0.7; letter-spacing: 0.04em; text-transform: uppercase; }
         .btn-android-text span:last-child { display: block; font-size: 0.85rem; font-weight: 600; }
 
-        /* ─── Platform-aware store CTAs ───────────────────────────────────
-           assets/applink.js stamps applink-ios / applink-android /
-           applink-desktop onto <html> before first paint. Must come after
-           .btn-android above, which also sets display and would otherwise win
-           on equal specificity. With JS off, only the App Store badge shows —
-           the safe default, since iOS is where the in-app block happens. */
+        /* HeightMax is currently available on the App Store only. */
         .cta-store--ios { display: inline-block; }
         .cta-store--ios img { width: 180px; height: auto; display: block; }
         .cta-store--android { display: none; }
-
         html.applink-android .cta-store--ios { display: none; }
-        html.applink-android .cta-store--android { display: flex; }
-        /* Desktop visitors may own either phone, so offer both. */
-        html.applink-desktop .cta-store--android { display: flex; }
+        html.applink-android .sticky-bar { display: none !important; }
 
         /* ─── Social Proof Strip ─────────────────────────────────────── */
         .proof-strip {
@@ -736,11 +729,11 @@
 <section class="hero">
     <div class="container">
         <h1 class="hero-title fade-up delay-1">
-            HeightMax: <span class="red">Grow Taller</span> with Smart Daily Guidance
+            HeightMax: <span class="red">Track Your Height</span> with Clear Daily Guidance
         </h1>
 
         <p class="hero-sub fade-up delay-2">
-            Track your height, improve your posture, and follow daily stretch routines designed to support your growth journey.
+            Record measurements, follow daily movement and posture routines, log sleep and meals, and review your progress over time.
         </p>
 
         <!-- CTA Buttons -->
@@ -751,29 +744,16 @@
                 <img src="assets/app-store-badge.svg" alt="Download on the App Store">
             </a>
 
-            <a class="cta-store cta-store--android btn-android" data-applink rel="noopener"
-               href="https://play.google.com/store/apps/details?id=com.uza.apple"
-               aria-label="Get HeightMax on Google Play">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 3.2v17.6a1 1 0 0 0 1.5.87l14.4-8.8a1 1 0 0 0 0-1.74L5.5 2.33A1 1 0 0 0 4 3.2z"/></svg>
-                <div class="btn-android-text">
-                    <span>Get it on</span>
-                    <span>Google Play</span>
-                </div>
-            </a>
-
-            <p class="cta-tip">Tap above — if the store doesn't open, we'll show you a one-tap way out.</p>
+            <p class="cta-tip">HeightMax is currently available for iPhone and iPad on the App Store.</p>
         </div>
 
         <!-- Phone Mockups -->
         <div class="phone-wrap fade-up delay-4">
-            <div class="phone-side phone-left">
-                <img src="assets/screen2.webp" alt="HeightMax App Screen" loading="lazy">
-            </div>
             <div class="phone-mockup">
-                <img src="assets/screen1.webp" alt="HeightMax App Main Screen" loading="eager">
+                <img src="assets/screen2.webp" alt="HeightMax exercise plan screen" loading="eager">
             </div>
             <div class="phone-side phone-right">
-                <img src="assets/screen3.webp" alt="HeightMax App Screen" loading="lazy">
+                <img src="assets/screen4.webp" alt="HeightMax sleep tracking screen" loading="lazy">
             </div>
         </div>
     </div>
@@ -783,18 +763,18 @@
 <div class="proof-strip">
     <div class="container">
         <div class="proof-stat">
-            <div class="proof-number">12<span>+</span></div>
+            <div class="proof-number">14</div>
             <div class="proof-label">Exercise Categories</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-stat">
-            <div class="proof-number">4.<span>8</span></div>
-            <div class="proof-label">App Rating</div>
+            <div class="proof-number">30</div>
+            <div class="proof-label">Supported Languages</div>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-stat">
-            <div class="proof-number">20<span>%</span></div>
-            <div class="proof-label">Height You Control*</div>
+            <div class="proof-number">90</div>
+            <div class="proof-label">Day Plan</div>
         </div>
     </div>
 </div>
@@ -802,28 +782,28 @@
 <!-- ─── Prediction Showcase ────────────────────────────────────────────── -->
 <section class="reviews">
     <div class="container">
-        <p class="section-label reveal">12+ Biological Factors Analyzed</p>
-        <h2 class="section-title reveal">The Only App That Stages<br>Your Puberty To Predict<br><span style="color:var(--red-light)">Your True Potential</span></h2>
-        <p style="text-align:center;color:var(--gray-3);font-size:0.9rem;margin:-18px 0 28px;line-height:1.6;" class="reveal">Generic apps ask your age. HeightMax asks about your body — because two 16-year-olds can be at completely different biological stages, and that changes everything.</p>
+        <p class="section-label reveal">A Clear Starting Point</p>
+        <h2 class="section-title reveal">Track What You Measure<br>Understand What Is<br><span style="color:var(--red-light)">Only an Estimate</span></h2>
+        <p style="text-align:center;color:var(--gray-3);font-size:0.9rem;margin:-18px 0 28px;line-height:1.6;" class="reveal">HeightMax keeps recorded measurements, a rough family-height reference, and routine activity clearly separated.</p>
 
         <div class="reviews-grid">
 
             <div class="review-card reveal" style="border-color:rgba(155,17,30,0.3);">
-                <div style="font-size:1.4rem;margin-bottom:10px;">🧬</div>
-                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Puberty Biological Staging</div>
-                <p class="review-text">HeightMax asks 8 biological markers — underarm hair, facial hair, body odor, shoulder broadening, acne frequency, muscle definition, voice change, and growth speed — to determine exactly where you are in your biological development. No other height app does this.</p>
+                <div style="font-size:1.4rem;margin-bottom:10px;">📏</div>
+                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Recorded Height History</div>
+                <p class="review-text">Save measured height with dates and notes. Your history is built from readings you record, not synthetic past measurements.</p>
             </div>
 
             <div class="review-card reveal" style="border-color:rgba(155,17,30,0.3);">
                 <div style="font-size:1.4rem;margin-bottom:10px;">📐</div>
-                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Your Exact Height Potential + Window</div>
-                <p class="review-text">Using mid-parental height formula, ethnicity factors, shoe size (large shoe = high potential), and your relatives' heights — HeightMax outputs your ceiling in cm, your growth completion %, and your dream height probability. Not a range. A number.</p>
+                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Rough Family-Height Reference</div>
+                <p class="review-text">When both parental heights are available, HeightMax uses a standard mid-parental-height calculation as a rough reference. It is not a clinical prediction.</p>
             </div>
 
             <div class="review-card reveal" style="border-color:rgba(155,17,30,0.3);">
-                <div style="font-size:1.4rem;margin-bottom:10px;">🌍</div>
-                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">4-Way Percentile Report</div>
-                <p class="review-text">See where you rank vs peers your age, vs your country's average, vs the same gender, and vs the global population. Not to crush you — to show you the exact gap, and the exact steps to close it before your plates close permanently.</p>
+                <div style="font-size:1.4rem;margin-bottom:10px;">📅</div>
+                <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:6px;">Weekly Routine Summary</div>
+                <p class="review-text">Review logging coverage, plan completion, and streaks separately from your height measurements. Habit data does not change the height estimate or promise a height outcome.</p>
             </div>
 
         </div>
@@ -833,74 +813,71 @@
 <!-- ─── Expert Credibility ────────────────────────────────────────────── -->
 <section class="reviews" style="background:var(--surface);padding-top:0;padding-bottom:60px;">
     <div class="container">
-        <p class="section-label reveal">Backed by Science</p>
-        <h2 class="section-title reveal">This Isn't a Gimmick.<br>The Research Is Real.</h2>
+        <p class="section-label reveal">Designed for Honest Tracking</p>
+        <h2 class="section-title reveal">Useful Guidance.<br>Clear Limits.</h2>
 
         <div class="reviews-grid">
 
             <div class="review-card reveal">
-                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">NIH — National Institutes of Health</div>
-                <p class="review-text" style="font-style:italic;">"Up to 20% of your final height is determined by your daily habits, including nutrition, sleep, and physical activity."</p>
-                <div style="font-size:0.72rem;color:var(--gray-4);margin-top:8px;">National Institutes of Health · Genetics Home Reference, 2023</div>
+                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">Recorded Measurements</div>
+                <p class="review-text">Your height history is based on readings you save, with dates and optional notes.</p>
             </div>
 
             <div class="review-card reveal">
-                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">Harvard Medical School</div>
-                <p class="review-text" style="font-style:italic;">"Optimizing sleep, posture, and nutrition can lead to measurable height gains in adolescents and young adults."</p>
-                <div style="font-size:0.72rem;color:var(--gray-4);margin-top:8px;">Harvard Medical School · Growth and Development, 2023</div>
+                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">General Wellness</div>
+                <p class="review-text">Sleep, nutrition, movement, and posture logs can support a consistent routine. HeightMax does not claim that those habits increase height.</p>
             </div>
 
             <div class="review-card reveal">
-                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">CDC — Centers for Disease Control</div>
-                <p class="review-text" style="font-style:italic;">"Height predictions powered by real CDC data from real people."</p>
-                <div style="font-size:0.72rem;color:var(--gray-4);margin-top:8px;">CDC Growth Charts · Retrieved 2025</div>
+                <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.12em;color:var(--red-light);text-transform:uppercase;margin-bottom:10px;">Rough Reference</div>
+                <p class="review-text">The family-height estimate is a starting reference based on limited self-reported information, not a diagnosis or a clinical assessment.</p>
             </div>
 
         </div>
 
-        <p style="text-align:center;font-size:0.72rem;color:var(--gray-4);margin-top:20px;" class="reveal">* NIH stat referenced in proof strip above. HeightMax uses CDC growth chart data in its prediction algorithm.</p>
+        <p style="text-align:center;font-size:0.72rem;color:var(--gray-4);margin-top:20px;" class="reveal">* HeightMax is a wellness and tracking app, not a medical device. Individual growth varies and is not guaranteed.</p>
     </div>
 </section>
 
 <!-- ─── Reviews ───────────────────────────────────────────────────────── -->
 <section class="reviews">
     <div class="container">
-        <p class="section-label reveal">Reviews</p>
-        <h2 class="section-title reveal">The Moment They Realized<br>They Still Had Time</h2>
+        <p class="section-label reveal">Built for Consistency</p>
+        <h2 class="section-title reveal">One Place for the Routine<br>Between Measurements</h2>
         <div class="reviews-grid">
 
             <div class="review-card reveal">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"HeightMax asked me stuff no other app ever asked — whether my shoulders were broadening, if my voice had changed. It figured out I'm early-mid puberty and told me I still have 71% of my growth window left. That hit different. Guys, you actually have time. Use it."</p>
+                <div class="review-stars">MEASUREMENTS</div>
+                <p class="review-text">Keep dated height readings and notes together so you can review what you actually measured over time.</p>
                 <div class="review-author">
-                    <div class="review-avatar">JK</div>
+                    <div class="review-avatar">HT</div>
                     <div>
-                        <div class="review-name">Jake K., 16</div>
-                        <div class="review-meta">HeightMax User · 6 weeks ago</div>
+                        <div class="review-name">Height Tracking</div>
+                        <div class="review-meta">Recorded measurements &amp; notes</div>
                     </div>
                 </div>
             </div>
 
             <div class="review-card reveal">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"It used my parents' heights plus my shoe size and told me I have 2.8cm of genetic potential I haven't unlocked yet. Then showed me my sleep was the #1 thing killing my score — I was missing the 10pm-2am growth hormone window every single night. Fixed my sleep schedule. Already seeing changes."</p>
+                <div class="review-stars">PLAN</div>
+                <p class="review-text">See daily completion and weekly plan progress as separate signals, with a real workout streak based on completed sessions.</p>
                 <div class="review-author">
-                    <div class="review-avatar">MR</div>
+                    <div class="review-avatar">WP</div>
                     <div>
-                        <div class="review-name">Marcus R., 15</div>
-                        <div class="review-meta">HeightMax User · 2 months ago</div>
+                        <div class="review-name">Weekly Plan</div>
+                        <div class="review-meta">Daily tasks &amp; weekly progress</div>
                     </div>
                 </div>
             </div>
 
             <div class="review-card reveal">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"The NEVER list completely changed how I eat. I didn't realize carbonated drinks and white flour were actively working against me. The AI coach explained why and built me a whole plan around it. 7-week streak. Measured myself with the AR tool — already up from my baseline."</p>
+                <div class="review-stars">COACH</div>
+                <p class="review-text">Ask general wellness questions in text. The coach uses recent conversation context but does not automatically load your saved height data.</p>
                 <div class="review-author">
-                    <div class="review-avatar">AL</div>
+                    <div class="review-avatar">AI</div>
                     <div>
-                        <div class="review-name">Alex L., 17</div>
-                        <div class="review-meta">HeightMax User · 7 weeks ago</div>
+                        <div class="review-name">AI Text Coach</div>
+                        <div class="review-meta">Text questions &amp; recent context</div>
                     </div>
                 </div>
             </div>
@@ -912,56 +889,56 @@
 <!-- ─── Benefits ──────────────────────────────────────────────────────── -->
 <section class="benefits">
     <div class="container">
-        <p class="section-label reveal">Everything Working Against You — Fixed</p>
-        <h2 class="section-title reveal">Every Factor Science Links<br>to Height. All in One App.</h2>
+        <p class="section-label reveal">Your Daily Tools</p>
+        <h2 class="section-title reveal">Measurements and Wellness<br>Tools in One App.</h2>
 
         <div class="benefits-list">
 
             <div class="benefit-item reveal">
-                <div class="benefit-icon">🧬</div>
+                <div class="benefit-icon">📝</div>
                 <div class="benefit-content">
-                    <h3>Puberty Biological Assessment</h3>
-                    <p>HeightMax asks 8 biological markers — underarm hair, facial hair, body odor, shoulder broadening, acne, muscle definition, voice change, growth speed — to pinpoint your exact biological stage. The most accurate age isn't your birthday. It's your biology.</p>
+                    <h3>Your Starting Information</h3>
+                    <p>Record the basics you want HeightMax to use on-device, including current height, goals, parental heights, and routine preferences. You can update this information in Settings.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
-                <div class="benefit-icon">🔮</div>
+                <div class="benefit-icon">📐</div>
                 <div class="benefit-content">
-                    <h3>Science-Based Height Prediction</h3>
-                    <p>Mid-parental height formula. Ethnicity adjustments. Shoe size indicator (large shoe = high potential). Relatives' heights. BMI. All factored into one number: your exact genetic ceiling in cm — and how close you are to hitting it.</p>
+                    <h3>Rough Family-Height Reference</h3>
+                    <p>When both parental heights are available, HeightMax shows a standard mid-parental-height reference alongside your recorded height. It is a rough estimate, not a genetic limit or guaranteed outcome.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
                 <div class="benefit-icon">😴</div>
                 <div class="benefit-content">
-                    <h3>The 10PM–2AM Growth Window</h3>
-                    <p>Growth hormone is released in pulses during deep sleep — and the highest spike happens specifically between 10pm and 2am. HeightMax tracks your sleep daily. Target: 9–12.5 hours. Miss that window consistently and you're leaving centimeters on the table permanently.</p>
+                    <h3>Sleep Routine Tracking</h3>
+                    <p>Log sleep duration and quality, compare days across the week, and use the history to build a more consistent sleep routine.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
-                <div class="benefit-icon">🚫</div>
+                <div class="benefit-icon">🥗</div>
                 <div class="benefit-content">
-                    <h3>The NEVER List — What's Silently Killing Your Growth</h3>
-                    <p>Refined sugar. White flour. Trans fats. Carbonated drinks. Processed foods. HeightMax shows you exactly what these do to your growth hormones — and builds a nutrition plan around what actually works. This list alone changes everything.</p>
+                    <h3>Practical Nutrition Logging</h3>
+                    <p>Type a meal name, amount, and unit to request an optional AI nutrition estimate, or enter a manual estimate when AI is unavailable. Nutrition scores reflect the meal—not promised height growth.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
                 <div class="benefit-icon">🏀</div>
                 <div class="benefit-content">
-                    <h3>12 Exercise Categories Built For Growth</h3>
-                    <p>Spine decompression, hanging, hip, shoulder, core, stretching, yoga, fascia release, posture, breathing, balance, neck — all calibrated to your biological stage. Plus sport correlation: basketball, swimming, and volleyball have the highest links to height. HeightMax factors in what you play.</p>
+                    <h3>14 Exercise Categories for General Wellness</h3>
+                    <p>Explore guided movement, mobility, flexibility, posture, balance, breathing, and strength exercises. They support general wellness and do not guarantee skeletal growth.</p>
                 </div>
             </div>
 
             <div class="benefit-item reveal">
                 <div class="benefit-icon">🤖</div>
                 <div class="benefit-content">
-                    <h3>AI Coach + AR Height Measurement</h3>
-                    <p>Your 24/7 AI growth coach answers any question, builds your plan, and adapts it as you improve — 3 free messages a day. Pair it with the AR height measurement tool to track your real progress down to the millimeter. The streak system makes showing up automatic.</p>
+                    <h3>Text AI Coach + AR Height Measurement</h3>
+                    <p>Ask general wellness questions in text and save manual or AR-assisted height measurements. AR results may contain error and should not be treated as clinical measurements.</p>
                 </div>
             </div>
 
@@ -972,36 +949,36 @@
 <!-- ─── How It Works ──────────────────────────────────────────────────── -->
 <section class="how">
     <div class="container">
-        <p class="section-label reveal">Your First 90 Seconds Change Everything</p>
+        <p class="section-label reveal">A Simple Setup, Then a Daily Routine</p>
         <h2 class="section-title reveal">How HeightMax Works</h2>
 
         <div class="steps">
             <div class="step reveal">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                    <h3>Complete Your Biological Assessment</h3>
-                    <p>HeightMax asks 12+ biological questions: puberty stage markers, parents' heights, shoe size, relatives' heights, ethnicity, sleep hours, sport activity, nutrition quality, BMI, and goal height. This isn't a quiz — it's a full biological profile. Takes under 90 seconds.</p>
+                    <h3>Set What You Want to Track</h3>
+                    <p>Enter your current height, goal, parental heights, and routine preferences. HeightMax stores these settings locally on your device.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                    <h3>Get Your Personalized Height Report</h3>
-                    <p>Instantly see: your exact height potential in cm, your growth window completion %, your dream height probability, your growth plate status, and your 4-way percentile ranking vs age peers, your country, same gender, and global population.</p>
+                    <h3>See Measurements and a Rough Reference</h3>
+                    <p>Review your recorded starting height and, when both parental heights are available, a rough family-height reference with clear limitations.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                    <h3>Execute Your Daily Growth Plan</h3>
-                    <p>Guided exercises across 12 categories, personalized to your biological stage. Sleep logging calibrated to the 10pm–2am growth hormone window. Nutrition tracking with your personal NEVER list. Your AI coach adapts the plan daily as you improve.</p>
+                    <h3>Follow Your Daily Plan</h3>
+                    <p>Use the 90-day movement plan, log sleep and meals, and ask the text-based AI coach general wellness questions.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                    <h3>Measure and Watch Yourself Grow</h3>
-                    <p>Use the built-in AR tool to measure your real height down to the millimeter — no ruler, no guessing. Log it over time and watch your potential score update as your habits improve. The streak system makes every day count.</p>
+                    <h3>Measure and Review</h3>
+                    <p>Add manual or AR-assisted measurements over time. Review saved points and notes while weekly activity stays separate from height change.</p>
                 </div>
             </div>
         </div>
@@ -1012,36 +989,36 @@
 <section class="features">
     <div class="container">
         <p class="section-label reveal">What's Inside</p>
-        <h2 class="section-title reveal">Four Tools.<br>One Growth System.</h2>
+        <h2 class="section-title reveal">Four Tools.<br>One Wellness Routine.</h2>
 
         <div class="features-grid">
 
             <div class="feature-card reveal">
                 <span class="feature-card-icon">🏋️</span>
                 <span class="feature-card-tag">Exercise Plans</span>
-                <h3>100+ Guided Workouts</h3>
-                <p>Spine, hanging, yoga, posture, fascia — 12 categories built around your biological stage and growth window.</p>
+                <h3>30+ Guided Exercises</h3>
+                <p>Movement, mobility, flexibility, posture, balance, breathing, and strength exercises across 14 categories.</p>
             </div>
 
             <div class="feature-card reveal">
                 <span class="feature-card-icon">🥗</span>
                 <span class="feature-card-tag">AI Meal Analysis</span>
-                <h3>Photo Your Food. Get Instant Feedback.</h3>
-                <p>AI scans your meal and tells you exactly how it helps or hurts your growth — in seconds.</p>
+                <h3>Type Your Meal. Get an Estimate.</h3>
+                <p>Enter a meal name, amount, and unit for an optional AI estimate of basic nutrition. Results are approximate and support general meal logging.</p>
             </div>
 
             <div class="feature-card reveal">
                 <span class="feature-card-icon">😴</span>
                 <span class="feature-card-tag">Sleep Tracking</span>
-                <h3>Optimize the 10PM–2AM Window</h3>
-                <p>Log your sleep daily. Hit the 9–12.5hr target. Capture the growth hormone peak that happens while you sleep.</p>
+                <h3>Track Your Sleep Routine</h3>
+                <p>Log sleep duration and quality, compare the week, and build a more consistent bedtime routine.</p>
             </div>
 
             <div class="feature-card reveal">
                 <span class="feature-card-icon">🤖</span>
                 <span class="feature-card-tag">AI Coach</span>
-                <h3>24/7 Personalized Guidance</h3>
-                <p>Ask anything, get a plan. Your AI coach adapts as you improve and keeps you accountable every single day.</p>
+                <h3>Text-Based Wellness Guidance</h3>
+                <p>Ask general wellness questions in text. The coach uses recent chat context and does not automatically receive your saved height data.</p>
             </div>
 
         </div>
@@ -1052,26 +1029,23 @@
 <section class="screens">
     <div class="container">
         <p class="section-label reveal">Inside the App</p>
-        <h2 class="section-title reveal">Your Biological Report.<br>Your Daily Plan.<br>Your Real Progress.</h2>
+        <h2 class="section-title reveal">Your Daily Plan.<br>Your Workout Progress.<br>Your Sleep Routine.</h2>
     </div>
     <div class="screens-scroll">
-        <div class="screen-thumb"><img src="assets/screen1.webp" alt="HeightMax Screen 1" loading="lazy"></div>
-        <div class="screen-thumb"><img src="assets/screen2.webp" alt="HeightMax Screen 2" loading="lazy"></div>
-        <div class="screen-thumb"><img src="assets/screen3.webp" alt="HeightMax Screen 3" loading="lazy"></div>
-        <div class="screen-thumb"><img src="assets/screen4.webp" alt="HeightMax Screen 4" loading="lazy"></div>
-        <div class="screen-thumb"><img src="assets/screen5.webp" alt="HeightMax Screen 5" loading="lazy"></div>
+        <div class="screen-thumb"><img src="assets/screen2.webp" alt="HeightMax exercise plan screen" loading="lazy"></div>
+        <div class="screen-thumb"><img src="assets/screen4.webp" alt="HeightMax sleep tracking screen" loading="lazy"></div>
     </div>
 </section>
 
 <!-- ─── Bottom CTA ────────────────────────────────────────────────────── -->
 <section class="bottom-cta">
     <div class="container">
-        <div class="badge reveal" style="font-size:0.6rem;letter-spacing:0.12em;">Don't Let Your Growth Plates Close Forever</div>
+        <div class="badge reveal" style="font-size:0.6rem;letter-spacing:0.12em;">Track Your Routine Over Time</div>
         <h2 class="hero-title reveal">
-            Grow Taller.<br><span class="red">Dream Bigger.</span>
+            Build Better Habits.<br><span class="red">See Your Progress.</span>
         </h2>
         <p class="hero-sub reveal">
-            Growth plates close for good — around 16–18 for females, 18–21 for males. After that, the window is gone. Right now you still have time. Find out exactly how much — and what your body needs to make the most of every week that's left.
+            Record real height measurements, follow a consistent wellness plan, and review sleep, nutrition, and workout activity. The family-height estimate is a rough reference, not a guaranteed outcome.
         </p>
         <div class="cta-stack reveal">
             <a class="cta-store cta-store--ios" data-applink rel="noopener"
@@ -1080,17 +1054,7 @@
                 <img src="assets/app-store-badge.svg" alt="Download on the App Store">
             </a>
 
-            <a class="cta-store cta-store--android btn-android" data-applink rel="noopener"
-               href="https://play.google.com/store/apps/details?id=com.uza.apple"
-               aria-label="Get HeightMax on Google Play">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 3.2v17.6a1 1 0 0 0 1.5.87l14.4-8.8a1 1 0 0 0 0-1.74L5.5 2.33A1 1 0 0 0 4 3.2z"/></svg>
-                <div class="btn-android-text">
-                    <span>Get it on</span>
-                    <span>Google Play</span>
-                </div>
-            </a>
-
-            <p class="cta-tip">Tap above — if the store doesn't open, we'll show you a one-tap way out.</p>
+            <p class="cta-tip">HeightMax is currently available for iPhone and iPad on the App Store.</p>
         </div>
     </div>
 </section>
@@ -1098,8 +1062,8 @@
 <!-- ─── Footer ────────────────────────────────────────────────────────── -->
 <footer class="footer">
     <p class="footer-copy">
-        © 2025 HeightMax by UltasDev. All rights reserved.<br>
-        HeightMax supports your daily growth habits through posture and stretching routines.<br>Individual results vary. This app does not guarantee height growth.
+        © 2026 HeightMax by UltasDev. All rights reserved.<br>
+        HeightMax supports daily wellness habits through measurement tracking, posture, movement, sleep, and nutrition tools.<br>Individual growth varies. This app does not guarantee height growth.
     </p>
     <div class="footer-links">
         <a href="/uza/privacy-policy.html">Privacy Policy</a>
@@ -1117,18 +1081,18 @@
        aria-label="Download HeightMax on the App Store">
         <img src="assets/app-store-badge.svg" alt="Download on the App Store">
     </a>
-    <a class="cta-store cta-store--android btn-android" data-applink rel="noopener"
-       href="https://play.google.com/store/apps/details?id=com.uza.apple"
-       aria-label="Get HeightMax on Google Play">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 3.2v17.6a1 1 0 0 0 1.5.87l14.4-8.8a1 1 0 0 0 0-1.74L5.5 2.33A1 1 0 0 0 4 3.2z"/></svg>
-        <div class="btn-android-text">
-            <span>Get it on</span>
-            <span>Google Play</span>
-        </div>
-    </a>
 </div>
 
 <script>
+    // This release is iOS-only. AppLink stamps the platform class immediately;
+    // remove its bindings before DOMContentLoaded on Android so the shared
+    // helper cannot rewrite these hidden App Store links to the Android store.
+    if (document.documentElement.classList.contains('applink-android')) {
+        document.querySelectorAll('[data-applink]').forEach((link) => {
+            link.removeAttribute('data-applink');
+        });
+    }
+
     // ── Intersection Observer for scroll reveal ──────────────────────
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

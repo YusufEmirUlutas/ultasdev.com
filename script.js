@@ -276,8 +276,13 @@ const translations = {
     }
 };
 
-// Language switching functionality
-let currentLang = localStorage.getItem('language') || 'tr'; // Default to Turkish
+// Language switching functionality. Static localized pages (for example the
+// legal documents) own their language through the URL and <html lang> value;
+// the translated landing page continues to use the saved preference.
+const fixedDocumentLanguage = document.documentElement.dataset.languageFixed === 'true'
+    ? document.documentElement.lang
+    : null;
+let currentLang = fixedDocumentLanguage || localStorage.getItem('language') || 'tr';
 
 function setLanguage(lang) {
     currentLang = lang;

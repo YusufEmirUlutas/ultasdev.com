@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-language-fixed="true">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,370 +7,106 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
-        .policy-hero {
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .policy-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-        }
-        .policy-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-        }
-        .policy-date {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-        }
-        .policy-content {
-            padding: 60px 0;
-            background: var(--primary-white);
-        }
-        .policy-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .policy-section {
-            margin-bottom: 3rem;
-        }
-        .policy-section h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gray-200);
-        }
-        .policy-section h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin: 2rem 0 1rem;
-        }
-        .policy-section p {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .policy-section ul, .policy-section ol {
-            margin: 1rem 0 1rem 2rem;
-        }
-        .policy-section ul li, .policy-section ol li {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            margin-top: 2rem;
-        }
-        .back-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        .highlight-box {
-            background: var(--gray-100);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--primary-black);
-        }
-        .warning-box {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #ffc107;
-        }
+        .policy-hero { background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%); padding: 120px 0 60px; text-align: center; }
+        .policy-badge { display: inline-block; padding: 0.4rem 1rem; background: var(--primary-black); color: var(--primary-white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; margin-bottom: 1rem; }
+        .policy-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--primary-black); }
+        .policy-date { color: var(--gray-500); font-size: 0.95rem; }
+        .policy-content { padding: 60px 0; background: var(--primary-white); }
+        .policy-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .policy-section { margin-bottom: 3rem; }
+        .policy-section h2 { font-size: 1.75rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; color: var(--primary-black); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gray-200); }
+        .policy-section h3 { font-size: 1.25rem; font-weight: 600; color: var(--gray-700); margin: 2rem 0 1rem; }
+        .policy-section p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1rem; }
+        .policy-section ul { margin: 1rem 0 1rem 2rem; }
+        .policy-section li { color: var(--gray-600); line-height: 1.8; margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--gray-100); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--primary-black); }
+        .warning-box { background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffc107; }
+        .back-button { display: inline-block; padding: 0.875rem 2rem; background: var(--primary-black); color: var(--primary-white); text-decoration: none; border-radius: 50px; font-weight: 600; transition: var(--transition); margin-top: 2rem; }
+        .back-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="nav-left">
-                        <div class="language-selector">
-                            <button class="language-trigger" id="languageTrigger" aria-label="Select language">
-                                <span class="flag-icon" id="currentFlag">🇬🇧</span>
-                            </button>
-                            <div class="language-dropdown" id="languageDropdown">
-                                <button class="language-option" data-lang="en" onclick="window.location.href='terms-of-service.html'">
-                                    <span class="flag-icon">🇬🇧</span>
-                                    <span class="lang-name">English</span>
-                                </button>
-                                <button class="language-option" data-lang="tr" onclick="window.location.href='terms-of-service-tr.html'">
-                                    <span class="flag-icon">🇹🇷</span>
-                                    <span class="lang-name">Türkçe</span>
-                                </button>
-                            </div>
-                        </div>
-                        <a href="../index.html" class="logo">
-                            <span class="logo-text">ULTASDEV</span>
-                            <span class="logo-dot">.</span>
-                        </a>
-                    </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="../index.html#home" class="nav-link">Home</a></li>
-                        <li><a href="../index.html#services" class="nav-link">Services</a></li>
-                        <li><a href="../index.html#portfolio" class="nav-link">Portfolio</a></li>
-                        <li><a href="../index.html#process" class="nav-link">Process</a></li>
-                        <li><a href="../index.html#about" class="nav-link">About</a></li>
-                        <li><a href="../index.html#contact" class="nav-link nav-cta">Get Started</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header class="header"><nav class="navbar"><div class="container"><div class="nav-wrapper">
+        <div class="nav-left"><div class="language-selector">
+            <button class="language-trigger" id="languageTrigger" aria-label="Select language"><span class="flag-icon" id="currentFlag">🇬🇧</span></button>
+            <div class="language-dropdown" id="languageDropdown"><button class="language-option" data-lang="en" onclick="window.location.href='terms-of-service.html'"><span class="flag-icon">🇬🇧</span><span class="lang-name">English</span></button><button class="language-option" data-lang="tr" onclick="window.location.href='terms-of-service-tr.html'"><span class="flag-icon">🇹🇷</span><span class="lang-name">Türkçe</span></button></div>
+        </div><a href="../index.html" class="logo"><span class="logo-text">ULTASDEV</span><span class="logo-dot">.</span></a></div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+        <ul class="nav-menu" id="navMenu"><li><a href="../index.html#home" class="nav-link">Home</a></li><li><a href="../index.html#services" class="nav-link">Services</a></li><li><a href="../index.html#portfolio" class="nav-link">Portfolio</a></li><li><a href="../index.html#process" class="nav-link">Process</a></li><li><a href="../index.html#about" class="nav-link">About</a></li><li><a href="../index.html#contact" class="nav-link nav-cta">Get Started</a></li></ul>
+    </div></div></nav></header>
 
-    <section class="policy-hero">
-        <div class="container">
-            <div class="policy-badge">HeightMax</div>
-            <h1 class="policy-title">Terms of Service</h1>
-            <p class="policy-date">Last Updated: June 2, 2026</p>
+    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Terms of Service</h1><p class="policy-date">Effective and Last Updated: August 16, 2026</p></div></section>
+
+    <section class="policy-content"><div class="policy-container">
+        <div class="policy-section"><h2>1. Agreement to These Terms</h2><p>These Terms of Service ("Terms") are an agreement between you and UltasDev ("we," "our," or "us") governing your use of the HeightMax mobile application (the "App" or "Service"). By downloading, purchasing, or using HeightMax, you agree to these Terms and the <a href="privacy-policy.html">HeightMax Privacy Policy</a>. If you do not agree, do not use the App.</p><div class="highlight-box"><strong>Material update:</strong> These Terms clarify that HeightMax is paid-only, requires users to be at least 13, and provides wellness tools and a rough family-height estimate—not a clinical prediction or guarantee of height growth.</div></div>
+
+        <div class="policy-section"><h2>2. Eligibility</h2><p>You must be at least 13 years old to use HeightMax. HeightMax is not intended for children under 13. If you are under the age of legal majority where you live, a parent or legal guardian must review and agree to these Terms and supervise your use. You must also be legally permitted to use the Service where you live.</p></div>
+
+        <div class="policy-section"><h2>3. What HeightMax Provides</h2><p>HeightMax provides accountless, device-based tools for saved height measurements, a rough family-height estimate, wellness and workout plans, sleep and nutrition logs, reminders, educational content, and optional AI coaching and meal analysis. Features may change, be corrected, or be discontinued as the App evolves.</p><p>HeightMax does not provide user accounts or account-based cloud sync. You are responsible for protecting your device and any backup file you export.</p></div>
+
+        <div class="policy-section">
+            <h2>4. License and Acceptable Use</h2>
+            <p>Subject to these Terms, we grant you a limited, personal, non-exclusive, non-transferable, revocable license to install and use HeightMax for lawful, non-commercial purposes.</p>
+            <p>You must not:</p><ul>
+                <li>copy, sell, sublicense, or commercially exploit the App except where law expressly permits;</li>
+                <li>reverse engineer, bypass security or usage limits, interfere with the Service, or attempt unauthorized access;</li>
+                <li>use the App or AI features for illegal, abusive, harmful, deceptive, or rights-infringing activity;</li>
+                <li>submit content you do not have the right to use; or</li>
+                <li>misrepresent App estimates or AI responses as medical findings or guaranteed outcomes.</li>
+            </ul>
         </div>
-    </section>
 
-    <section class="policy-content">
-        <div class="policy-container">
-            <div class="policy-section">
-                <h2>1. Agreement to Terms</h2>
-                <p>
-                    These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you") and UltasDev ("Company", "we", "our", "us") regarding your use of the HeightMax mobile application ("App", "Service").
-                </p>
-                <p>
-                    By downloading, installing, or using HeightMax, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.
-                </p>
-                <div class="highlight-box">
-                    <strong>Important:</strong> Please read these Terms carefully. They include important information about your legal rights, remedies, and obligations.
-                </div>
-            </div>
-
-            <div class="policy-section">
-                <h2>2. Description of Service</h2>
-                <p>
-                    HeightMax is a personal wellness and growth tracking application that provides:
-                </p>
-                <ul>
-                    <li>Height tracking and growth monitoring tools</li>
-                    <li>AI-powered coaching and personalized guidance</li>
-                    <li>Training and exercise programs</li>
-                    <li>Educational content related to health and wellness</li>
-                    <li>Progress tracking and analytics</li>
-                    <li>Notification and reminder features</li>
-                </ul>
-                <p>
-                    The Service is provided "as is" and may be modified, updated, or discontinued at our discretion.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>3. Eligibility</h2>
-                <p>
-                    To use HeightMax, you must:
-                </p>
-                <ul>
-                    <li>Be at least 13 years old. If you are between the ages of 9 and 13, you may only use the App with the supervision and explicit consent of a parent or legal guardian.</li>
-                    <li>Have the capacity to enter into a binding agreement</li>
-                    <li>Not be prohibited from using the Service under applicable laws</li>
-                </ul>
-                <p>
-                    <strong>For users under 18:</strong> Parental or legal guardian consent is required to use the App. Parents and guardians are responsible for monitoring and supervising the Service use by minors.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>4. License and Restrictions</h2>
-
-                <h3>4.1 License Grant</h3>
-                <p>
-                    Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use HeightMax on your personal mobile device for personal, non-commercial purposes.
-                </p>
-
-                <h3>4.2 Restrictions</h3>
-                <p>You agree NOT to:</p>
-                <ul>
-                    <li>Copy, modify, distribute, sell, or lease any part of the App</li>
-                    <li>Reverse engineer, decompile, or attempt to extract the source code</li>
-                    <li>Remove, alter, or obscure any copyright notices</li>
-                    <li>Use the App for any illegal or unauthorized purpose</li>
-                    <li>Attempt to gain unauthorized access to any part of the Service</li>
-                    <li>Interfere with or disrupt the functionality of the App</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>5. Subscriptions and Payment</h2>
-
-                <h3>5.1 Free and Premium Features</h3>
-                <p>
-                    HeightMax offers both free and premium features. Premium features require a paid subscription, which may be offered on a weekly, monthly, or yearly basis.
-                </p>
-
-                <h3>5.2 Payment Processing</h3>
-                <p>
-                    All payments are processed through:
-                </p>
-                <ul>
-                    <li><strong>Apple App Store</strong> for iOS users</li>
-                    <li><strong>Google Play Store</strong> for Android users</li>
-                </ul>
-                <p>
-                    By purchasing a subscription, you agree to the payment terms of the respective app store.
-                </p>
-
-                <h3>5.3 Auto-Renewal</h3>
-                <p>
-                    Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period.
-                </p>
-
-                <h3>5.4 Cancellation</h3>
-                <p>
-                    You can cancel your subscription at any time in your App Store or Play Store account settings. The cancellation will take effect at the end of the current billing period.
-                </p>
-
-                <h3>5.5 Refunds</h3>
-                <p>
-                    Refund requests are subject to the refund policies of the Apple App Store or Google Play Store. We do not process refunds directly. Please contact the respective app store for refund requests.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>6. Medical Disclaimer</h2>
-                <div class="warning-box">
-                    <p><strong>⚠️ IMPORTANT MEDICAL DISCLAIMER</strong></p>
-                    <p>
-                        HeightMax is a wellness and tracking application, NOT a medical device or healthcare service. The App and its features:
-                    </p>
-                    <ul>
-                        <li>Are for informational and educational purposes ONLY</li>
-                        <li>Do NOT provide medical advice, diagnosis, or treatment</li>
-                        <li>Should NOT replace professional medical consultation</li>
-                        <li>Are NOT intended to cure, treat, or prevent any disease or condition</li>
-                    </ul>
-                </div>
-
-                <p>
-                    <strong>You acknowledge and agree that:</strong>
-                </p>
-                <ul>
-                    <li>The AI coaching feature provides general wellness guidance, not medical advice.</li>
-                    <li>Always consult with a qualified healthcare professional before making health-related decisions.</li>
-                    <li>Results vary and are not guaranteed.</li>
-                    <li>Height growth is influenced by genetics, nutrition, hormones, and other factors beyond the App's control.</li>
-                    <li>You assume all risks associated with using the training programs.</li>
-                    <li>Stop use and seek medical attention if you experience pain, discomfort, or adverse effects.</li>
-                </ul>
-
-                <p>
-                    <strong>By using HeightMax, you release us from any and all liability related to health outcomes, injuries, or adverse effects.</strong>
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>7. Limitation of Liability</h2>
-                <p>
-                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, ULTASDEV SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h2>8. Contact Information</h2>
-                <p>
-                    If you have questions, concerns, or feedback regarding these Terms, please contact us:
-                </p>
-                <ul>
-                    <li><strong>Email:</strong> <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a></li>
-                    <li><strong>Website:</strong> <a href="https://www.ultasdev.com">www.ultasdev.com</a></li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>9. Acknowledgment</h2>
-                <p>
-                    BY USING HEIGHTMAX, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE, UNDERSTAND THEM, AND AGREE TO BE BOUND BY THEM.
-                </p>
-                <div class="highlight-box">
-                    <p><strong>Quick Summary:</strong></p>
-                    <ul>
-                        <li>✅ Use HeightMax for personal wellness tracking.</li>
-                        <li>⚠️ The app is NOT medical advice - consult real doctors.</li>
-                        <li>⚠️ AI responses may contain errors.</li>
-                        <li>⚠️ Use at your own risk.</li>
-                        <li>💰 Subscriptions auto-renew unless cancelled.</li>
-                        <li>📱 We may update the App and Terms anytime.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="../index.html" class="back-button">Back to Home</a>
-            </div>
+        <div class="policy-section">
+            <h2>5. Paid Subscription</h2>
+            <h3>5.1 Paid-Only Access</h3>
+            <p>HeightMax is a paid subscription service. Access to subscription features requires an active subscription purchased through the applicable App store. HeightMax does not currently offer a free tier or free trial. Available billing periods and prices are displayed before purchase and may vary by country or platform.</p>
+            <h3>5.2 Billing and Auto-Renewal</h3>
+            <p>Your applicable App-store account is charged when you confirm a purchase. Unless the store states otherwise, subscriptions renew automatically at the displayed price and billing period until cancelled. The App store—not UltasDev—processes your payment information.</p>
+            <h3>5.3 Cancellation</h3>
+            <p>You can cancel through your applicable App-store subscription settings. Deleting or resetting HeightMax does not cancel a subscription. Cancellation normally takes effect at the end of the current paid period, subject to the store's rules.</p>
+            <h3>5.4 Restoring and Lapsed Access</h3>
+            <p>You may use Restore Purchases where available. A valid entitlement is required for paid features. After access lapses, HeightMax may continue to display locally stored history and a renewal offer, while limiting paid plan, coach, or measurement actions.</p>
+            <h3>5.5 Refunds</h3>
+            <p>Refunds and billing disputes are governed and handled by the App store through which you purchased. We do not directly process App-store refunds.</p>
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">ULTASDEV.</div>
-                    <p class="footer-tagline">Building the future, one app at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="../index.html#about">About</a></li>
-                            <li><a href="../index.html#portfolio">Projects</a></li>
-                            <li><a href="../index.html#process">Process</a></li>
-                            <li><a href="../index.html#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 UltasDev. All rights reserved.</p>
-            </div>
+        <div class="policy-section">
+            <h2>6. Height Estimates and Wellness Information</h2>
+            <div class="warning-box"><strong>Important:</strong> HeightMax is a wellness and tracking App, not a medical device, healthcare service, genetic test, or growth-plate assessment.</div>
+            <ul>
+                <li>The displayed height number is a rough family-height estimate based on limited, self-reported information. It is not a clinically or statistically validated prediction for an individual.</li>
+                <li>The estimate is not a guarantee of final height, diagnosis, bone-age result, growth-plate status, or promise of additional centimeters.</li>
+                <li>Weekly logging coverage, plan completion, streaks, and nutrition scores measure App activity or general wellness consistency. They do not prove or guarantee a change in height.</li>
+                <li>Exercise, nutrition, sleep, and posture features support general wellness and do not guarantee skeletal growth or increased adult height.</li>
+                <li>Manual and AR measurements may contain error and should not be used for clinical decisions.</li>
+            </ul>
+            <p>Growth and health depend on many factors beyond the App. Consult a qualified healthcare professional about growth concerns, puberty, pain, nutrition deficiencies, supplements, exercise safety, or any medical condition.</p>
         </div>
-    </footer>
 
+        <div class="policy-section"><h2>7. AI Features</h2><p>AI Coach and meal analysis generate probabilistic output and may be incomplete, inaccurate, or inappropriate. They provide general wellness information only and must not be used for diagnosis, treatment, emergencies, supplement dosing, eating-disorder guidance, or other medical decisions. Do not submit information you do not want processed by the AI providers described in our Privacy Policy. You may report an AI response for safety review from inside the App.</p></div>
+
+        <div class="policy-section"><h2>8. Your Data and Backups</h2><p>Core App records are primarily local. HeightMax does not promise that data will survive device loss, corruption, uninstall, platform changes, or unsupported backup files. Use the in-App export feature if you want a portable copy, protect the unencrypted file, and verify imports yourself. Resetting the App does not cancel a subscription or erase records held independently by App stores and service providers. See the Privacy Policy for details.</p></div>
+
+        <div class="policy-section"><h2>9. Intellectual Property</h2><p>HeightMax, including its software, branding, graphics, text, exercises, and other content, is owned by or licensed to UltasDev and protected by applicable intellectual-property laws. These Terms do not transfer ownership to you. Feedback you voluntarily provide may be used to improve the Service without an obligation to compensate you.</p></div>
+
+        <div class="policy-section"><h2>10. Availability and Changes</h2><p>We may update, suspend, restrict, or discontinue part or all of HeightMax, including AI models, plan content, pricing for future billing periods, and supported platforms. Network, provider, device, or maintenance issues may interrupt access. We do not guarantee uninterrupted or error-free operation.</p></div>
+
+        <div class="policy-section"><h2>11. Disclaimers</h2><p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HEIGHTMAX IS PROVIDED "AS IS" AND "AS AVAILABLE." WE DISCLAIM IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT. NOTHING IN THESE TERMS EXCLUDES A WARRANTY OR RIGHT THAT CANNOT LAWFULLY BE EXCLUDED.</p></div>
+
+        <div class="policy-section"><h2>12. Limitation of Liability</h2><p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ULTASDEV AND ITS PROVIDERS WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR LOSS OF DATA, USE, PROFITS, OR GOODWILL ARISING FROM HEIGHTMAX. OUR TOTAL LIABILITY FOR CLAIMS RELATING TO THE SERVICE WILL NOT EXCEED THE AMOUNT YOU PAID FOR HEIGHTMAX DURING THE 12 MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM. THESE LIMITS DO NOT APPLY WHERE THE LAW DOES NOT ALLOW THEM.</p></div>
+
+        <div class="policy-section"><h2>13. Suspension or Termination</h2><p>We may restrict or end access if you materially violate these Terms, abuse the Service, create security or legal risk, or where required by law. You may stop using HeightMax at any time, but you must separately cancel any active subscription through the applicable App store.</p></div>
+
+        <div class="policy-section"><h2>14. Changes to These Terms</h2><p>We may update these Terms to reflect changes to HeightMax, providers, or legal requirements. We will update the date above and provide additional notice where required. Continuing to use the Service after an effective update constitutes acceptance where permitted by law.</p></div>
+
+        <div class="policy-section"><h2>15. Contact</h2><p>Questions about these Terms may be sent to <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> or through <a href="https://www.ultasdev.com">www.ultasdev.com</a>.</p></div>
+
+        <div style="text-align: center; margin-top: 3rem;"><a href="../index.html" class="back-button">Back to Home</a></div>
+    </div></section>
+
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-brand"><div class="footer-logo">ULTASDEV.</div><p class="footer-tagline">Building the future, one app at a time.</p></div><div class="footer-links"><div class="footer-column"><h4>Company</h4><ul><li><a href="../index.html#about">About</a></li><li><a href="../index.html#portfolio">Projects</a></li><li><a href="../index.html#process">Process</a></li><li><a href="../index.html#contact">Contact</a></li></ul></div><div class="footer-column"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div></div></div><div class="footer-bottom"><p>&copy; 2026 UltasDev. All rights reserved.</p></div></div></footer>
     <script src="../script.js"></script>
 </body>
 </html>

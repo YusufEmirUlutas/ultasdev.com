@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-language-fixed="true">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,312 +7,86 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
-        .policy-hero {
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .policy-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-        }
-        .policy-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-        }
-        .policy-date {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-        }
-        .policy-content {
-            padding: 60px 0;
-            background: var(--primary-white);
-        }
-        .policy-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .policy-section {
-            margin-bottom: 3rem;
-        }
-        .policy-section h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gray-200);
-        }
-        .policy-section h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin: 2rem 0 1rem;
-        }
-        .policy-section p {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .policy-section ul, .policy-section ol {
-            margin: 1rem 0 1rem 2rem;
-        }
-        .policy-section ul li, .policy-section ol li {
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            margin-top: 2rem;
-        }
-        .back-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        .highlight-box {
-            background: var(--gray-100);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--primary-black);
-        }
-        .warning-box {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #ffc107;
-        }
+        .policy-hero { background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%); padding: 120px 0 60px; text-align: center; }
+        .policy-badge { display: inline-block; padding: 0.4rem 1rem; background: var(--primary-black); color: var(--primary-white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 50px; margin-bottom: 1rem; }
+        .policy-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--primary-black); }
+        .policy-date { color: var(--gray-500); font-size: 0.95rem; }
+        .policy-content { padding: 60px 0; background: var(--primary-white); }
+        .policy-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .policy-section { margin-bottom: 3rem; }
+        .policy-section h2 { font-size: 1.75rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; color: var(--primary-black); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gray-200); }
+        .policy-section h3 { font-size: 1.25rem; font-weight: 600; color: var(--gray-700); margin: 2rem 0 1rem; }
+        .policy-section p { color: var(--gray-600); line-height: 1.8; margin-bottom: 1rem; }
+        .policy-section ul { margin: 1rem 0 1rem 2rem; }
+        .policy-section li { color: var(--gray-600); line-height: 1.8; margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--gray-100); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--primary-black); }
+        .warning-box { background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffc107; }
+        .back-button { display: inline-block; padding: 0.875rem 2rem; background: var(--primary-black); color: var(--primary-white); text-decoration: none; border-radius: 50px; font-weight: 600; transition: var(--transition); margin-top: 2rem; }
+        .back-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="nav-left">
-                        <div class="language-selector">
-                            <button class="language-trigger" id="languageTrigger" aria-label="Select language">
-                                <span class="flag-icon" id="currentFlag">🇹🇷</span>
-                            </button>
-                            <div class="language-dropdown" id="languageDropdown">
-                                <button class="language-option" data-lang="en" onclick="window.location.href='terms-of-service.html'">
-                                    <span class="flag-icon">🇬🇧</span>
-                                    <span class="lang-name">English</span>
-                                </button>
-                                <button class="language-option" data-lang="tr" onclick="window.location.href='terms-of-service-tr.html'">
-                                    <span class="flag-icon">🇹🇷</span>
-                                    <span class="lang-name">Türkçe</span>
-                                </button>
-                            </div>
-                        </div>
-                        <a href="../index.html" class="logo">
-                            <span class="logo-text">ULTASDEV</span>
-                            <span class="logo-dot">.</span>
-                        </a>
-                    </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="../index.html#home" class="nav-link">Ana Sayfa</a></li>
-                        <li><a href="../index.html#services" class="nav-link">Hizmetler</a></li>
-                        <li><a href="../index.html#portfolio" class="nav-link">Portföy</a></li>
-                        <li><a href="../index.html#process" class="nav-link">Süreç</a></li>
-                        <li><a href="../index.html#about" class="nav-link">Hakkımızda</a></li>
-                        <li><a href="../index.html#contact" class="nav-link nav-cta">İletişim</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header class="header"><nav class="navbar"><div class="container"><div class="nav-wrapper">
+        <div class="nav-left"><div class="language-selector">
+            <button class="language-trigger" id="languageTrigger" aria-label="Dil seçin"><span class="flag-icon" id="currentFlag">🇹🇷</span></button>
+            <div class="language-dropdown" id="languageDropdown"><button class="language-option" data-lang="en" onclick="window.location.href='terms-of-service.html'"><span class="flag-icon">🇬🇧</span><span class="lang-name">English</span></button><button class="language-option" data-lang="tr" onclick="window.location.href='terms-of-service-tr.html'"><span class="flag-icon">🇹🇷</span><span class="lang-name">Türkçe</span></button></div>
+        </div><a href="../index.html" class="logo"><span class="logo-text">ULTASDEV</span><span class="logo-dot">.</span></a></div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menüyü aç"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+        <ul class="nav-menu" id="navMenu"><li><a href="../index.html#home" class="nav-link">Ana Sayfa</a></li><li><a href="../index.html#services" class="nav-link">Hizmetler</a></li><li><a href="../index.html#portfolio" class="nav-link">Portföy</a></li><li><a href="../index.html#process" class="nav-link">Süreç</a></li><li><a href="../index.html#about" class="nav-link">Hakkımızda</a></li><li><a href="../index.html#contact" class="nav-link nav-cta">İletişim</a></li></ul>
+    </div></div></nav></header>
 
-    <section class="policy-hero">
-        <div class="container">
-            <div class="policy-badge">HeightMax</div>
-            <h1 class="policy-title">Kullanım Koşulları</h1>
-            <p class="policy-date">Son Güncelleme: 2 Haziran 2026</p>
+    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Kullanım Koşulları</h1><p class="policy-date">Yürürlük ve Son Güncelleme Tarihi: 16 Ağustos 2026</p></div></section>
+
+    <section class="policy-content"><div class="policy-container">
+        <div class="policy-section"><h2>1. Koşulların Kabulü</h2><p>Bu Kullanım Koşulları ("Koşullar"), HeightMax mobil uygulamasını ("Uygulama" veya "Hizmet") kullanımınız konusunda sizinle UltasDev ("biz", "bizim" veya "bize") arasında yapılan bir sözleşmedir. HeightMax'i indirerek, satın alarak veya kullanarak bu Koşulları ve <a href="privacy-policy-tr.html">HeightMax Gizlilik Politikasını</a> kabul edersiniz. Kabul etmiyorsanız Uygulamayı kullanmayın.</p><div class="highlight-box"><strong>Önemli güncelleme:</strong> Bu Koşullar; HeightMax'in yalnızca ücretli olduğunu, kullanıcıların en az 13 yaşında olması gerektiğini ve klinik bir tahmin veya boy uzama garantisi değil, genel sağlık araçları ile yaklaşık bir aile boyu tahmini sunduğunu açıklar.</div></div>
+
+        <div class="policy-section"><h2>2. Uygunluk</h2><p>HeightMax'i kullanmak için en az 13 yaşında olmalısınız. HeightMax 13 yaşın altındaki çocuklara yönelik değildir. Yaşadığınız yerde reşit değilseniz bir ebeveyn veya yasal vasi bu Koşulları incelemeli, kabul etmeli ve kullanımınızı denetlemelidir. Ayrıca yaşadığınız yerde Hizmeti kullanmanıza hukuken izin verilmiş olmalıdır.</p></div>
+
+        <div class="policy-section"><h2>3. HeightMax'in Sunduğu Hizmet</h2><p>HeightMax; kayıtlı boy ölçümleri, yaklaşık aile boyu tahmini, sağlık ve antrenman planları, uyku ve beslenme kayıtları, hatırlatmalar, eğitici içerik ile isteğe bağlı yapay zeka koçluğu ve öğün analizi için hesapsız ve cihaz tabanlı araçlar sunar. Uygulama geliştikçe özellikler değiştirilebilir, düzeltilebilir veya sonlandırılabilir.</p><p>HeightMax kullanıcı hesabı veya hesap tabanlı bulut eşitlemesi sunmaz. Cihazınızı ve dışa aktardığınız yedek dosyalarını korumaktan siz sorumlusunuz.</p></div>
+
+        <div class="policy-section"><h2>4. Lisans ve Kabul Edilebilir Kullanım</h2><p>Bu Koşullara uymanız şartıyla, HeightMax'i hukuka uygun ve ticari olmayan amaçlarla yüklemeniz ve kullanmanız için size sınırlı, kişisel, münhasır olmayan, devredilemez ve geri alınabilir bir lisans veririz.</p><p>Şunları yapamazsınız:</p><ul><li>hukukun açıkça izin verdiği durumlar dışında Uygulamayı kopyalamak, satmak, alt lisanslamak veya ticari olarak kullanmak;</li><li>tersine mühendislik yapmak, güvenlik veya kullanım sınırlarını aşmak, Hizmete müdahale etmek veya yetkisiz erişim sağlamaya çalışmak;</li><li>Uygulamayı veya yapay zeka özelliklerini hukuka aykırı, kötüye kullanım, zarar verme, yanıltma veya hak ihlali amacıyla kullanmak;</li><li>kullanma hakkına sahip olmadığınız içeriği göndermek; veya</li><li>Uygulama tahminlerini ya da yapay zeka yanıtlarını tıbbi bulgu veya garantili sonuç olarak sunmak.</li></ul></div>
+
+        <div class="policy-section">
+            <h2>5. Ücretli Abonelik</h2>
+            <h3>5.1 Yalnızca Ücretli Erişim</h3><p>HeightMax ücretli bir abonelik hizmetidir. Abonelik özelliklerine erişmek için ilgili uygulama mağazasından satın alınmış etkin bir abonelik gerekir. HeightMax şu anda ücretsiz katman veya ücretsiz deneme sunmaz. Mevcut faturalandırma süreleri ve fiyatlar satın alma öncesinde gösterilir ve ülkeye veya platforma göre değişebilir.</p>
+            <h3>5.2 Faturalandırma ve Otomatik Yenileme</h3><p>Satın almayı onayladığınızda ilgili uygulama mağazası hesabınız ücretlendirilir. Mağazada aksi belirtilmedikçe abonelikler, iptal edilene kadar gösterilen fiyat ve faturalandırma dönemi üzerinden otomatik olarak yenilenir. Ödeme bilgilerinizi UltasDev değil, uygulama mağazası işler.</p>
+            <h3>5.3 İptal</h3><p>Aboneliği ilgili uygulama mağazasının abonelik ayarlarından iptal edebilirsiniz. HeightMax'i silmek veya sıfırlamak aboneliği iptal etmez. İptal, mağazanın kurallarına tabi olarak genellikle mevcut ücretli dönemin sonunda yürürlüğe girer.</p>
+            <h3>5.4 Geri Yükleme ve Sona Eren Erişim</h3><p>Mevcut olduğu durumlarda Satın Almaları Geri Yükle özelliğini kullanabilirsiniz. Ücretli özellikler için geçerli bir yetki gerekir. Erişim sona erdikten sonra HeightMax yerel geçmişinizi ve yenileme teklifini göstermeye devam ederken ücretli plan, koç veya ölçüm işlemlerini sınırlayabilir.</p>
+            <h3>5.5 İadeler</h3><p>İade ve faturalandırma itirazları, satın alma yaptığınız uygulama mağazasının kurallarına tabidir ve mağaza tarafından işlenir. Uygulama mağazası iadelerini doğrudan işlemeyiz.</p>
         </div>
-    </section>
 
-    <section class="policy-content">
-        <div class="policy-container">
-            <div class="policy-section">
-                <h2>1. Şartların Kabulü</h2>
-                <p>
-                    Bu Kullanım Koşulları ("Şartlar"), sizin ("Kullanıcı", "siz") ile HeightMax mobil uygulamasının ("Uygulama", "Hizmet") kullanımınıza ilişkin olarak UltasDev ("Şirket", "biz", "bizim") arasında yasal olarak bağlayıcı bir anlaşma oluşturmaktadır.
-                </p>
-                <p>
-                    HeightMax'yı indirerek, yükleyerek veya kullanarak bu Şartlar'la bağlı olmayı kabul etmiş olursunuz. Bu Şartlar'ı kabul etmiyorsanız, Uygulamayı kullanmayınız.
-                </p>
-                <div class="highlight-box">
-                    <strong>Önemli:</strong> Lütfen bu Şartlar'ı dikkatle okuyunuz. Yasal haklarınız, hukuki yollarınız ve yükümlülükleriniz hakkında önemli bilgiler içermektedir.
-                </div>
-            </div>
+        <div class="policy-section"><h2>6. Boy Tahminleri ve Sağlık Bilgileri</h2><div class="warning-box"><strong>Önemli:</strong> HeightMax bir sağlık ve takip uygulamasıdır; tıbbi cihaz, sağlık hizmeti, genetik test veya büyüme plağı değerlendirmesi değildir.</div><ul>
+            <li>Gösterilen boy değeri, sınırlı ve kullanıcı tarafından bildirilen bilgilere dayanan yaklaşık bir aile boyu tahminidir. Bir birey için klinik veya istatistiksel olarak doğrulanmış bir tahmin değildir.</li>
+            <li>Tahmin; nihai boy, teşhis, kemik yaşı sonucu, büyüme plağı durumu veya ilave santimetre garantisi değildir.</li>
+            <li>Haftalık kayıt kapsamı, plan tamamlaması, seriler ve beslenme puanları Uygulama etkinliğini veya genel sağlık tutarlılığını ölçer. Boy değişikliğini kanıtlamaz veya garanti etmez.</li>
+            <li>Egzersiz, beslenme, uyku ve duruş özellikleri genel sağlığı destekler; iskelet gelişimini veya yetişkin boyunun artmasını garanti etmez.</li>
+            <li>Elle ve AR ile yapılan ölçümler hata içerebilir ve klinik kararlarda kullanılmamalıdır.</li>
+        </ul><p>Büyüme ve sağlık, Uygulamanın dışındaki pek çok etkene bağlıdır. Büyüme endişeleri, ergenlik, ağrı, beslenme eksiklikleri, takviyeler, egzersiz güvenliği veya herhangi bir sağlık durumu için nitelikli bir sağlık uzmanına danışın.</p></div>
 
-            <div class="policy-section">
-                <h2>2. Hizmetin Tanımı</h2>
-                <p>
-                    HeightMax, aşağıdaki özellikleri sunan kişisel sağlık ve gelişim takip uygulamasıdır:
-                </p>
-                <ul>
-                    <li>Boy takibi ve büyüme izleme araçları</li>
-                    <li>Yapay zeka destekli koçluk ve kişiselleştirilmiş rehberlik</li>
-                    <li>Antrenman ve egzersiz programları</li>
-                    <li>Sağlık ve zindelik ile ilgili eğitici içerik</li>
-                    <li>İlerleme takibi ve analitik</li>
-                    <li>Bildirim ve hatırlatma özellikleri</li>
-                </ul>
-                <p>
-                    Hizmet "olduğu gibi" sunulmaktadır ve takdirimize bağlı olarak değiştirilebilir, güncellenebilir veya durdurulabilir.
-                </p>
-            </div>
+        <div class="policy-section"><h2>7. Yapay Zeka Özellikleri</h2><p>Yapay Zeka Koçu ve öğün analizi olasılıksal çıktılar üretir ve eksik, hatalı veya uygunsuz olabilir. Yalnızca genel sağlık bilgisi sunar; teşhis, tedavi, acil durum, takviye dozu, yeme bozukluğu yönlendirmesi veya başka bir tıbbi karar için kullanılmamalıdır. Gizlilik Politikamızda açıklanan yapay zeka sağlayıcıları tarafından işlenmesini istemediğiniz bilgileri göndermeyin. Uygulama içinden bir yapay zeka yanıtını güvenlik incelemesi için bildirebilirsiniz.</p></div>
 
-            <div class="policy-section">
-                <h2>3. Uygunluk</h2>
-                <p>
-                    HeightMax'yı kullanmak için:
-                </p>
-                <ul>
-                    <li>En az 13 yaşında olmanız gerekmektedir. 9 ile 13 yaş arasındaki kullanıcılar, Uygulamayı yalnızca bir ebeveyn veya yasal vasinin gözetimi ve açık izni ile kullanabilirler.</li>
-                    <li>Bu Şartlar'a taraf olma ehliyetine sahip olmanız gerekmektedir</li>
-                    <li>İlgili yasalar kapsamında Hizmet'i kullanmanız yasaklanmamış olmalıdır</li>
-                </ul>
-                <p>
-                    <strong>18 yaş altı kullanıcılar için:</strong> Uygulamayı kullanmak için bir ebeveyn veya yasal vasinin izni gerekmektedir. Ebeveynler ve vasiler, reşit olmayan çocukların Hizmet kullanımını izlemek ve denetlemekten sorumludur.
-                </p>
-            </div>
+        <div class="policy-section"><h2>8. Verileriniz ve Yedekler</h2><p>Temel Uygulama kayıtları öncelikle yereldir. HeightMax; verilerin cihaz kaybı, bozulma, kaldırma, platform değişikliği veya desteklenmeyen yedek dosyalarından sonra korunacağını garanti etmez. Taşınabilir bir kopya istiyorsanız Uygulamadaki dışa aktarma özelliğini kullanın, şifrelenmemiş dosyayı koruyun ve içe aktarma sonuçlarını doğrulayın. Uygulamayı sıfırlamak aboneliği iptal etmez veya uygulama mağazaları ve hizmet sağlayıcılar tarafından bağımsız olarak tutulan kayıtları silmez. Ayrıntılar için Gizlilik Politikasına bakın.</p></div>
 
-            <div class="policy-section">
-                <h2>4. Tıbbi Sorumluluk Reddi</h2>
-                <div class="warning-box">
-                    <p><strong>⚠️ ÖNEMLİ TIBBİ SORUMLULUK REDDİ</strong></p>
-                    <p>
-                        HeightMax bir sağlık ve takip uygulamasıdır, tıbbi cihaz veya sağlık hizmeti DEĞİLDİR. Uygulama ve özellikleri:
-                    </p>
-                    <ul>
-                        <li>Yalnızca bilgilendirme ve eğitim amaçlıdır</li>
-                        <li>Tıbbi tavsiye, teşhis veya tedavi SAĞLAMAZ</li>
-                        <li>Profesyonel tıbbi danışmanlığın YERİNİ geçmemelidir</li>
-                        <li>Herhangi bir hastalık veya durumu iyileştirmeyi, tedavi etmeyi veya önlemeyi AMAÇLAMAZ</li>
-                    </ul>
-                </div>
+        <div class="policy-section"><h2>9. Fikri Mülkiyet</h2><p>Yazılımı, markası, grafikleri, metinleri, egzersizleri ve diğer içerikleri dahil HeightMax, UltasDev'e aittir veya UltasDev tarafından lisanslanmıştır ve ilgili fikri mülkiyet kanunlarıyla korunur. Bu Koşullar size mülkiyet devretmez. Gönüllü olarak sağladığınız geri bildirimler, size ücret ödeme yükümlülüğü olmadan Hizmeti geliştirmek için kullanılabilir.</p></div>
 
-                <p>
-                    <strong>Şunları kabul ve beyan edersiniz:</strong>
-                </p>
-                <ul>
-                    <li>Yapay zeka koçluk özelliği genel sağlık rehberliği sağlar, tıbbi tavsiye değildir.</li>
-                    <li>Sağlıkla ilgili kararlar vermeden önce her zaman nitelikli bir sağlık profesyoneline danışmalısınız.</li>
-                    <li>Sonuçlar değişebilir ve garanti edilmez.</li>
-                    <li>Antrenman programlarını kullanmakla ilişkili tüm riskleri üstlenirsiniz.</li>
-                </ul>
+        <div class="policy-section"><h2>10. Kullanılabilirlik ve Değişiklikler</h2><p>Yapay zeka modelleri, plan içeriği, gelecek faturalandırma dönemlerinin fiyatlandırması ve desteklenen platformlar dahil HeightMax'in bir kısmını veya tamamını güncelleyebilir, askıya alabilir, kısıtlayabilir veya sonlandırabiliriz. Ağ, sağlayıcı, cihaz veya bakım sorunları erişimi kesintiye uğratabilir. Kesintisiz veya hatasız çalışma garanti etmeyiz.</p></div>
 
-                <p>
-                    <strong>HeightMax'yı kullanarak, bizi sağlık sonuçları, yaralanmalar veya olumsuz etkilerle ilgili her türlü sorumluluktan muaf tutmuş olursunuz.</strong>
-                </p>
-            </div>
+        <div class="policy-section"><h2>11. Garantilerin Reddi</h2><p>UYGULANABİLİR HUKUKUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE HEIGHTMAX "OLDUĞU GİBİ" VE "MEVCUT OLDUĞU ŞEKLİYLE" SUNULUR. TİCARİ ELVERİŞLİLİK, BELİRLİ BİR AMACA UYGUNLUK, DOĞRULUK VE İHLAL ETMEME DAHİL ZIMNİ GARANTİLERİ REDDEDERİZ. BU KOŞULLARDAKİ HİÇBİR HÜKÜM, HUKUKEN KALDIRILAMAYAN BİR GARANTİYİ VEYA HAKKI KALDIRMAZ.</p></div>
 
-            <div class="policy-section">
-                <h2>5. Abonelik ve Ödeme</h2>
-                <p>
-                    Premium özellikler, haftalık, aylık veya yıllık olarak sunulabilecek ücretli bir abonelik gerektirir. Tüm ödemeler Apple App Store veya Google Play Store üzerinden işlenir.
-                </p>
-            </div>
+        <div class="policy-section"><h2>12. Sorumluluğun Sınırlandırılması</h2><p>UYGULANABİLİR HUKUKUN İZİN VERDİĞİ AZAMİ ÖLÇÜDE ULTASDEV VE HİZMET SAĞLAYICILARI, HEIGHTMAX'TEN KAYNAKLANAN DOLAYLI, ARIZİ, ÖZEL, SONUÇ OLARAK DOĞAN, ÖRNEK NİTELİĞİNDE VEYA CEZAİ ZARARLARDAN YA DA VERİ, KULLANIM, KÂR VEYA İTİBAR KAYBINDAN SORUMLU OLMAZ. HİZMETLE İLGİLİ TALEPLERE İLİŞKİN TOPLAM SORUMLULUĞUMUZ, TALEBE YOL AÇAN OLAYDAN ÖNCEKİ 12 AYDA HEIGHTMAX İÇİN ÖDEDİĞİNİZ TUTARI AŞMAZ. BU SINIRLAMALAR, HUKUKUN İZİN VERMEDİĞİ DURUMLARDA UYGULANMAZ.</p></div>
 
-            <div class="policy-section">
-                <h2>6. İletişim Bilgileri</h2>
-                <p>
-                    Bu Şartlar ile ilgili sorularınız veya geri bildiriminiz varsa, lütfen bizimle iletişime geçiniz:
-                </p>
-                <ul>
-                    <li><strong>E-posta:</strong> <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a></li>
-                    <li><strong>Web Sitesi:</strong> <a href="https://www.ultasdev.com">www.ultasdev.com</a></li>
-                </ul>
-            </div>
+        <div class="policy-section"><h2>13. Askıya Alma veya Sonlandırma</h2><p>Bu Koşulları önemli ölçüde ihlal etmeniz, Hizmeti kötüye kullanmanız, güvenlik veya hukuki risk oluşturmanız ya da hukuken gerekli olması hâlinde erişimi kısıtlayabilir veya sonlandırabiliriz. HeightMax'i kullanmayı istediğiniz zaman bırakabilirsiniz; ancak etkin aboneliği ayrıca ilgili uygulama mağazası üzerinden iptal etmelisiniz.</p></div>
 
-            <div class="policy-section">
-                <h2>7. Onay</h2>
-                <p>
-                    HEIGHTMAX'YI KULLANARAK, BU KULLANIM KOŞULLARI'NI OKUDUĞUNUZU, ANLADIĞINIZI VE BUNLARA BAĞLI OLMAYI KABUL ETTİĞİNİZİ BEYAN EDERSİNİZ.
-                </p>
-                <div class="highlight-box">
-                    <p><strong>Hızlı Özet:</strong></p>
-                    <ul>
-                        <li>✅ HeightMax'yı kişisel sağlık takibi için kullanın.</li>
-                        <li>⚠️ Uygulama tıbbi tavsiye DEĞİLDİR - gerçek doktorlara danışın.</li>
-                        <li>⚠️ Yapay zeka yanıtları hatalar içerebilir.</li>
-                        <li>⚠️ Kullanım riski size aittir.</li>
-                        <li>💰 Abonelikler iptal edilmediği sürece otomatik olarak yenilenir.</li>
-                        <li>📱 Uygulamayı ve Şartlar'ı istediğimiz zaman güncelleyebiliriz.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="policy-section"><h2>14. Koşullardaki Değişiklikler</h2><p>Bu Koşulları HeightMax, hizmet sağlayıcılar veya hukuki gereksinimlerdeki değişiklikleri yansıtmak için güncelleyebiliriz. Yukarıdaki tarihi günceller ve gerekli olduğunda ek bildirim sağlarız. Yürürlükteki bir güncellemeden sonra Hizmeti kullanmaya devam etmeniz, hukuken izin verildiği ölçüde kabul anlamına gelir.</p></div>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="../index.html" class="back-button">Ana Sayfaya Dön</a>
-            </div>
-        </div>
-    </section>
+        <div class="policy-section"><h2>15. İletişim</h2><p>Bu Koşullarla ilgili sorularınızı <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> adresine gönderebilir veya <a href="https://www.ultasdev.com">www.ultasdev.com</a> üzerinden bize ulaşabilirsiniz.</p></div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">ULTASDEV.</div>
-                    <p class="footer-tagline">Geleceği inşa ediyoruz, bir uygulama ile bir seferde.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Şirket</h4>
-                        <ul>
-                            <li><a href="../index.html#about">Hakkımızda</a></li>
-                            <li><a href="../index.html#portfolio">Projeler</a></li>
-                            <li><a href="../index.html#process">Süreç</a></li>
-                            <li><a href="../index.html#contact">İletişim</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Yasal</h4>
-                        <ul>
-                            <li><a href="privacy-policy-tr.html">Gizlilik Politikası</a></li>
-                            <li><a href="terms-of-service-tr.html">Kullanım Koşulları</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 UltasDev. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
-    </footer>
+        <div style="text-align: center; margin-top: 3rem;"><a href="../index.html" class="back-button">Ana Sayfaya Dön</a></div>
+    </div></section>
 
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-brand"><div class="footer-logo">ULTASDEV.</div><p class="footer-tagline">Her seferinde bir uygulamayla geleceği inşa ediyoruz.</p></div><div class="footer-links"><div class="footer-column"><h4>Şirket</h4><ul><li><a href="../index.html#about">Hakkımızda</a></li><li><a href="../index.html#portfolio">Projeler</a></li><li><a href="../index.html#process">Süreç</a></li><li><a href="../index.html#contact">İletişim</a></li></ul></div><div class="footer-column"><h4>Yasal</h4><ul><li><a href="privacy-policy-tr.html">Gizlilik Politikası</a></li><li><a href="terms-of-service-tr.html">Kullanım Koşulları</a></li></ul></div></div></div><div class="footer-bottom"><p>&copy; 2026 UltasDev. Tüm hakları saklıdır.</p></div></div></footer>
     <script src="../script.js"></script>
 </body>
 </html>
