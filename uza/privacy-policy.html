@@ -39,14 +39,14 @@
         <ul class="nav-menu" id="navMenu"><li><a href="../index.html#home" class="nav-link">Home</a></li><li><a href="../index.html#services" class="nav-link">Services</a></li><li><a href="../index.html#portfolio" class="nav-link">Portfolio</a></li><li><a href="../index.html#process" class="nav-link">Process</a></li><li><a href="../index.html#about" class="nav-link">About</a></li><li><a href="../index.html#contact" class="nav-link nav-cta">Get Started</a></li></ul>
     </div></div></nav></header>
 
-    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Privacy Policy</h1><p class="policy-date">Effective and Last Updated: August 16, 2026</p></div></section>
+    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Privacy Policy</h1><p class="policy-date">Effective and Last Updated: August 17, 2026</p></div></section>
 
     <section class="policy-content"><div class="policy-container">
         <div class="policy-section">
             <h2>1. Scope and Overview</h2>
             <p>UltasDev ("we," "our," or "us") provides the HeightMax mobile application (the "App"). This Privacy Policy explains what the App stores locally, what it transmits when you use connected features, why that processing occurs, and the choices available to you.</p>
-            <div class="highlight-box"><strong>Important summary:</strong> HeightMax does not require or provide a user account. Most height, wellness, and activity information is stored in App storage on your device. Limited data is transmitted when you invoke AI features and to service providers for analytics, crash diagnostics, advertising attribution, subscription management, and App security, as explained below.</div>
-            <p>This material update clarifies HeightMax's paid-only service, AI processing, safety reports, local backup feature, platform backups, and age requirement.</p>
+            <div class="highlight-box"><strong>Important summary:</strong> HeightMax does not require or provide a user account. Most height, wellness, and activity information is stored in App storage on your device. The AI features are optional and off until you turn them on: nothing is sent to an AI service until you have read the in-App disclosure and agreed to it. Limited data is transmitted to service providers for analytics, crash diagnostics, advertising attribution, subscription management, and App security, as explained below.</div>
+            <p>This material update clarifies HeightMax's paid-only service, AI processing, safety reports, local backup feature, platform backups, and age requirement. It also records that the AI features now require your explicit prior consent, that the App's ready-made coach questions are answered on your device without any transmission, and that consent can be withdrawn at any time in Settings.</p>
         </div>
 
         <div class="policy-section">
@@ -71,9 +71,11 @@
             <h2>3. Information Transmitted from the App</h2>
             <h3>3.1 AI Coach and Meal Analysis</h3>
             <p>HeightMax uses Firebase Cloud Functions and Google Cloud Vertex AI, using a Gemini model, for AI coaching and optional meal analysis.</p>
+            <div class="highlight-box"><strong>These features require your consent and are off by default.</strong> The first time you try to write your own coach question or request AI meal analysis, the App shows a disclosure naming the information that would be sent, the recipient, and how long anything is kept. Nothing is transmitted unless you accept it. If you decline, the App continues to work: the ready-made coach questions still answer, and meals can still be logged using the manual estimate. You can withdraw consent at any time under Settings, which stops further transmission immediately.</div>
+            <p>The coach questions built into the App are answered from a set of answers shipped inside the App. Selecting one does not contact Google Cloud Vertex AI, does not use your daily AI allowance, and transmits nothing, so it works without consent and without a network connection.</p>
             <ul>
-                <li><strong>AI Coach:</strong> the message you submit, your preferred language, and up to four recent messages from the conversation.</li>
-                <li><strong>Meal Analysis:</strong> the meal name, amount, unit, and preferred language you submit.</li>
+                <li><strong>AI Coach:</strong> the message you submit, your preferred language, and up to four recent messages that you typed in the conversation. Exchanges produced by the App's built-in coach questions are excluded from that context and are never transmitted.</li>
+                <li><strong>Meal Analysis:</strong> the meal name, amount, unit, and preferred language you submit, and only when you have consented as described above.</li>
                 <li><strong>Security and abuse prevention:</strong> Firebase App Check integrity and network metadata plus a random day-scoped token that is not derived from an advertising or hardware identifier.</li>
             </ul>
             <p>HeightMax does not automatically attach your locally stored height measurements, birth date, sex, estimate, sleep history, workout history, or nutrition history to AI Coach requests. If you type such information into a message or meal name, it is included in the request you choose to submit.</p>
@@ -127,7 +129,8 @@
         <div class="policy-section"><h2>7. Your Choices and Rights</h2><ul>
             <li>view, correct, or delete local records in the App;</li>
             <li>export or replace supported local data through Backup &amp; Restore;</li>
-            <li>reset HeightMax data, which also clears locally stored chat history;</li>
+            <li>reset HeightMax data, which also clears locally stored chat history and withdraws AI consent;</li>
+            <li>turn the online AI coach and AI meal analysis on or off at any time under Settings, without losing the App's built-in coach answers or manual meal logging;</li>
             <li>control camera, notification, and tracking permissions through operating-system permission prompts and device settings; and</li>
             <li>contact us to exercise privacy rights available under your local law.</li>
         </ul><p>Because HeightMax has no account system and some server records are deliberately pseudonymous, we may not be able to identify a particular record as yours without information from the relevant provider. We may need to verify a request before acting on it.</p></div>
