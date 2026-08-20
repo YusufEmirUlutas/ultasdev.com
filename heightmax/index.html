@@ -21,7 +21,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Space Grotesk's weight axis stops at 700; asking for 800 is a 400 from
+         the Fonts API on its own and is silently dropped from a combined
+         request, so the CSS must not ask for it either. -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ─── Reset & Variables ─────────────────────────────────────── */
@@ -126,7 +129,7 @@
         .hero-title {
             font-family: var(--font-head);
             font-size: clamp(2.4rem, 9vw, 3.6rem);
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.1;
             letter-spacing: -0.03em;
             margin-bottom: 18px;
@@ -259,7 +262,7 @@
         .proof-number {
             font-family: var(--font-head);
             font-size: 1.8rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--white);
             line-height: 1;
             margin-bottom: 4px;
@@ -288,7 +291,7 @@
         .section-title {
             font-family: var(--font-head);
             font-size: clamp(1.6rem, 6vw, 2.2rem);
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.2;
             margin-bottom: 32px;
@@ -451,7 +454,7 @@
             color: var(--white);
             font-family: var(--font-head);
             font-size: 0.9rem;
-            font-weight: 800;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
