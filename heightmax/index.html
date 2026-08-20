@@ -191,8 +191,9 @@
             align-items: center;
             gap: 12px;
             width: 100%;
-            /* Wide enough for both 54px-tall badges plus their gap (356px) so
-               desktop keeps them on one row; narrower viewports wrap. */
+            /* Wide enough for both badges at their 54px ceiling plus the gap
+               (354px). Below this the badges scale with the viewport instead
+               of wrapping — see .cta-store img. */
             max-width: 360px;
             margin: 0 auto;
         }
@@ -223,17 +224,20 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .cta-store { display: inline-block; }
-        .cta-store img { height: 54px; width: auto; display: block; }
 
-        /* On a phone only the store that visitor can actually install from is
-           worth showing. Desktop — and anything AppLink cannot place — keeps
-           both badges. */
-        html.applink-ios .cta-store--android { display: none; }
-        html.applink-android .cta-store--ios { display: none; }
+        /* Every visitor sees both badges, so the pair has to fit one row on a
+           phone too. Side by side they span 6.37x their own height plus the
+           gap; 12.5vw keeps that inside the container down to ~245px wide,
+           and the 54px ceiling stops them growing on desktop. */
+        .cta-store img {
+            height: clamp(40px, 12.5vw, 54px);
+            width: auto;
+            display: block;
+        }
 
         /* ─── Social Proof Strip ─────────────────────────────────────── */
         .proof-strip {
@@ -1104,17 +1108,19 @@
 </div>
 
 <script>
+    // Load-bearing, not a safety net: both badges are visible to everyone, and
     // AppLink rewrites the href of every [data-applink] anchor to the store for
-    // the DETECTED platform, whatever that anchor was pointing at. The badge for
-    // the other platform is hidden by CSS, but leaving it bound would quietly
-    // aim the Google Play badge at the App Store the moment anyone shows both.
-    // AppLink scans on DOMContentLoaded, so unbinding here still lands first.
+    // the DETECTED platform regardless of where that anchor pointed. Left bound,
+    // the Google Play badge would send an iPhone visitor to the App Store — and
+    // the reverse on Android. Unbind the badge that does not match the platform
+    // so its own href survives. AppLink scans on DOMContentLoaded, so this lands
+    // first. The matching badge stays bound and keeps its in-app-browser escape.
     (function () {
         var html = document.documentElement;
         var stale = html.classList.contains('applink-ios')     ? '.cta-store--android'
                   : html.classList.contains('applink-android') ? '.cta-store--ios'
                   : null;
-        // Desktop shows both badges and gets no rewrite, so nothing to unbind.
+        // Desktop gets no rewrite at all, so there is nothing to unbind.
         if (!stale) return;
         document.querySelectorAll(stale + '[data-applink]').forEach((link) => {
             link.removeAttribute('data-applink');
