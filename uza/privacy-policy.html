@@ -39,13 +39,13 @@
         <ul class="nav-menu" id="navMenu"><li><a href="../index.html#home" class="nav-link">Home</a></li><li><a href="../index.html#services" class="nav-link">Services</a></li><li><a href="../index.html#portfolio" class="nav-link">Portfolio</a></li><li><a href="../index.html#process" class="nav-link">Process</a></li><li><a href="../index.html#about" class="nav-link">About</a></li><li><a href="../index.html#contact" class="nav-link nav-cta">Get Started</a></li></ul>
     </div></div></nav></header>
 
-    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Privacy Policy</h1><p class="policy-date">Effective and Last Updated: August 16, 2026</p></div></section>
+    <section class="policy-hero"><div class="container"><div class="policy-badge">HeightMax</div><h1 class="policy-title">Privacy Policy</h1><p class="policy-date">Effective and Last Updated: August 24, 2026</p></div></section>
 
     <section class="policy-content"><div class="policy-container">
         <div class="policy-section">
             <h2>1. Scope and Overview</h2>
             <p>UltasDev ("we," "our," or "us") provides the HeightMax mobile application (the "App"). This Privacy Policy explains what the App stores locally, what it transmits when you use connected features, why that processing occurs, and the choices available to you.</p>
-            <div class="highlight-box"><strong>Important summary:</strong> HeightMax does not require or provide a user account. Most height, wellness, and activity information is stored in App storage on your device. Limited data is transmitted when you invoke AI features and to service providers for analytics, crash diagnostics, advertising attribution, subscription management, and App security, as explained below.</div>
+            <div class="highlight-box"><strong>Important summary:</strong> HeightMax does not require or provide a user account. Most height, wellness, and activity information is stored in App storage on your device. Limited data is transmitted when you invoke AI features and to service providers for first-party analytics, crash diagnostics, subscription management, and App security, as explained below. HeightMax does not include an advertising SDK or use data for cross-company advertising tracking.</div>
             <p>This material update clarifies HeightMax's paid-only service, AI processing, safety reports, local backup feature, platform backups, and age requirement.</p>
         </div>
 
@@ -83,13 +83,11 @@
             <h3>3.3 AI Abuse-Prevention Records</h3>
             <p>The server hashes a caller key and stores request counts, a quota category, the App ID, and timestamps. The caller key normally uses the random day-scoped token; if unavailable, the service may fall back to an IP-derived key before hashing. Records become eligible for deletion after eight days and are removed by a daily cleanup job.</p>
             <h3>3.4 Analytics and Diagnostics</h3>
-            <p>Firebase Analytics is enabled by default and uses a pseudonymous App-instance identifier. HeightMax records events such as screen and tab opens, onboarding steps, sessions and days since install, paywall and purchase lifecycle actions, product/package/paywall identifiers, transaction identifiers, price, currency, subscription period type, purchase failure codes or messages, workout plan/completion metrics, streak milestones, occurrence and timing of measurements, AI-feature use and report outcomes, notification interactions, and feature completion.</p>
+            <p>Firebase Analytics uses a pseudonymous App-instance identifier. On new installs, optional product analytics remains off unless you enable the existing product-improvement choice shown during onboarding; existing installs retain their prior first-party analytics setting unless changed through that choice. When enabled, HeightMax records events such as screen and tab opens, onboarding steps, sessions and days since install, paywall and purchase lifecycle actions, product/package/paywall identifiers, transaction identifiers, price, currency, subscription period type, purchase failure codes or messages, workout plan/completion metrics, streak milestones, occurrence and timing of measurements, AI-feature use and report outcomes, notification interactions, and feature completion. HeightMax disables Firebase advertising-storage, advertising-user-data, and advertising-personalization signals and uses the iOS Firebase Analytics configuration without advertising-identifier support.</p>
             <p>HeightMax's custom analytics events do not include chat or reported-response text, meal contents, height values, birth date, age, sex, sleep values, exercise names or identifiers, repetitions, or sets. Firebase Crashlytics may process crash reports, stack traces, diagnostic logs, and device, operating-system, and App technical data. Firebase Remote Config and App Check may process App-instance, configuration, integrity, network, and IP metadata.</p>
-            <h3>3.5 Attribution</h3>
-            <p>Meta tools measure App activation and marketing attribution. They may process a Meta App/device identifier, App events, device and network information, and—only when platform settings and permission allow—advertising identifiers. On iOS, advertising tracking and identifier access follow your App Tracking Transparency choice.</p>
-            <h3>3.6 Purchases and Subscriptions</h3>
-            <p>Apple and Google process payment details, product IDs, receipts, transactions, and subscription status under your App-store account. RevenueCat processes product IDs, receipts, transactions, entitlement and subscription status, a RevenueCat-generated pseudonymous accountless purchaser/App-user identifier, Firebase App-instance ID, Meta anonymous ID, tracking-consent status, and available device or advertising identifiers when enabled and permitted. HeightMax does not intentionally attach your height, birth date, measurements, sleep, meals, or chat values, and does not receive your full payment-card details.</p>
-            <h3>3.7 Support Communications</h3>
+            <h3>3.5 Purchases and Subscriptions</h3>
+            <p>Apple and Google process payment details, product IDs, receipts, transactions, and subscription status under your App-store account. RevenueCat processes product IDs, receipts, transactions, entitlement and subscription status, a RevenueCat-generated pseudonymous accountless purchaser/App-user identifier, and a Firebase App-instance ID used for subscription analytics. HeightMax disables RevenueCat's automatic attribution-device-identifier collection and does not attach Meta or advertising identifiers. HeightMax does not intentionally attach your height, birth date, measurements, sleep, meals, or chat values, and does not receive your full payment-card details.</p>
+            <h3>3.6 Support Communications</h3>
             <p>If you contact us, we receive your email address, message, and any other information you choose to provide so we can respond and maintain appropriate support records.</p>
         </div>
 
@@ -98,7 +96,6 @@
             <li>process AI requests and user-confirmed safety reports;</li>
             <li>manage paid access, purchases, restorations, and subscription status;</li>
             <li>measure use, diagnose crashes, prevent abuse, and improve reliability;</li>
-            <li>measure marketing attribution where permitted; and</li>
             <li>respond to support, safety, and legal requests.</li>
         </ul></div>
 
@@ -106,7 +103,6 @@
             <h2>5. Service Providers and Transfers</h2>
             <ul>
                 <li><strong>Google Firebase and Google Cloud Vertex AI:</strong> cloud functions, Firestore, AI processing, App Check, Remote Config, analytics, crash reporting, abuse records, and confirmed AI-response reports. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase privacy information</a> and the <a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">Google Cloud Privacy Notice</a>.</li>
-                <li><strong>Meta:</strong> App-event measurement and marketing attribution. See the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.</li>
                 <li><strong>RevenueCat:</strong> subscription and entitlement management. See the <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a>.</li>
                 <li><strong>Apple and Google:</strong> App distribution, purchases, platform backups, device transfer, and permissions under your platform account and settings.</li>
             </ul>
@@ -119,16 +115,16 @@
                 <li><strong>Local content:</strong> remains until you delete records or use Reset HeightMax. Reset deletes HeightMax-managed local content, the current in-memory AI conversation, and the daily AI token. It does not cancel your subscription and preserves RevenueCat's pseudonymous accountless purchaser identifier so paid access can be restored.</li>
                 <li><strong>Uninstall and platform copies:</strong> uninstalling alone may not remove operating-system backups, user-created exports, or platform secure-storage remnants.</li>
                 <li><strong>AI abuse records and reports:</strong> become eligible for deletion after eight and 30 days respectively and are removed by daily cleanup.</li>
-                <li><strong>Provider and support records:</strong> analytics, diagnostics, attribution, purchases, and support data follow operational, legal, and provider retention requirements.</li>
+                <li><strong>Provider and support records:</strong> analytics, diagnostics, purchases, and support data follow operational, legal, and provider retention requirements.</li>
             </ul>
-            <p>Reset HeightMax does not erase records already held by Apple, Google, Firebase, Meta, or RevenueCat under their policies, or files and backups outside the App.</p>
+            <p>Reset HeightMax does not erase records already held by Apple, Google, Firebase, or RevenueCat under their policies, or files and backups outside the App.</p>
         </div>
 
         <div class="policy-section"><h2>7. Your Choices and Rights</h2><ul>
             <li>view, correct, or delete local records in the App;</li>
             <li>export or replace supported local data through Backup &amp; Restore;</li>
             <li>reset HeightMax data, which also clears the current in-memory chat conversation;</li>
-            <li>control camera, notification, and tracking permissions through operating-system permission prompts and device settings; and</li>
+            <li>control camera and notification permissions through operating-system permission prompts and device settings, and choose whether to enable optional first-party product analytics during onboarding; and</li>
             <li>contact us to exercise privacy rights available under your local law.</li>
         </ul><p>Because HeightMax has no account system and some server records are deliberately pseudonymous, we may not be able to identify a particular record as yours without information from the relevant provider. We may need to verify a request before acting on it.</p></div>
 
@@ -140,7 +136,7 @@
 
         <div class="policy-section"><h2>11. Contact Us</h2><p>For privacy questions or requests, contact <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> or visit <a href="https://www.ultasdev.com">www.ultasdev.com</a>.</p></div>
 
-        <div class="highlight-box"><strong>Summary:</strong> No HeightMax account is required. Core height and wellness records are stored locally, subject to operating-system backups and user-directed exports. AI input is transmitted only when you invoke an AI feature. HeightMax also uses pseudonymous analytics, diagnostics, attribution, subscription, and security services. HeightMax does not sell your locally stored height or wellness records.</div>
+        <div class="highlight-box"><strong>Summary:</strong> No HeightMax account is required. Core height and wellness records are stored locally, subject to operating-system backups and user-directed exports. AI input is transmitted only when you invoke an AI feature. HeightMax also uses pseudonymous first-party analytics, diagnostics, subscription, and security services, without an advertising SDK or cross-company advertising tracking. HeightMax does not sell your locally stored height or wellness records.</div>
         <div style="text-align: center; margin-top: 3rem;"><a href="../index.html" class="back-button">Back to Home</a></div>
     </div></section>
 
