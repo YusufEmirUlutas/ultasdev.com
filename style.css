@@ -1132,6 +1132,13 @@ body {
     font-size: 0.95rem;
 }
 
+.footer-legal-name {
+    color: var(--gray-400);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+}
+
 .footer-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -117,11 +117,13 @@ const translations = {
         'contact.description': 'Let\'s discuss how we can help bring your vision to life. Our team is ready to create something amazing together.',
         'contact.email': 'ultasdevelopment@gmail.com',
         'contact.location': 'Global - Remote Work',
+        'contact.business': 'YUSUF EMİR ULUTAŞ',
         'contact.btn.start': 'Start a Project',
         'contact.btn.portfolio': 'View Our Work',
 
         // Footer
         'footer.tagline': 'Building the future, one app at a time.',
+        'footer.legal.owner': 'UltasDev is a trade name of YUSUF EMİR ULUTAŞ, a sole proprietorship.',
         'footer.company.title': 'Company',
         'footer.company.about': 'About',
         'footer.company.projects': 'Projects',
@@ -135,7 +137,7 @@ const translations = {
         'footer.legal.title': 'Legal',
         'footer.legal.privacy': 'Privacy Policy',
         'footer.legal.terms': 'Terms of Service',
-        'footer.copyright': '© 2025 UltasDev. All rights reserved.'
+        'footer.copyright': '© 2026 UltasDev — YUSUF EMİR ULUTAŞ. All rights reserved.'
     },
     tr: {
         // Navigation
@@ -254,11 +256,13 @@ const translations = {
         'contact.description': 'Vizyonunuzu gerçeğe dönüştürmek için nasıl yardımcı olabileceğimizi konuşalım. Ekibimiz birlikte harika şeyler yaratmaya hazır.',
         'contact.email': 'ultasdevelopment@gmail.com',
         'contact.location': 'Global - Uzaktan Çalışma',
+        'contact.business': 'YUSUF EMİR ULUTAŞ',
         'contact.btn.start': 'Proje Başlatın',
         'contact.btn.portfolio': 'Projelerimizi İnceleyin',
 
         // Footer
         'footer.tagline': 'Geleceği inşa ediyoruz, birer uygulama ile.',
+        'footer.legal.owner': 'UltasDev, YUSUF EMİR ULUTAŞ şahıs işletmesinin ticari markasıdır.',
         'footer.company.title': 'Şirket',
         'footer.company.about': 'Hakkımızda',
         'footer.company.projects': 'Projeler',
@@ -272,7 +276,7 @@ const translations = {
         'footer.legal.title': 'Yasal',
         'footer.legal.privacy': 'Gizlilik Politikası',
         'footer.legal.terms': 'Kullanım Koşulları',
-        'footer.copyright': '© 2025 UltasDev. Tüm hakları saklıdır.'
+        'footer.copyright': '© 2026 UltasDev — YUSUF EMİR ULUTAŞ. Tüm hakları saklıdır.'
     }
 };
 
