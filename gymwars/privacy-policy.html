@@ -56,6 +56,13 @@
             color: var(--primary-black);
             margin-bottom: 1rem;
         }
+        .policy-section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--primary-black);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
         .policy-section p, .policy-section ul {
             color: var(--gray-600);
             line-height: 1.7;
@@ -101,14 +108,14 @@
         <div class="container">
             <span class="policy-badge">GymWars</span>
             <h1 class="policy-title">Privacy Policy</h1>
-            <p class="policy-date">Last Updated: July 2, 2026</p>
+            <p class="policy-date">Last Updated: September 6, 2026</p>
         </div>
     </section>
 
     <section class="policy-content">
         <div class="policy-container">
             <div class="highlight-box">
-                <strong>TL;DR:</strong> We only collect the data necessary to provide you with your workout tracking, gamification, and social features. Your workout data is synced to our secure backend (Supabase) so you can access it across devices and participate in social feeds. We never sell your personal data.
+                <strong>TL;DR:</strong> We only collect the data necessary to provide you with your workout tracking, gamification, and social features. Your workout data is synced to our secure backend (Supabase) so you can access it across devices and participate in social feeds. We never sell your personal data. We do share a scrambled (hashed) version of your email address and an advertising identifier with Meta so we can measure which of our ads brought people to GymWars &mdash; you can switch this off, and it is off entirely for users in Europe and the UK.
             </div>
 
             <div class="policy-section">
@@ -119,6 +126,7 @@
                     <li><strong>Fitness & Workout Data:</strong> To provide core app functionality (tracking reps, sets, weights, PRs, and assigning your gamified character), we store your logged workout sessions on our secure servers.</li>
                     <li><strong>Social Data:</strong> If you choose to share your workouts or interact with others on the Discover/Friends feed, that data is visible to other users as per your privacy settings.</li>
                     <li><strong>Device & Usage Data:</strong> Anonymous diagnostic data and usage metrics to help us fix crashes and improve the app.</li>
+                    <li><strong>Advertising & Measurement Data:</strong> A scrambled (hashed) version of your email address, plus device and advertising identifiers, used only to measure the performance of our own advertising. See section 4 below.</li>
                 </ul>
             </div>
 
@@ -130,6 +138,7 @@
                     <li>To analyze your workouts and assign your gamified character and stats.</li>
                     <li>To display your workouts to your friends and the community (if you opt-in to social features).</li>
                     <li>To process subscriptions via our payment provider (RevenueCat).</li>
+                    <li>To measure how well our own advertising works, so we know which ads are worth running. We do not use your workout data for advertising, and we do not sell your data to anyone.</li>
                 </ul>
             </div>
 
@@ -140,21 +149,42 @@
                     <li><strong>Supabase:</strong> For database and secure backend infrastructure.</li>
                     <li><strong>RevenueCat:</strong> For securely managing subscriptions and in-app purchases.</li>
                     <li><strong>Google / Apple:</strong> For secure authentication (if you choose these login methods).</li>
+                    <li><strong>Firebase (Google):</strong> For crash reporting and anonymous usage analytics.</li>
+                    <li><strong>Meta Platforms:</strong> For measuring our own advertising, as described in section 4.</li>
                 </ul>
             </div>
 
+
             <div class="policy-section">
-                <h2>4. Data Retention and Deletion</h2>
+                <h2>4. Advertising and Measurement</h2>
+                <p>We advertise GymWars on Meta's platforms (Facebook and Instagram). So that we can tell which of our ads actually brought someone to the app &mdash; and stop paying for the ones that do not &mdash; we share a limited amount of data with Meta:</p>
+                <ul>
+                    <li><strong>A hashed version of your email address,</strong> once you are signed in. Hashing scrambles the address into a fixed string of characters before it leaves your device. Meta uses it only to check whether it already recognises you; it cannot read your actual address from it.</li>
+                    <li><strong>Device and advertising identifiers,</strong> which let Meta connect an app install to an ad you saw.</li>
+                    <li><strong>The fact that a subscription or free trial started,</strong> sent by RevenueCat rather than from your device.</li>
+                </ul>
+                <p>We never share your workout history, your body weight, your ranks, your friends or anything you post in the app with Meta or any other advertiser. We do not sell your personal data to anyone.</p>
+                <p><strong>If you sign in with Apple and choose &ldquo;Hide My Email&rdquo;,</strong> the private relay address Apple gives us is never shared with Meta at all.</p>
+
+                <h3>How to switch this off</h3>
+                <p>On iOS, the app asks for your permission before using the advertising identifier. Choosing <em>Ask App Not to Track</em> declines it, and you can change your mind at any time in <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.</p>
+
+                <h3>If you are in Europe or the UK</h3>
+                <p>We do not run paid advertising in the European Economic Area, the United Kingdom or Switzerland, so rather than ask you for consent we simply switched the whole thing off there. If your device is in one of those regions, GymWars does not initialise Meta's software at all: no hashed email, no advertising identifier, no install or session data is sent to Meta, and the app does not ask you about tracking.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>5. Data Retention and Deletion</h2>
                 <p>You have full control over your data. You can request to delete your account and all associated workout data at any time from within the app settings. Once requested, your data will be permanently removed from our servers within 30 days.</p>
             </div>
 
             <div class="policy-section">
-                <h2>5. Subscriptions and Payments</h2>
+                <h2>6. Subscriptions and Payments</h2>
                 <p>Payment information is processed entirely by Apple (App Store) or Google (Play Store). GymWars does not collect, process, or store your credit card information directly. We only receive a confirmation token to unlock premium features.</p>
             </div>
 
             <div class="policy-section">
-                <h2>6. Contact Us</h2>
+                <h2>7. Contact Us</h2>
                 <p>If you have any questions or concerns regarding this Privacy Policy or your data, please contact us at:</p>
                 <p><strong>Email:</strong> ultasdevelopment@gmail.com</p>
                 <p><strong>Website:</strong> <a href="https://ultasdev.com">ultasdev.com</a></p>
