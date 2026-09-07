@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+    <title>Open HeightMax in your browser</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Open this page in your browser to download HeightMax.">
+
+    <!-- AppLink supplies the UA detection. This page never *fires* an escape:
+         TikTok blocks App Store destinations by policy, so any attempt raises
+         its own "action cannot be completed" error. See docs/applink.md. -->
+    <script src="/assets/applink.js"></script>
+
+    <!-- Leave before paint for anyone who is already in a real browser.
+         That is the whole loop this page exists to close: the visitor follows
+         the instructions, TikTok reopens this same URL in Safari or Chrome,
+         and this block sends them straight to the store with no second tap. -->
+    <script>
+    (function () {
+        'use strict';
+        try {
+            var IOS = 'https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362';
+            var ANDROID = 'https://play.google.com/store/apps/details?id=com.uza.apple';
+            var DESKTOP = '/heightmax/';
+
+            // ?preview=1 holds the instructions on screen in a normal browser,
+            // which is the only way to see this page without a phone in TikTok.
+            var preview = /[?&]preview=1\b/.test(window.location.search);
+
+            var d = AppLink.route();
+
+            // 'replace' means nothing is intercepting us — a real browser.
+            if (!preview && d.mode === 'replace') {
+                window.location.replace(
+                    d.target === 'android' ? ANDROID :
+                    d.target === 'ios'     ? IOS     : DESKTOP
+                );
+            }
+            // This page is TikTok-only: its menu drawing is TikTok's sheet,
+            // and showing it to an Instagram visitor would point them at a
+            // menu item they do not have. Meta apps also have a working
+            // one-tap escape, which /get/ already fires. Send them there.
+            else if (!preview && d.app !== 'tiktok') {
+                window.location.replace('/get/' + window.location.search);
+            }
+            // What is left is TikTok on iOS, where the store is blocked by
+            // policy and no escape exists. Fall through to the instructions.
+            // TikTok on Android is not blocked, so it resolved to 'replace'
+            // above and never reaches this branch.
+        } catch (err) {
+            /* AppLink missing or blocked — the instructions still work. */
+        }
+    }());
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --red:       #9B111E;
+            --red-light: #C41C2C;
+            --red-glow:  rgba(155, 17, 30, 0.35);
+            --black:     #000000;
+            --surface:   #0E0E0E;
+            --surface2:  #181818;
+            --surface3:  #242424;
+            --border:    rgba(255, 255, 255, 0.08);
+            --white:     #FFFFFF;
+            --gray-1:    #F5F5F5;
+            --gray-2:    #CCCCCC;
+            --gray-3:    #999999;
+            --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-head: 'Space Grotesk', -apple-system, sans-serif;
+        }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding:
+                calc(74px + env(safe-area-inset-top, 0px))
+                20px
+                calc(24px + env(safe-area-inset-bottom, 0px));
+            overflow-x: hidden;
+        }
+
+        /* Red bloom behind the icon, same device the landing page uses. */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 420px;
+            height: 420px;
+            transform: translate(-50%, -30%);
+            background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        /* ─── The arrow ──────────────────────────────────────────────────
+           Points up and off the top-right corner, at TikTok's own ⋯ button
+           in the native chrome above this document. The page deliberately
+           does NOT draw a copy of that chrome: a second, dead ⋯ would just
+           collect the taps meant for the real one. */
+        .arrow {
+            position: absolute;
+            top: -66px;
+            right: 2px;
+            width: 34px;
+            height: 78px;
+            pointer-events: none;
+            animation: nudge 2.1s ease-in-out infinite;
+        }
+        .arrow svg { width: 100%; height: 100%; display: block; }
+        .arrow path {
+            stroke: var(--red-light);
+            stroke-width: 3.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        @keyframes nudge {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-7px); }
+        }
+
+        /* ─── Headline ──────────────────────────────────────────────── */
+        h1 {
+            font-family: var(--font-head);
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.22;
+            letter-spacing: -0.02em;
+            margin-bottom: 22px;
+        }
+        h1 span { color: var(--red-light); }
+
+        /* ─── App icon ──────────────────────────────────────────────── */
+        .mark {
+            width: 92px;
+            height: 92px;
+            margin: 0 auto 24px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 40px var(--red-glow);
+        }
+        .mark img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ─── Steps ─────────────────────────────────────────────────────
+           Numbered because these genuinely are a sequence: step 2 only
+           exists once the menu from step 1 is open. */
+        .steps {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        .steps li {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            text-align: left;
+            font-size: 0.97rem;
+            color: var(--gray-1);
+            padding: 9px 0;
+        }
+        .steps .n {
+            flex: 0 0 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--red);
+            color: #fff;
+            font-family: var(--font-head);
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .steps b { font-weight: 700; color: var(--white); }
+        .dots {
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 1px 7px 3px;
+            border-radius: 6px;
+            background: var(--surface3);
+            border: 1px solid var(--border);
+            line-height: 1;
+            display: inline-block;
+        }
+
+        /* ─── Menu mock ─────────────────────────────────────────────────
+           A drawing of TikTok's own sheet, so the visitor recognises it
+           before they open it. */
+        .menu {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 14px 12px 16px;
+            margin-bottom: 22px;
+        }
+        .menu-title {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--gray-3);
+            margin-bottom: 13px;
+        }
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px;
+        }
+        .tile {
+            padding: 11px 3px 9px;
+            border-radius: 12px;
+            border: 1.5px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+        }
+        .tile svg {
+            width: 21px;
+            height: 21px;
+            stroke: var(--gray-2);
+            stroke-width: 1.7;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .tile span {
+            font-size: 0.6rem;
+            line-height: 1.28;
+            color: var(--gray-3);
+            font-weight: 500;
+        }
+
+        /* The one the visitor is looking for. */
+        .tile.is-target {
+            border-color: var(--red-light);
+            background: rgba(155, 17, 30, 0.14);
+            animation: pulse 2.1s ease-in-out infinite;
+        }
+        .tile.is-target svg { stroke: var(--red-light); }
+        .tile.is-target span { color: var(--white); font-weight: 700; }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(196, 28, 44, 0.42); }
+            50%      { box-shadow: 0 0 0 7px rgba(196, 28, 44, 0); }
+        }
+
+        /* ─── Payoff + fallback ─────────────────────────────────────── */
+        .payoff {
+            font-size: 0.87rem;
+            color: var(--gray-2);
+            margin-bottom: 16px;
+        }
+        .payoff b { color: var(--white); font-weight: 600; }
+
+        .copy {
+            display: block;
+            width: 100%;
+            font: inherit;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--gray-2);
+            background: var(--surface3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 13px 16px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .copy:active { transform: translateY(1px); }
+        .copy:focus-visible {
+            outline: 2px solid var(--red-light);
+            outline-offset: 2px;
+        }
+
+        /* Revealed only if the clipboard write is refused, so that "press and
+           hold" has something to press and hold. */
+        .link-out {
+            display: none;
+            margin-top: 10px;
+            padding: 11px 12px;
+            border-radius: 10px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            font-size: 0.72rem;
+            line-height: 1.45;
+            color: var(--gray-2);
+            word-break: break-all;
+            -webkit-user-select: all;
+            user-select: all;
+        }
+        .link-out.is-on { display: block; }
+
+        .foot {
+            font-size: 0.68rem;
+            color: #555;
+            margin-top: 20px;
+        }
+        .foot a { color: #777; text-decoration: none; }
+
+        /* Short viewports: buy back vertical space rather than scroll. */
+        @media (max-height: 700px) {
+            body { padding-top: calc(60px + env(safe-area-inset-top, 0px)); }
+            h1 { font-size: 1.4rem; margin-bottom: 16px; }
+            .mark { width: 72px; height: 72px; border-radius: 18px; margin-bottom: 18px; }
+            .steps { margin-bottom: 18px; }
+            .steps li { padding: 6px 0; font-size: 0.92rem; }
+            .menu { margin-bottom: 16px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .arrow, .tile.is-target { animation: none; }
+        }
+    </style>
+</head>
+<body>
+
+<main class="wrap">
+
+    <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 34 78" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 74 C 6 44, 28 40, 28 12"/>
+            <path d="M20 21 L28 10 L34 22"/>
+        </svg>
+    </div>
+
+    <h1>Open in <span>browser</span><br>to continue</h1>
+
+    <div class="mark">
+        <img src="/heightmax/assets/heightmaxlogo.webp" alt="HeightMax" width="92" height="92">
+    </div>
+
+    <ol class="steps">
+        <li>
+            <span class="n">1</span>
+            <span>Tap the <b class="dots">•••</b> icon in the top right</span>
+        </li>
+        <li>
+            <span class="n">2</span>
+            <span>Choose <b>Open in browser</b></span>
+        </li>
+    </ol>
+
+    <!-- TikTok's sheet, drawn. Item order shifts between app versions, so the
+         copy tells people to look for the label rather than a position. -->
+    <div class="menu">
+        <p class="menu-title">TikTok menu</p>
+        <div class="tiles">
+            <div class="tile">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 11a8 8 0 1 0-2.3 5.7"/>
+                    <path d="M20 5v6h-6"/>
+                </svg>
+                <span>Refresh</span>
+            </div>
+            <div class="tile">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 13.5a4 4 0 0 0 5.7.4l3-3a4 4 0 0 0-5.7-5.7L11.3 6.9"/>
+                    <path d="M14 10.5a4 4 0 0 0-5.7-.4l-3 3a4 4 0 0 0 5.7 5.7l1.7-1.7"/>
+                </svg>
+                <span>Copy link</span>
+            </div>
+            <div class="tile">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 21V4"/>
+                    <path d="M5 4h11l-1.6 3.5L16 11H5"/>
+                </svg>
+                <span>Report</span>
+            </div>
+            <div class="tile is-target">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8.5"/>
+                    <path d="M3.5 12h17"/>
+                    <path d="M12 3.5a13 13 0 0 1 0 17a13 13 0 0 1 0-17z"/>
+                </svg>
+                <span>Open in browser</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="payoff">The <b id="storeName">App Store</b> opens by itself once you do.</p>
+
+    <button type="button" class="copy" id="copy">Copy the link instead</button>
+    <p class="link-out" id="linkOut"></p>
+
+    <p class="foot">HeightMax by <a href="/">UltasDev</a></p>
+
+</main>
+
+<script>
+(function () {
+    'use strict';
+
+    var IOS = 'https://apps.apple.com/us/app/heightmax-grow-taller-app/id6753893362';
+    var ANDROID = 'https://play.google.com/store/apps/details?id=com.uza.apple';
+
+    var copyEl = document.getElementById('copy');
+
+    /* Android normally never reaches these instructions — TikTok only blocks
+       the store on iOS, so Android was redirected to Play before paint. It
+       lands here only if applink.js failed to load, and in that case the page
+       must still name the right store rather than promising an App Store the
+       visitor does not have. Hence the plain UA test: it cannot depend on the
+       script whose absence put us here. */
+    var isAndroid = /Android/i.test(navigator.userAgent);
+
+    /* Hand over the store URL, not this page's URL: someone who resorts to
+       pasting has already given up on the two taps above, so send them the
+       thing they actually want. */
+    var link = isAndroid ? ANDROID : IOS;
+
+    document.getElementById('storeName').textContent =
+        isAndroid ? 'Google Play' : 'App Store';
+
+    var linkOutEl = document.getElementById('linkOut');
+
+    copyEl.addEventListener('click', function () {
+        function done(ok) {
+            if (ok) {
+                copyEl.textContent = 'Copied — paste it in Safari or Chrome';
+                return;
+            }
+            // The clipboard was refused. Put the URL on screen instead, so
+            // "press and hold" refers to something the visitor can see.
+            copyEl.textContent = 'Press and hold the address below to copy it';
+            linkOutEl.textContent = link;
+            linkOutEl.classList.add('is-on');
+        }
+        try {
+            AppLink.copy(link).then(done, function () { done(false); });
+        } catch (err) {
+            done(false);
+        }
+    });
+}());
+</script>
+
+</body>
+</html>
