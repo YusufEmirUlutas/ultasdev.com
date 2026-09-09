@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - ReadMax | UltasDev</title>
+    <meta name="description" content="Help for ReadMax: Speed Reading Trainer. Restore purchases, cancel a subscription, import a book, set a reminder, manage your data, or get in touch.">
+    <link rel="canonical" href="https://ultasdev.com/readmax/support.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .policy-hero {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .policy-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .policy-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+        .policy-date {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .policy-content {
+            padding: 60px 0;
+            background: var(--primary-white);
+        }
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+        .policy-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+        .policy-section p, .policy-section ul {
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .faq-section {
+            background: var(--primary-white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--gray-200);
+        }
+        .faq-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .faq-question {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .faq-answer {
+            color: var(--gray-600);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .faq-answer p {
+            margin-bottom: 0.75rem;
+        }
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        .contact-section {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1rem;
+        }
+        .contact-description {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gray-900);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--primary-white);
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: var(--transition);
+        }
+        .contact-email:hover {
+            background: var(--gray-800);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .contact-email svg {
+            width: 20px;
+            height: 20px;
+        }
+        .response-time {
+            margin-top: 1.5rem;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        .back-button:hover {
+            opacity: 0.9;
+            color: var(--primary-white);
+        }
+        .highlight-box {
+            background-color: var(--gray-100);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-black);
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 1.5rem;
+            }
+            .faq-question {
+                font-size: 1rem;
+            }
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+            .contact-title {
+                font-size: 1.5rem;
+            }
+            .contact-email {
+                font-size: 1rem;
+                padding: 0.875rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">ULTASDEV.</a>
+        </div>
+    </header>
+
+    <section class="policy-hero">
+        <div class="container">
+            <span class="policy-badge">ReadMax</span>
+            <h1 class="policy-title">Support</h1>
+            <p class="policy-date">Answers to the questions we hear most about ReadMax: Speed Reading Trainer, and a way to reach us if yours is not here.</p>
+        </div>
+    </section>
+
+    <section class="policy-content">
+        <div class="policy-container">
+            <div class="highlight-box">
+                <strong>Quick fixes:</strong> lost your subscription after reinstalling? Settings &rsaquo; Restore purchases. Want to cancel? That happens in your App Store subscription settings, not in the app. Want to start over? Settings &rsaquo; Erase all data.
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">How do I restore my purchase?</div>
+                    <div class="faq-answer">
+                        <p>Open ReadMax, go to <strong>Settings &rsaquo; Restore purchases</strong>. You can also tap <strong>Restore</strong> on the subscription screen. Make sure your device is signed in to the same Apple ID you used to subscribe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I cancel my subscription?</div>
+                    <div class="faq-answer">
+                        <p>Subscriptions are managed by Apple, so cancelling happens in your App Store settings rather than inside ReadMax. On your iPhone, open the <strong>Settings</strong> app, tap your name, then <strong>Subscriptions</strong>, choose ReadMax and tap Cancel.</p>
+                        <p>Cancel at least 24 hours before the end of your current period to avoid the next charge. You keep access until that period ends. Refunds are handled by Apple, not by us.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I import my own book?</div>
+                    <div class="faq-answer">
+                        <p>Go to <strong>Library &rsaquo; Add &rsaquo; Import a file</strong> and pick an EPUB or TXT file. ReadMax copies it into the app on your device; it is never uploaded anywhere. To remove it later, delete the book from your library.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I turn the daily reminder on or off?</div>
+                    <div class="faq-answer">
+                        <p>Go to <strong>Settings &rsaquo; Reminder</strong>. The reminder is a local notification scheduled on your device, so it only works while notifications for ReadMax are allowed in your iPhone&rsquo;s Settings. Switch it off in the same place whenever you like.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Where is my data stored, and how do I delete it?</div>
+                    <div class="faq-answer">
+                        <p>Everything ReadMax stores, including your reading sessions, book positions, imported books, notes and settings, lives only on your device. There is no account and no cloud sync, and we cannot see any of it.</p>
+                        <p>To delete it all, go to <strong>Settings &rsaquo; Erase all data</strong>. Deleting the app from your device removes it too. See the <a href="privacy-policy.html">Privacy Policy</a> for the full picture.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I retake the reading test?</div>
+                    <div class="faq-answer">
+                        <p>Yes. Go to <strong>Settings &rsaquo; Retake the reading test</strong> to measure your reading speed and comprehension again.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do I need an account?</div>
+                    <div class="faq-answer">
+                        <p>No. ReadMax has no sign-in. Your subscription is tied to your Apple ID, and everything else stays on your device.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2 class="contact-title">Still Have Questions?</h2>
+                <p class="contact-description">
+                    Email us and we will help. Mention the model of your iPhone and your iOS version if the question is about a bug.
+                </p>
+                <a href="mailto:ultasdevelopment@gmail.com?subject=ReadMax%20support" class="contact-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    ultasdevelopment@gmail.com
+                </a>
+                <p class="response-time">
+                    We typically respond within 24-48 hours
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2>More About ReadMax</h2>
+                <ul>
+                    <li><a href="index.html">ReadMax overview</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html" class="back-button">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">ULTASDEV.</div>
+                    <p class="footer-tagline">Building the future, one app at a time.</p>
+                    <p class="footer-legal-name">UltasDev is a trade name of YUSUF EMİR ULUTAŞ, a sole proprietorship.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="../index.html#about">About</a></li>
+                            <li><a href="../index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>ReadMax</h4>
+                        <ul>
+                            <li><a href="index.html">Overview</a></li>
+                            <li><a href="support.html">Support</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 UltasDev &mdash; YUSUF EMİR ULUTAŞ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
