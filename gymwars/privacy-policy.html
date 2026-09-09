@@ -1,234 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - GymWars | UltasDev</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .policy-hero {
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--primary-white) 100%);
-            padding: 120px 0 60px;
-            text-align: center;
-        }
-        .policy-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: var(--primary-black);
-            color: var(--primary-white);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border-radius: 50px;
-            margin-bottom: 1rem;
-        }
-        .policy-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-        }
-        .policy-date {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-        }
-        .policy-content {
-            padding: 60px 0;
-            background: var(--primary-white);
-        }
-        .policy-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .policy-section {
-            margin-bottom: 3rem;
-        }
-        .policy-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-        }
-        .policy-section h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            color: var(--primary-black);
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-        }
-        .policy-section p, .policy-section ul {
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .policy-section ul {
-            padding-left: 1.5rem;
-        }
-        .policy-section li {
-            margin-bottom: 0.5rem;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary-black);
-            color: var(--primary-white);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: opacity 0.3s ease;
-        }
-        .back-button:hover {
-            opacity: 0.9;
-            color: var(--primary-white);
-        }
-        .highlight-box {
-            background-color: var(--gray-100);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-black);
-            margin: 2rem 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How GymWars handles account and fitness data, optional social photos, local camera rep counting, competitions, privacy controls and deletion.">
+<title>Privacy Policy - GymWars | UltasDev</title>
+<link rel="canonical" href="https://ultasdev.com/gymwars/privacy-policy.html">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="legal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">ULTASDEV.</a>
-        </div>
-    </header>
-
-    <section class="policy-hero">
-        <div class="container">
-            <span class="policy-badge">GymWars</span>
-            <h1 class="policy-title">Privacy Policy</h1>
-            <p class="policy-date">Last Updated: September 6, 2026</p>
-        </div>
-    </section>
-
-    <section class="policy-content">
-        <div class="policy-container">
-            <div class="highlight-box">
-                <strong>TL;DR:</strong> We only collect the data necessary to provide you with your workout tracking, gamification, and social features. Your workout data is synced to our secure backend (Supabase) so you can access it across devices and participate in social feeds. We never sell your personal data. We do share a scrambled (hashed) version of your email address and an advertising identifier with Meta so we can measure which of our ads brought people to GymWars &mdash; you can switch this off, and it is off entirely for users in Europe and the UK.
-            </div>
-
-            <div class="policy-section">
-                <h2>1. Information We Collect</h2>
-                <p>When you use the GymWars app, we collect the following types of information:</p>
-                <ul>
-                    <li><strong>Account Information:</strong> When you sign up via Email, Google, or Apple, we collect your email address, display name, and optional profile picture.</li>
-                    <li><strong>Fitness & Workout Data:</strong> To provide core app functionality (tracking reps, sets, weights, PRs, and assigning your gamified character), we store your logged workout sessions on our secure servers.</li>
-                    <li><strong>Social Data:</strong> If you choose to share your workouts or interact with others on the Discover/Friends feed, that data is visible to other users as per your privacy settings.</li>
-                    <li><strong>Device & Usage Data:</strong> Anonymous diagnostic data and usage metrics to help us fix crashes and improve the app.</li>
-                    <li><strong>Advertising & Measurement Data:</strong> A scrambled (hashed) version of your email address, plus device and advertising identifiers, used only to measure the performance of our own advertising. See section 4 below.</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>2. How We Use Your Data</h2>
-                <p>Your data is strictly used to enhance your experience within GymWars:</p>
-                <ul>
-                    <li>To authenticate your account and sync your data across your devices.</li>
-                    <li>To analyze your workouts and assign your gamified character and stats.</li>
-                    <li>To display your workouts to your friends and the community (if you opt-in to social features).</li>
-                    <li>To process subscriptions via our payment provider (RevenueCat).</li>
-                    <li>To measure how well our own advertising works, so we know which ads are worth running. We do not use your workout data for advertising, and we do not sell your data to anyone.</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h2>3. Third-Party Services</h2>
-                <p>We use trusted third-party services to power GymWars. These services only access the data required to perform their functions:</p>
-                <ul>
-                    <li><strong>Supabase:</strong> For database and secure backend infrastructure.</li>
-                    <li><strong>RevenueCat:</strong> For securely managing subscriptions and in-app purchases.</li>
-                    <li><strong>Google / Apple:</strong> For secure authentication (if you choose these login methods).</li>
-                    <li><strong>Firebase (Google):</strong> For crash reporting and anonymous usage analytics.</li>
-                    <li><strong>Meta Platforms:</strong> For measuring our own advertising, as described in section 4.</li>
-                </ul>
-            </div>
-
-
-            <div class="policy-section">
-                <h2>4. Advertising and Measurement</h2>
-                <p>We advertise GymWars on Meta's platforms (Facebook and Instagram). So that we can tell which of our ads actually brought someone to the app &mdash; and stop paying for the ones that do not &mdash; we share a limited amount of data with Meta:</p>
-                <ul>
-                    <li><strong>A hashed version of your email address,</strong> once you are signed in. Hashing scrambles the address into a fixed string of characters before it leaves your device. Meta uses it only to check whether it already recognises you; it cannot read your actual address from it.</li>
-                    <li><strong>Device and advertising identifiers,</strong> which let Meta connect an app install to an ad you saw.</li>
-                    <li><strong>Subscription events and the amount paid</strong> &mdash; a trial starting, a trial converting, a first purchase, a renewal &mdash; reported by RevenueCat from our servers rather than from your device.</li>
-                </ul>
-                <p>We never share your workout history, your body weight, your ranks, your friends or anything you post in the app with Meta or any other advertiser. We do not sell your personal data to anyone.</p>
-                <p><strong>If you sign in with Apple and choose &ldquo;Hide My Email&rdquo;,</strong> the private relay address Apple gives us is never shared with Meta at all.</p>
-
-                <h3>How to switch this off</h3>
-                <p>On iOS, the app asks for your permission before using the advertising identifier. Choosing <em>Ask App Not to Track</em> declines it, and you can change your mind at any time in <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.</p>
-                <p>To be clear about what declining does and does not do: it stops the advertising identifier, and it stops your device sending anything to Meta. It does not stop RevenueCat reporting that a subscription or free trial started, which happens on our servers rather than on your phone. If you would rather that stopped too, email us and we will remove it for your account.</p>
-
-                <h3>If you are in Europe or the UK</h3>
-                <p>We do not run paid advertising in the European Economic Area, the United Kingdom or Switzerland, so rather than ask you for consent we simply switched the whole thing off there. If your device is in one of those regions, GymWars does not initialise Meta's software at all: no hashed email, no advertising identifier and no install or session data leave your device, and the app does not ask you about tracking.</p>
-                <p>Because no identifier is ever created for you, there is nothing for Meta to match a subscription against either &mdash; the reporting described above has no way to reach you.</p>
-            </div>
-
-            <div class="policy-section">
-                <h2>5. Data Retention and Deletion</h2>
-                <p>You have full control over your data. You can request to delete your account and all associated workout data at any time from within the app settings. Once requested, your data will be permanently removed from our servers within 30 days.</p>
-            </div>
-
-            <div class="policy-section">
-                <h2>6. Subscriptions and Payments</h2>
-                <p>Payment information is processed entirely by Apple (App Store) or Google (Play Store). GymWars does not collect, process, or store your credit card information directly. We only receive a confirmation token to unlock premium features.</p>
-            </div>
-
-            <div class="policy-section">
-                <h2>7. Contact Us</h2>
-                <p>If you have any questions or concerns regarding this Privacy Policy or your data, please contact us at:</p>
-                <p><strong>Email:</strong> ultasdevelopment@gmail.com</p>
-                <p><strong>Website:</strong> <a href="https://ultasdev.com">ultasdev.com</a></p>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="../index.html" class="back-button">Back to Home</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">ULTASDEV.</div>
-                    <p class="footer-tagline">Building the future, one app at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="../index.html#about">About</a></li>
-                            <li><a href="../index.html#portfolio">Projects</a></li>
-                            <li><a href="../index.html#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 UltasDev. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="legal-header">
+<div class="legal-header-inner">
+<a href="../index.html" class="legal-brand">ULTASDEV.</a>
+<nav class="legal-nav" aria-label="GymWars information"><a href="privacy-policy.html" aria-current="page">Privacy</a>
+<a href="terms-of-service.html">Terms</a>
+<a href="community-guidelines.html">Community</a>
+<a href="support.html">Support</a></nav>
+</div>
+</header>
+<main id="main">
+<div class="legal-hero">
+<span class="legal-badge">GymWars</span>
+<h1>Privacy Policy</h1>
+<p class="legal-date">Last updated: September 9, 2026</p>
+</div>
+<div class="legal-content">
+<p class="legal-version">The redesigned social profiles, session posts, uploaded social photos and live camera-counted competitions described here are available from GymWars 2.0.0. Earlier versions may not include these features.</p>
+<div class="legal-summary"><p><strong>You choose what to share.</strong> A completed workout stays in your training history unless you choose to publish it. Shared workouts, photos, comments and competitions use our backend. The competition camera counts repetitions on your phone; its footage is not uploaded or shown to opponents. Google ML Kit sends separate diagnostic and usage information. This policy also explains our existing analytics, subscription and advertising services.</p></div>
+<nav class="legal-index" aria-label="On this page"><a href="#information">1. Information we collect</a>
+<a href="#sharing">2. What other people can see</a>
+<a href="#photos-camera">3. Photos, avatars and the competition camera</a>
+<a href="#purposes">4. How we use and share information</a>
+<a href="#diagnostics">5. Product analytics and diagnostics</a>
+<a href="#advertising">6. Advertising and measurement</a>
+<a href="#retention">7. Retention and deletion</a>
+<a href="#rights">8. Your choices and privacy requests</a>
+<a href="#payments">9. Subscriptions and payments</a>
+<a href="#contact">10. Contact and policy changes</a></nav>
+<section id="information" aria-labelledby="information-title">
+<h2 id="information-title">1. Information we collect</h2>
+<p>This policy covers the GymWars app and its account, training, social and competition services.</p>
+<ul>
+<li><strong>Account and profile information:</strong> your account identifier, email address, sign-in provider, username, display name and any country, bio, social handles or profile image you choose to provide.</li>
+<li><strong>Training information:</strong> workout sessions, exercises, sets, weights, repetitions, time, effort ratings (RPE), notes, personal records, training preferences and body measurements you enter. We use this information for workout history, progress, ranks and character features.</li>
+<li><strong>Shared activity:</strong> the completed workout snapshot you choose to publish, its audience, optional caption and photo, Respect reactions, comments, friendships, friend requests and blocks. A shared snapshot includes its session statistics, exercises and sets.</li>
+<li><strong>Competition information:</strong> invitations, participants, readiness, match timing, repetition scores, completion or cancellation state, results, records, streaks and cosmetic crown status.</li>
+<li><strong>Service information:</strong> push notification tokens and preferences, support messages, reports, moderation decisions, purchase and subscription status, and technical records needed to operate and secure the service.</li>
+<li><strong>Diagnostics and measurement:</strong> app and device information, identifiers, product interactions, performance measurements and crash reports, described below.</li>
+</ul>
+</section>
+<section id="sharing" aria-labelledby="sharing-title">
+<h2 id="sharing-title">2. What other people can see</h2>
+<p>Finishing a workout saves your training history. Sharing it to the social feed is optional and is offered after completion. There is one post per shared session; its caption and photo are optional.</p>
+<ul>
+<li><strong>Global:</strong> a shared post can be seen by eligible signed-in GymWars users, subject to profile visibility and blocks.</li>
+<li><strong>Friends:</strong> a shared post can be seen by you and accepted friends. A pending request does not grant access.</li>
+<li><strong>Only me:</strong> changing an existing post to this audience limits access to you.</li>
+<li><strong>Profiles:</strong> public profiles are visible to eligible signed-in users. Private profile details and shared activity are limited to accepted friends and the account owner. Basic identity information needed to find a person or handle a request may still appear in search or invitations.</li>
+<li><strong>Competitions:</strong> public invitations and eligible public results can appear in the community. Direct match details are limited to the participants and the invited person. Visible records and crowns follow profile access rules.</li>
+</ul>
+<p>Your photo, bio and external social handles can reveal personal information. Add only what you want the permitted audience to see. External social links open services with their own privacy practices. GymWars does not import your address book for its mutual-friends feature.</p>
+<p>You can change a post's audience, delete it, change your profile visibility or block a person. These controls apply to future access through GymWars. They cannot erase a screenshot or a copy someone previously saved. An image already loaded or accessed through a short-lived media link may remain available briefly while that link expires.</p>
+</section>
+<section id="photos-camera" aria-labelledby="photos-camera-title">
+<h2 id="photos-camera-title">3. Photos, avatars and the competition camera</h2>
+<h3>Photos you choose to upload</h3>
+<p>You can select a workout photo or a profile photo, or use the app's character artwork. Uploaded social photos are stored in private Supabase storage and are served only after access checks. Photos submitted for sharing are held for moderation before being shown to other people. Photos attached only to an Only me post are not placed in the routine photo-review queue.</p>
+<p>If you edit a personal avatar, we may store an editing source image accessible only to your account and the finished avatar that eligible viewers can see. Character stickers are positioned by you. They do not use face recognition or establish your identity.</p>
+<h3>Live repetition counting</h3>
+<p>Camera permission is used when you set up a camera-counted competition. Camera frames and temporary pose landmarks are processed on your device to estimate repetitions. GymWars does not record or upload the competition footage or pose landmarks, stream your camera to an opponent, or capture microphone audio. The repetition score and match state are sent to our backend to run the competition.</p>
+<p>Google ML Kit performs pose detection on the device. Separately, its SDK sends Google device and app information, installation identifiers, configuration, performance measurements and error or usage events for diagnostics and usage analytics. Android pose detection also uses Firebase installation and remote-configuration services. These SDK diagnostics are distinct from your camera footage. See Google's disclosures for <a href="https://developers.google.com/ml-kit/ios-data-disclosure">iOS</a> and <a href="https://developers.google.com/ml-kit/android-data-disclosure">Android</a>.</p>
+<p>You can deny or revoke camera and photo permissions in your device settings. Camera-counted competitions need camera access; you can use the training log without entering one.</p>
+</section>
+<section id="purposes" aria-labelledby="purposes-title">
+<h2 id="purposes-title">4. How we use and share information</h2>
+<p>We use your information to provide account access and syncing; keep training history and calculate progress; display content to its permitted audience; connect friends; run competitions; deliver notifications; manage subscriptions; answer support requests; and detect or address abuse, security issues and technical failures.</p>
+<p>Authorized moderators can access submitted social photos and reported content when needed to review it against our <a href="community-guidelines.html">Community Guidelines</a>. Reports and moderation records are not public. A post that was shared and reported can remain available to an authorized reviewer for the investigation even if its author later changes its audience to Only me. The identity of a reporter is not displayed to the reported person.</p>
+<ul>
+<li><strong>Supabase:</strong> account authentication, databases, private media storage and backend services.</li>
+<li><strong>RevenueCat:</strong> purchase validation, subscription status, entitlement management and the advertising measurement integration described in section 6.</li>
+<li><strong>Apple and Google:</strong> sign-in when selected, store payments, and notification delivery through platform services.</li>
+<li><strong>Firebase (Google):</strong> product analytics, crash reporting and push notification services.</li>
+<li><strong>Google ML Kit:</strong> local pose detection and the SDK diagnostics described in section 3.</li>
+<li><strong>Meta Platforms:</strong> advertising measurement as described in section 6.</li>
+</ul>
+<p>Service providers may process data in countries other than your own. We restrict access through account permissions and use encrypted connections for data sent to the service. No system can guarantee absolute security.</p>
+<p>We do not sell your personal data. We may disclose information when required by law or when necessary to investigate abuse, protect people or defend legal rights. Content you choose to share is disclosed to the audience you select.</p>
+</section>
+<section id="diagnostics" aria-labelledby="diagnostics-title">
+<h2 id="diagnostics-title">5. Product analytics and diagnostics</h2>
+<p>Firebase analytics and crash reporting are enabled in release builds. They collect app interactions, onboarding and feature-use events, device and app information, performance data and error reports. When you are signed in, we associate these records with your GymWars account identifier so we can understand and resolve account-specific problems. They are not described as anonymous.</p>
+<p>ML Kit collects its own SDK diagnostics when used, as explained in section 3. Your camera footage is not included in these diagnostics by GymWars.</p>
+<p>Contact us if you want to ask about your diagnostic records or exercise an applicable privacy right. Your device's advertising-tracking control governs advertising permission; it is separate from the operational analytics described here.</p>
+</section>
+<section id="advertising" aria-labelledby="advertising-title">
+<h2 id="advertising-title">6. Advertising and measurement</h2>
+<p>We advertise GymWars on Meta's platforms, including Facebook and Instagram. Where advertising measurement is enabled, we use limited information to understand which advertising leads to installs and subscriptions:</p>
+<ul>
+<li><strong>Hashed email:</strong> for a signed-in account, the Meta SDK can hash the email address for matching with information Meta already holds. A hash is a matching identifier, not anonymous data. Apple Hide My Email relay addresses are excluded from this matching.</li>
+<li><strong>Device and advertising identifiers:</strong> identifiers and install or app-use events used for attribution. Access to the iOS advertising identifier requires App Tracking Transparency permission.</li>
+<li><strong>Subscription events:</strong> trial, purchase and renewal events, together with the amount paid, can be sent through RevenueCat's server integration.</li>
+</ul>
+<p>We do not send your workout history, body measurements, ranks, friends, social photos, captions, comments, camera footage or competition scores to Meta for advertising.</p>
+<h3>Your controls</h3>
+<p>From GymWars 2.0.0, the iOS app enables the Meta integration only after App Tracking Transparency authorization and a separate region eligibility check. Without authorization, it does not initialize the Meta SDK or send new Meta activation events, matching email or attribution identifiers. You can manage permission in <em>Settings → Privacy &amp; Security → Tracking</em>. The app checks again when it returns to the foreground and stops further Meta event calls if authorization was revoked.</p>
+<p>Server-side subscription measurement is a separate integration. Our RevenueCat integration now requires authorized ATT consent for iOS subscription events sent to Meta, using the consent status most recently received from the app. Records sent by earlier versions or before a permission change are not automatically erased. A permission change made while the app is closed reaches our subscription provider when the app next communicates with it. Contact <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> to ask us to stop advertising measurement associated with your account or request deletion of related records.</p>
+<h3>Regional and platform restrictions</h3>
+<p>GymWars disables the device Meta app-events integration when the device region or time zone indicates the European Economic Area, United Kingdom or Switzerland, and does not request tracking permission in those regions. This check does not use GPS location. From version 2.0.0 the Android app does not include the Meta SDK.</p>
+<p>The regional device control does not retroactively erase attribution records already held by a provider. For example, a previously attributed account moving into an excluded region can still have server-side subscription events matched using previously saved identifiers while the provider records authorized consent. Contact us to request that existing account-level measurement stop. Regional controls do not disable the account, payment or diagnostic services needed by the app.</p>
+</section>
+<section id="retention" aria-labelledby="retention-title">
+<h2 id="retention-title">7. Retention and deletion</h2>
+<p>We keep account and training data while it is needed to provide your account and features. You can delete your account in the app's settings, or contact us if you cannot access it. Account deletion removes associated account, workout and social data from the active service; any remaining deletion work is normally completed within 30 days, except records we must retain for a legal obligation or a specific unresolved safety or security issue.</p>
+<ul>
+<li><strong>Deleted posts and comments:</strong> access is removed and the deleted caption, comment text and shared workout snapshot are cleared from active records. A minimal technical record may remain to prevent duplicate session posts and maintain references; it does not preserve the deleted photo, caption or workout snapshot. Deleting a shared post does not delete the original workout from your private training history.</li>
+<li><strong>Social photos:</strong> deleted or replaced photos are queued for permanent removal. Removal normally completes within 24 hours; service outages can delay cleanup and failed deletions are retried. Uploads that are abandoned before being attached to a post or profile are eligible for cleanup after 24 hours.</li>
+<li><strong>Reports and moderation:</strong> pending reports are accessible only to authorized personnel. When a report is resolved, its text and links to the people and content involved are removed. A nonidentifying audit of action types and counts is retained for 90 days after resolution. Photo approval records remain while an approved photo is in use. Personal photo-review metadata is removed after the associated file is erased, normally within the same 24-hour cleanup period. An appeal should include the relevant context because we do not keep a personal copy of a resolved report for that purpose.</li>
+<li><strong>Backups and technical logs:</strong> residual copies can remain in restricted backups until normal backup rotation, and records needed to secure or restore the service may outlast removal from the live app. They are not used to keep deleted content visible in the feed.</li>
+</ul>
+<p>Deleting an account does not automatically cancel an App Store or Google Play subscription. Manage the subscription with the store. We do not control copies that another user saved outside GymWars or records a payment provider must keep.</p>
+</section>
+<section id="rights" aria-labelledby="rights-title">
+<h2 id="rights-title">8. Your choices and privacy requests</h2>
+<p>You can edit your profile, remove optional social handles, choose the audience for shared activity, change profile visibility, block people and manage notification or device permissions. You can also request access, correction or deletion of your information by contacting us. Other rights, including objection, restriction or portability, may apply under the laws where you live. We may ask for information needed to verify that a request relates to your account.</p>
+<p>We do not use the competition camera for identifying people or create a facial-recognition profile. Do not upload someone else's personal information without their permission. If you believe a child or another person has provided information without appropriate permission, contact us so we can investigate.</p>
+</section>
+<section id="payments" aria-labelledby="payments-title">
+<h2 id="payments-title">9. Subscriptions and payments</h2>
+<p>Apple or Google processes payment details. GymWars does not receive your full payment-card number. RevenueCat and GymWars receive purchase, subscription and entitlement information needed to manage premium access and restore purchases.</p>
+</section>
+<section id="contact" aria-labelledby="contact-title">
+<h2 id="contact-title">10. Contact and policy changes</h2>
+<p>GymWars is operated by UltasDev, a trade name of YUSUF EMİR ULUTAŞ, a sole proprietorship. For a privacy request, email <a href="mailto:ultasdevelopment@gmail.com?subject=GymWars%20privacy%20request">ultasdevelopment@gmail.com</a>. Include your GymWars username and the request; do not send your password or payment-card details.</p>
+<p>We will update this page when our practices change and revise the date above. The <a href="support.html">GymWars Support page</a> explains reporting, blocking and account deletion.</p>
+</section>
+</div>
+</main>
+<footer class="legal-footer">
+<div class="legal-footer-inner">
+<div class="legal-footer-links"><a href="privacy-policy.html">Privacy</a>
+<a href="terms-of-service.html">Terms</a>
+<a href="community-guidelines.html">Community</a>
+<a href="support.html">Support</a></div>
+<p>GymWars is operated by UltasDev, a trade name of YUSUF EMİR ULUTAŞ, a sole proprietorship.</p>
+<p><a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> · <a href="../index.html">ultasdev.com</a></p>
+<p>&copy; 2026 UltasDev — YUSUF EMİR ULUTAŞ. All rights reserved.</p>
+</div>
+</footer>
 </body>
 </html>
