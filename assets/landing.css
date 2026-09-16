@@ -26,7 +26,7 @@ main { flex: 1; display: flex; flex-direction: column; }
 h1 { margin: 0; font-size: clamp(58px, 9.4vw, 148px); font-weight: 450; letter-spacing: -.075em; line-height: 1.18; }
 .headline { display: flex; align-items: center; gap: .19em; white-space: nowrap; }
 .word-window { display: inline-block; position: relative; top: .06em; width: 2.85em; height: 1.3em; overflow: hidden; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -.045em; }
-.word { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; padding: 0 .08em .075em 0; will-change: transform, opacity, filter; }
+.word { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; padding: 0 .08em .075em 0; will-change: opacity; }
 .period { margin-left: .015em; }
 .expertise { width: min(880px, 100%); margin: 0 auto 48px; }
 .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }

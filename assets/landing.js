@@ -36,14 +36,14 @@
         windowElement.append(incoming);
 
         if (animate && !reducedMotion.matches && typeof incoming.animate === 'function') {
-            const options = { duration: 850, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' };
+            const options = { duration: 520, easing: 'cubic-bezier(.4, 0, .2, 1)', fill: 'both' };
             const exit = outgoing.animate([
-                { transform: 'translateY(0) rotateX(0)', opacity: 1, filter: 'blur(0)' },
-                { transform: 'translateY(-80%) rotateX(12deg)', opacity: 0, filter: 'blur(7px)' },
+                { opacity: 1 },
+                { opacity: 0 },
             ], options);
             const enter = incoming.animate([
-                { transform: 'translateY(85%) rotateX(-12deg)', opacity: 0, filter: 'blur(7px)' },
-                { transform: 'translateY(0) rotateX(0)', opacity: 1, filter: 'blur(0)' },
+                { opacity: 0 },
+                { opacity: 1 },
             ], options);
             activeAnimations = [exit, enter];
             exit.finished.then(() => outgoing.remove()).catch(() => {});
