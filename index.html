@@ -3,431 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="facebook-domain-verification" content="aq4tirdo5ybrh0lfvmjh5uiixpjgc0" />
-    <title>UltasDev - Premium Mobil Uygulama Geliştirme</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="facebook-domain-verification" content="aq4tirdo5ybrh0lfvmjh5uiixpjgc0">
+    <meta name="description" content="UltasDev is an independent app studio. We build, launch, scale, and run thoughtfully crafted mobile apps. From the first idea to what comes next.">
+    <meta name="theme-color" content="#ffffff">
+    <title>UltasDev — We build apps.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/landing.css">
+    <script src="assets/landing.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="nav-left">
-                        <div class="language-selector">
-                            <button class="language-trigger" id="languageTrigger" aria-label="Select language">
-                                <span class="flag-icon" id="currentFlag">🇹🇷</span>
-                            </button>
-                            <div class="language-dropdown" id="languageDropdown">
-                                <button class="language-option" data-lang="en">
-                                    <span class="flag-icon">🇬🇧</span>
-                                    <span class="lang-name">English</span>
-                                </button>
-                                <button class="language-option" data-lang="tr">
-                                    <span class="flag-icon">🇹🇷</span>
-                                    <span class="lang-name">Türkçe</span>
-                                </button>
-                            </div>
-                        </div>
-                        <a href="#" class="logo">
-                            <span class="logo-text">ULTASDEV</span>
-                            <span class="logo-dot">.</span>
-                        </a>
-                    </div>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#home" class="nav-link" data-i18n="nav.home">Ana Sayfa</a></li>
-                        <li><a href="#services" class="nav-link" data-i18n="nav.services">Hizmetler</a></li>
-                        <li><a href="#process" class="nav-link" data-i18n="nav.process">Süreç</a></li>
-                        <li><a href="#about" class="nav-link" data-i18n="nav.about">Hakkımızda</a></li>
-                        <li><a href="support.html" class="nav-link" data-i18n="nav.support">Destek</a></li>
-                        <li><a href="#contact" class="nav-link nav-cta" data-i18n="nav.contact">Başlayalım</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <div class="page">
+        <header class="header">
+            <a class="wordmark" href="./" aria-label="UltasDev home">ultasdev<span>.</span></a>
+        </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge" data-i18n="hero.badge">MOBİL UYGULAMA UZMANLARI</div>
-                    <h1 class="hero-title">
-                        <span data-i18n="hero.title.1">Geleceği Tanımlayan</span>
-                        <span class="hero-highlight" data-i18n="hero.title.2">Uygulamalar Geliştiriyoruz</span>
-                    </h1>
-                    <p class="hero-description" data-i18n="hero.description">
-                        Vizyonunuzu güçlü mobil deneyimlere dönüştürüyoruz. Kullanıcıların sevdiği ve işletmelerin güvendiği premium iOS ve Android uygulamaları geliştiriyoruz.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary" data-i18n="hero.btn.start">Projenizi Başlatın</a>
-                        <a href="#services" class="btn btn-secondary" data-i18n="hero.btn.work">Hizmetlerimiz</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="floating-phone">
-                        <div class="phone-frame">
-                            <div class="phone-power-button"></div>
-                            <div class="phone-screen">
-                                <div class="dynamic-island"></div>
-                                <div class="phone-screen-content">
-                                <!-- Status Bar -->
-                                <div class="phone-status-bar">
-                                    <span class="time">9:41</span>
-                                    <div class="status-icons">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M1 9l2-2v8a2 2 0 002 2h14a2 2 0 002-2V7l2 2V6l-3-3h-6l-3 3-3-3H2L-1 6v3l2-2z"/>
-                                        </svg>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M2 17h20v2H2zm1.15-4.05L4 11.47l.85 1.48 1.3-.75-.85-1.48H7v-1.5H5.3l.85-1.48L4.85 7 4 8.47 3.15 7l-1.3.75.85 1.48H1v1.5h1.7l-.85 1.48 1.3.75zm6.7-.75l1.48.85 1.48-.85-.85-1.48H14v-1.5h-2.05l.85-1.48-1.48-.85L10 8.47 8.68 7l-1.48.85.85 1.48H6v1.5h2.05l-.85 1.48zm8 0l1.48.85 1.48-.85-.85-1.48H22v-1.5h-2.05l.85-1.48-1.48-.85L18 8.47 16.68 7l-1.48.85.85 1.48H14v1.5h2.05l-.85 1.48z"/>
-                                        </svg>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M2 7v10c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1zm18 3v6H4v-6h16z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <!-- App Header -->
-                                <div class="phone-app-header">
-                                    <h3 class="app-title">ULTASDEV</h3>
-                                    <p class="app-subtitle">Premium Mobil Çözümler</p>
-                                </div>
-                                <!-- App Content -->
-                                <div class="phone-app-content">
-                                    <div class="app-card">
-                                        <div class="app-card-icon">📱</div>
-                                        <div class="app-card-text">
-                                            <h4>iOS Geliştirme</h4>
-                                            <p>Swift & SwiftUI</p>
-                                        </div>
-                                    </div>
-                                    <div class="app-card">
-                                        <div class="app-card-icon">🤖</div>
-                                        <div class="app-card-text">
-                                            <h4>Android</h4>
-                                            <p>Kotlin & Compose</p>
-                                        </div>
-                                    </div>
-                                    <div class="app-card">
-                                        <div class="app-card-icon">🎨</div>
-                                        <div class="app-card-text">
-                                            <h4>UI/UX Tasarım</h4>
-                                            <p>Modern Arayüzler</p>
-                                        </div>
-                                    </div>
-                                    <div class="app-card">
-                                        <div class="app-card-icon">⚡</div>
-                                        <div class="app-card-text">
-                                            <h4>Hızlı Teslimat</h4>
-                                            <p>Zamanında Proje</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- App Bottom Nav -->
-                                <div class="phone-app-nav">
-                                    <div class="nav-item active">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="nav-item">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="nav-item">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="nav-item">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <main id="home">
+            <section class="hero" aria-labelledby="hero-title">
+                <h1 id="hero-title">
+                    <span class="sr-only">We build, launch, scale, and run apps.</span>
+                    <span class="headline" aria-hidden="true">
+                        <span>We</span>
+                        <span class="word-window"><span class="word current">build</span></span>
+                        <span>apps<span class="period">.</span></span>
+                    </span>
+                </h1>
+            </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge" data-i18n="services.badge">NELER YAPIYORUZ</div>
-                    <h2 class="section-title" data-i18n="services.title">Mobil Mükemmellik</h2>
-                    <p class="section-description" data-i18n="services.description">
-                        İşletmenizin ihtiyaçlarına özel uçtan uca mobil uygulama geliştirme hizmetleri
-                    </p>
+            <section class="expertise" id="services" aria-label="Our expertise">
+                <div class="services" id="process" role="group" aria-label="Explore what we do" aria-describedby="service-description">
+                    <button class="service active" type="button" data-index="0" aria-pressed="true"><span class="service-number">01</span><span>Build</span><span class="service-note">Craft the experience</span></button>
+                    <button class="service" type="button" data-index="1" aria-pressed="false"><span class="service-number">02</span><span>Launch</span><span class="service-note">Bring it to the world</span></button>
+                    <button class="service" type="button" data-index="2" aria-pressed="false"><span class="service-number">03</span><span>Scale</span><span class="service-note">Grow with purpose</span></button>
+                    <button class="service" type="button" data-index="3" aria-pressed="false"><span class="service-number">04</span><span>Run</span><span class="service-note">Keep moving forward</span></button>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.ios.title">iOS Geliştirme</h3>
-                        <p class="service-description" data-i18n="services.ios.description">Optimal performans ve kullanıcı deneyimi için Swift ve SwiftUI ile geliştirilen native iOS uygulamaları</p>
-                        <ul class="service-features">
-                            <li data-i18n="services.ios.feature.1">Swift & SwiftUI</li>
-                            <li data-i18n="services.ios.feature.2">App Store Optimizasyonu</li>
-                            <li data-i18n="services.ios.feature.3">iOS Tasarım Standartları</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.android.title">Android Geliştirme</h3>
-                        <p class="service-description" data-i18n="services.android.description">Kotlin ve modern mimari desenler kullanarak yüksek performanslı Android uygulamaları</p>
-                        <ul class="service-features">
-                            <li data-i18n="services.android.feature.1">Kotlin & Jetpack Compose</li>
-                            <li data-i18n="services.android.feature.2">Material Design 3</li>
-                            <li data-i18n="services.android.feature.3">Play Store Yayınlama</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.cross.title">Cross-Platform Uygulamalar</h3>
-                        <p class="service-description" data-i18n="services.cross.description">React Native ve Flutter ile tek kod tabanından hızlı pazara sunulan çözümler</p>
-                        <ul class="service-features">
-                            <li data-i18n="services.cross.feature.1">React Native & Flutter</li>
-                            <li data-i18n="services.cross.feature.2">Kod Yeniden Kullanımı</li>
-                            <li data-i18n="services.cross.feature.3">Maliyet Etkin Çözümler</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.ui.title">UI/UX Tasarım</h3>
-                        <p class="section-description" data-i18n="services.ui.description">Kullanıcıları memnun eden ve etkileşimi artıran güzel, sezgisel arayüzler</p>
-                        <ul class="service-features">
-                            <li data-i18n="services.ui.feature.1">Kullanıcı Araştırması</li>
-                            <li data-i18n="services.ui.feature.2">Wireframe & Prototipleme</li>
-                            <li data-i18n="services.ui.feature.3">Tasarım Sistemleri</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 12 17 22 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.backend.title">Backend Geliştirme</h3>
-                        <p class="service-description" data-i18n="services.backend.description">Mobil uygulamalarınızı destekleyecek ölçeklenebilir, güvenli backend sistemleri ve API'ler</p>
-                        <ul class="service-features">
-                            <li data-i18n="services.backend.feature.1">RESTful & GraphQL API'ler</li>
-                            <li data-i18n="services.backend.feature.2">Bulut Altyapısı</li>
-                            <li data-i18n="services.backend.feature.3">Veritabanı Tasarımı</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="service-title" data-i18n="services.support.title">Bakım & Destek</h3>
-                        <p class="service-description" data-i18n="services.support.description">Uygulamanızın güncel, güvenli ve en iyi performansta kalması için sürekli destek</p>
-                        <ul class="service-features">
-                            <li data-i18n="services.support.feature.1">Düzenli Güncellemeler</li>
-                            <li data-i18n="services.support.feature.2">Performans İzleme</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <p class="service-description" id="service-description">Beautiful interfaces. Robust engineering. Apps people love to use.</p>
+            </section>
+        </main>
 
-        <section id="process" class="process">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge" data-i18n="process.badge">NASIL ÇALIŞIYORUZ</div>
-                    <h2 class="section-title" data-i18n="process.title">Geliştirme Sürecimiz</h2>
-                    <p class="section-description" data-i18n="process.description">
-                        Başarılı uygulama teslimatını garanti eden kanıtlanmış metodolojimiz
-                    </p>
-                </div>
-                <div class="process-timeline">
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <h3 class="step-title" data-i18n="process.step.1.title">Keşif & Strateji</h3>
-                        <p class="step-description" data-i18n="process.step.1.description">İş hedeflerinizi, hedef kitlenizi ve pazarınızı derinlemesine analiz ederek kazanan bir strateji oluşturuyoruz</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <h3 class="step-title" data-i18n="process.step.2.title">Tasarım & Prototip</h3>
-                        <p class="step-description" data-i18n="process.step.2.description">Markanızla uyumlu, sezgisel kullanıcı deneyimleri ve güzel arayüzler oluşturuyoruz</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <h3 class="step-title" data-i18n="process.step.3.title">Geliştirme</h3>
-                        <p class="step-description" data-i18n="process.step.3.description">En son teknolojileri ve en iyi uygulamaları kullanarak temiz, ölçeklenebilir kod ile uygulamanızı inşa ediyoruz</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <h3 class="step-title" data-i18n="process.step.4.title">Test & Kalite Kontrol</h3>
-                        <p class="step-description" data-i18n="process.step.4.description">Kusursuz performans ve kullanıcı deneyimi için tüm cihazlarda kapsamlı testler gerçekleştiriyoruz</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">05</div>
-                        <h3 class="step-title" data-i18n="process.step.5.title">Yayınlama & Destek</h3>
-                        <p class="step-description" data-i18n="process.step.5.description">Uygulama mağazalarına sorunsuz yayınlama ve sürekli başarı için devam eden destek</p>
-                    </div>
-                </div>
+        <footer class="footer">
+            <div class="business-info">
+                <p>© <span id="year">2026</span> UltasDev</p>
+                <p>UltasDev is a trade name of YUSUF EMİR ULUTAŞ, a sole proprietorship.</p>
             </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="section-badge" data-i18n="about.badge">HAKKIMIZDA</div>
-                        <h2 class="section-title" data-i18n="about.title">Dijital Çözümler İnşa Ediyoruz</h2>
-                        <p class="about-description" data-i18n="about.description.1">
-                            UltasDev olarak, fark yaratan mobil uygulamalar geliştirme konusunda tutkuluyuz. Yetenekli geliştiriciler, tasarımcılar ve stratejistlerden oluşan ekibimizle fikirleri güçlü dijital ürünlere dönüştürüyoruz.
-                        </p>
-                        <p class="about-description" data-i18n="about.description.2">
-                            Teknolojinin gerçek dünya sorunlarını çözme ve insan deneyimlerini geliştirme gücüne inanıyoruz. İnşa ettiğimiz her uygulama, hassasiyet, yaratıcılık ve kullanıcı ihtiyaçlarının derin bir anlayışıyla şekilleniyor.
-                        </p>
-                        <div class="about-features">
-                            <div class="feature-item">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span data-i18n="about.feature.1">Çevik Geliştirme Metodolojisi</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span data-i18n="about.feature.2">Şeffaf İletişim</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span data-i18n="about.feature.3">Lansman Sonrası Destek</span>
-                            </div>
-                            <div class="feature-item">
-                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span data-i18n="about.feature.4">Güvenlik Odaklı Yaklaşım</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="legal-links">
+                <button class="motion-control" type="button" aria-label="Pause word animation" aria-pressed="false" hidden>Pause animation</button>
+                <a href="mailto:ultasdevelopment@gmail.com">Contact</a>
+                <a href="support.html">Support</a>
+                <a href="website-privacy.html">Website privacy</a>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-text">
-                        <div class="section-badge" data-i18n="contact.badge">İLETİŞİM</div>
-                        <h2 class="section-title" data-i18n="contact.title">Uygulamanızı Geliştirmeye Hazır Mısınız?</h2>
-                        <p class="contact-description" data-i18n="contact.description">
-                            Vizyonunuzu gerçeğe dönüştürmek için nasıl yardımcı olabileceğimizi konuşalım. Ekibimiz birlikte harika şeyler yaratmaya hazır.
-                        </p>
-                        <div class="contact-info">
-                            <a href="mailto:ultasdevelopment@gmail.com" class="contact-link">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <span data-i18n="contact.email">ultasdevelopment@gmail.com</span>
-                            </a>
-                            <div class="contact-link">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                <span data-i18n="contact.location">Global - Uzaktan Çalışma</span>
-                            </div>
-                            <div class="contact-link">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                </svg>
-                                <span data-i18n="contact.business">YUSUF EMİR ULUTAŞ</span>
-                            </div>
-                        </div>
-                        <div class="contact-cta">
-                            <a href="mailto:ultasdevelopment@gmail.com" class="btn btn-primary" data-i18n="contact.btn.start">Proje Başlatın</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">ULTASDEV.</div>
-                    <p class="footer-tagline" data-i18n="footer.tagline">Geleceği inşa ediyoruz, birer uygulama ile.</p>
-                    <p class="footer-legal-name" data-i18n="footer.legal.owner">UltasDev, YUSUF EMİR ULUTAŞ şahıs işletmesinin ticari markasıdır.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4 data-i18n="footer.company.title">Şirket</h4>
-                        <ul>
-                            <li><a href="#about" data-i18n="footer.company.about">Hakkımızda</a></li>
-                            <li><a href="#process" data-i18n="footer.company.process">Süreç</a></li>
-                            <li><a href="#contact" data-i18n="footer.company.contact">İletişim</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 data-i18n="footer.services.title">Hizmetler</h4>
-                        <ul>
-                            <li><a href="#services" data-i18n="footer.services.ios">iOS Geliştirme</a></li>
-                            <li><a href="#services" data-i18n="footer.services.android">Android Geliştirme</a></li>
-                            <li><a href="#services" data-i18n="footer.services.ui">UI/UX Tasarım</a></li>
-                            <li><a href="#services" data-i18n="footer.services.consulting">Danışmanlık</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Yasal</h4>
-                        <ul>
-                            <li><a href="uza/privacy-policy.html">Gizlilik Politikası</a></li>
-                            <li><a href="uza/terms-of-service.html">Kullanım Koşulları</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p data-i18n="footer.copyright">&copy; 2026 UltasDev &mdash; YUSUF EMİR ULUTAŞ. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        </footer>
+    </div>
 </body>
 </html>
