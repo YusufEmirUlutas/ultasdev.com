@@ -36,15 +36,14 @@
         windowElement.append(incoming);
 
         if (animate && !reducedMotion.matches && typeof incoming.animate === 'function') {
-            // Both faces share one rotation and timeline, like opposite sides of a wheel.
-            const options = { duration: 1050, easing: 'cubic-bezier(.65, 0, .35, 1)', fill: 'both' };
+            const options = { duration: 850, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' };
             const exit = outgoing.animate([
-                { transform: 'rotateX(0deg)' },
-                { transform: 'rotateX(180deg)' },
+                { transform: 'translateY(0) rotateX(0)', opacity: 1, filter: 'blur(0)' },
+                { transform: 'translateY(-80%) rotateX(12deg)', opacity: 0, filter: 'blur(7px)' },
             ], options);
             const enter = incoming.animate([
-                { transform: 'rotateX(-180deg)' },
-                { transform: 'rotateX(0deg)' },
+                { transform: 'translateY(85%) rotateX(-12deg)', opacity: 0, filter: 'blur(7px)' },
+                { transform: 'translateY(0) rotateX(0)', opacity: 1, filter: 'blur(0)' },
             ], options);
             exit.startTime = enter.startTime = document.timeline.currentTime;
             activeAnimations = [exit, enter];
