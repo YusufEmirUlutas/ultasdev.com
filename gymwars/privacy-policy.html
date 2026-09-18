@@ -27,7 +27,7 @@
 <div class="legal-hero">
 <span class="legal-badge">GymWars</span>
 <h1>Privacy Policy</h1>
-<p class="legal-date">Last updated: September 9, 2026</p>
+<p class="legal-date">Last updated: September 18, 2026</p>
 </div>
 <div class="legal-content">
 <p class="legal-version">The redesigned social profiles, session posts, uploaded social photos and live camera-counted competitions described here are available from GymWars 2.0.0. Earlier versions may not include these features.</p>
@@ -70,7 +70,7 @@
 <section id="photos-camera" aria-labelledby="photos-camera-title">
 <h2 id="photos-camera-title">3. Photos, avatars and the competition camera</h2>
 <h3>Photos you choose to upload</h3>
-<p>You can select a workout photo or a profile photo, or use the app's character artwork. Uploaded social photos are stored in private Supabase storage and are served only after access checks. Photos submitted for sharing are held for moderation before being shown to other people. Photos attached only to an Only me post are not placed in the routine photo-review queue.</p>
+<p>You can select a workout photo or a profile photo, or use the app's character artwork. Uploaded social photos are stored in private Supabase storage and are served only after access checks. Photos you share with other people appear right away. Within seconds, Google Cloud Vision screens each shared photo for explicit or violent content, and a photo it flags is hidden until a moderator reviews it. Photos attached only to an Only me post are not screened unless you later share them.</p>
 <p>If you edit a personal avatar, we may store an editing source image accessible only to your account and the finished avatar that eligible viewers can see. Character stickers are positioned by you. They do not use face recognition or establish your identity.</p>
 <h3>Live repetition counting</h3>
 <p>Camera permission is used when you set up a camera-counted competition. Camera frames and temporary pose landmarks are processed on your device to estimate repetitions. GymWars does not record or upload the competition footage or pose landmarks, stream your camera to an opponent, or capture microphone audio. The repetition score and match state are sent to our backend to run the competition.</p>
@@ -87,6 +87,7 @@
 <li><strong>Apple and Google:</strong> sign-in when selected, store payments, and notification delivery through platform services.</li>
 <li><strong>Firebase (Google):</strong> product analytics, crash reporting and push notification services.</li>
 <li><strong>Google ML Kit:</strong> local pose detection and the SDK diagnostics described in section 3.</li>
+<li><strong>Google Cloud Vision:</strong> automated screening of photos you share with other people for explicit or violent content. Images are processed in memory, are not stored by the service and are not used to train Google's models.</li>
 <li><strong>Meta Platforms:</strong> advertising measurement as described in section 6.</li>
 </ul>
 <p>Service providers may process data in countries other than your own. We restrict access through account permissions and use encrypted connections for data sent to the service. No system can guarantee absolute security.</p>
