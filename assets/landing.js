@@ -36,7 +36,7 @@
         windowElement.append(incoming);
 
         if (animate && !reducedMotion.matches && typeof incoming.animate === 'function') {
-            const options = { duration: 850, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' };
+            const options = { duration: 250, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' };
             const exit = outgoing.animate([
                 { transform: 'translateY(0) rotateX(0)', opacity: 1, filter: 'blur(0)' },
                 { transform: 'translateY(-80%) rotateX(12deg)', opacity: 0, filter: 'blur(7px)' },
@@ -65,7 +65,7 @@
         timer = window.setTimeout(() => {
             showStage((index + 1) % stages.length);
             schedule();
-        }, 3800);
+        }, 1200);
     }
 
     function updateControl() {
