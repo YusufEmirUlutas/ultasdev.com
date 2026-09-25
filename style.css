@@ -85,100 +85,6 @@ body {
     margin-left: 2px;
 }
 
-/* Language Selector */
-.language-selector {
-    position: relative;
-}
-
-.language-trigger {
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 40px;
-}
-
-.language-trigger:hover {
-    background: var(--gray-200);
-    border-color: var(--gray-300);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.language-trigger:active {
-    transform: translateY(0);
-}
-
-.flag-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.language-dropdown {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    left: 0;
-    background: var(--primary-white);
-    border: 1px solid var(--gray-200);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    min-width: 160px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
-    overflow: hidden;
-}
-
-.language-dropdown.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.language-option {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    color: var(--gray-700);
-}
-
-.language-option:hover {
-    background: var(--gray-100);
-}
-
-.language-option:active {
-    background: var(--gray-200);
-}
-
-.language-option.selected {
-    background: var(--gray-100);
-    color: var(--primary-black);
-    font-weight: 600;
-}
-
-.lang-name {
-    font-weight: 500;
-}
-
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -1328,25 +1234,6 @@ body {
 
     .nav-left {
         gap: 0.5rem;
-    }
-
-    .language-trigger {
-        width: 40px;
-        height: 36px;
-        padding: 0.4rem;
-    }
-
-    .flag-icon {
-        font-size: 1.25rem;
-    }
-
-    .language-dropdown {
-        min-width: 140px;
-    }
-
-    .language-option {
-        padding: 0.65rem 0.875rem;
-        font-size: 0.875rem;
     }
 
     .hero {
