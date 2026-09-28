@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How GymWars handles account and fitness data, optional social photos, local camera rep counting, competitions, privacy controls and deletion.">
+<meta name="description" content="How GymWars handles account and fitness data, optional social photos, local camera rep counting, competitions, age checks, privacy controls and deletion.">
 <title>Privacy Policy - GymWars | UltasDev</title>
 <link rel="canonical" href="https://ultasdev.com/gymwars/privacy-policy.html">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="legal.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -27,7 +25,7 @@
 <div class="legal-hero">
 <span class="legal-badge">GymWars</span>
 <h1>Privacy Policy</h1>
-<p class="legal-date">Last updated: September 18, 2026</p>
+<p class="legal-date">Last updated: September 28, 2026</p>
 </div>
 <div class="legal-content">
 <p class="legal-version">The redesigned social profiles, session posts, uploaded social photos and live camera-counted competitions described here are available from GymWars 2.0.0. Earlier versions may not include these features.</p>
@@ -40,14 +38,16 @@
 <a href="#advertising">6. Advertising and measurement</a>
 <a href="#retention">7. Retention and deletion</a>
 <a href="#rights">8. Your choices and privacy requests</a>
-<a href="#payments">9. Subscriptions and payments</a>
-<a href="#contact">10. Contact and policy changes</a></nav>
+<a href="#children">9. Children, teens and age checks</a>
+<a href="#payments">10. Subscriptions and payments</a>
+<a href="#contact">11. Contact and policy changes</a></nav>
 <section id="information" aria-labelledby="information-title">
 <h2 id="information-title">1. Information we collect</h2>
 <p>This policy covers the GymWars app and its account, training, social and competition services.</p>
 <ul>
 <li><strong>Account and profile information:</strong> your account identifier, email address, sign-in provider, username, display name and any country, bio, social handles or profile image you choose to provide.</li>
-<li><strong>Training information:</strong> workout sessions, exercises, sets, weights, repetitions, time, effort ratings (RPE), notes, personal records, training preferences and body measurements you enter. We use this information for workout history, progress, ranks and character features.</li>
+<li><strong>Training information:</strong> workout sessions, exercises, sets, weights, repetitions, time, effort ratings (RPE), notes, personal records, training preferences, body measurements you enter and the answers you give during onboarding, such as your goal, experience, sex, age, height and body weight. We use this information for workout history, progress, ranks, strength standards and character features. When you are signed in, your onboarding answers are saved with your account so they survive a reinstall.</li>
+<li><strong>App store age signals:</strong> from GymWars 2.3.0, where the law requires it, the age range and parental-approval status that Apple or Google provides, described in <a href="#children">section 9</a>. This stays on your device.</li>
 <li><strong>Shared activity:</strong> the completed workout snapshot you choose to publish, its audience, optional caption and photo, Respect reactions, comments, friendships, friend requests and blocks. A shared snapshot includes its session statistics, exercises and sets.</li>
 <li><strong>Competition information:</strong> invitations, participants, readiness, match timing, repetition scores, completion or cancellation state, results, records, streaks and cosmetic crown status.</li>
 <li><strong>Service information:</strong> push notification tokens and preferences, support messages, reports, moderation decisions, purchase and subscription status, and technical records needed to operate and secure the service.</li>
@@ -84,7 +84,7 @@
 <ul>
 <li><strong>Supabase:</strong> account authentication, databases, private media storage and backend services.</li>
 <li><strong>RevenueCat:</strong> purchase validation, subscription status, entitlement management and the advertising measurement integration described in section 6.</li>
-<li><strong>Apple and Google:</strong> sign-in when selected, store payments, and notification delivery through platform services.</li>
+<li><strong>Apple and Google:</strong> sign-in when selected, store payments, notification delivery through platform services and, where the law requires it, the age range signals described in <a href="#children">section 9</a>.</li>
 <li><strong>Firebase (Google):</strong> product analytics, crash reporting and push notification services.</li>
 <li><strong>Google ML Kit:</strong> local pose detection and the SDK diagnostics described in section 3.</li>
 <li><strong>Google Cloud Vision:</strong> automated screening of photos you share with other people for explicit or violent content. Images are processed in memory, are not stored by the service and are not used to train Google's models.</li>
@@ -95,7 +95,7 @@
 </section>
 <section id="diagnostics" aria-labelledby="diagnostics-title">
 <h2 id="diagnostics-title">5. Product analytics and diagnostics</h2>
-<p>Firebase analytics and crash reporting are enabled in release builds. They collect app interactions, onboarding and feature-use events, device and app information, performance data and error reports. When you are signed in, we associate these records with your GymWars account identifier so we can understand and resolve account-specific problems. They are not described as anonymous.</p>
+<p>Firebase analytics and crash reporting are enabled in release builds. They collect app interactions, onboarding and feature-use events, device and app information, performance data and error reports. Onboarding events include some of your answers, such as your goal, experience, sex and age group (for example 18–24 or under 18), but not your exact age. When you are signed in, we associate these records with your GymWars account identifier so we can understand and resolve account-specific problems. They are not described as anonymous.</p>
 <p>ML Kit collects its own SDK diagnostics when used, as explained in section 3. Your camera footage is not included in these diagnostics by GymWars.</p>
 <p>Contact us if you want to ask about your diagnostic records or exercise an applicable privacy right. Your device's advertising-tracking control governs advertising permission; it is separate from the operational analytics described here.</p>
 </section>
@@ -109,10 +109,11 @@
 </ul>
 <p>We do not send your workout history, body measurements, ranks, friends, social photos, captions, comments, camera footage or competition scores to Meta for advertising.</p>
 <h3>Your controls</h3>
-<p>From GymWars 2.0.0, the iOS app enables the Meta integration only after App Tracking Transparency authorization and a separate region eligibility check. Without authorization, it does not initialize the Meta SDK or send new Meta activation events, matching email or attribution identifiers. You can manage permission in <em>Settings → Privacy &amp; Security → Tracking</em>. The app checks again when it returns to the foreground and stops further Meta event calls if authorization was revoked.</p>
+<p>From GymWars 2.0.0, the iOS app enables the Meta integration only after App Tracking Transparency authorization and separate region and age eligibility checks. Without authorization, it does not initialize the Meta SDK or send new Meta activation events, matching email or attribution identifiers. You can manage permission in <em>Settings → Privacy &amp; Security → Tracking</em>. The app checks again when it returns to the foreground and stops further Meta event calls if authorization was revoked.</p>
 <p>Server-side subscription measurement is a separate integration. Our RevenueCat integration now requires authorized ATT consent for iOS subscription events sent to Meta, using the consent status most recently received from the app. Records sent by earlier versions or before a permission change are not automatically erased. A permission change made while the app is closed reaches our subscription provider when the app next communicates with it. Contact <a href="mailto:ultasdevelopment@gmail.com">ultasdevelopment@gmail.com</a> to ask us to stop advertising measurement associated with your account or request deletion of related records.</p>
-<h3>Regional and platform restrictions</h3>
+<h3>Regional, age and platform restrictions</h3>
 <p>GymWars disables the device Meta app-events integration when the device region or time zone indicates the European Economic Area, United Kingdom or Switzerland, and does not request tracking permission in those regions. This check does not use GPS location. From version 2.0.0 the Android app does not include the Meta SDK.</p>
+<p>From GymWars 2.3.0, the Meta integration also stays off, and GymWars does not request tracking permission, for anyone who tells us in onboarding that they are under 18 or whom an app store identifies as under 18. See <a href="#children">section 9</a>.</p>
 <p>The regional device control does not retroactively erase attribution records already held by a provider. For example, a previously attributed account moving into an excluded region can still have server-side subscription events matched using previously saved identifiers while the provider records authorized consent. Contact us to request that existing account-level measurement stop. Regional controls do not disable the account, payment or diagnostic services needed by the app.</p>
 </section>
 <section id="retention" aria-labelledby="retention-title">
@@ -129,14 +130,20 @@
 <section id="rights" aria-labelledby="rights-title">
 <h2 id="rights-title">8. Your choices and privacy requests</h2>
 <p>You can edit your profile, remove optional social handles, choose the audience for shared activity, change profile visibility, block people and manage notification or device permissions. You can also request access, correction or deletion of your information by contacting us. Other rights, including objection, restriction or portability, may apply under the laws where you live. We may ask for information needed to verify that a request relates to your account.</p>
-<p>We do not use the competition camera for identifying people or create a facial-recognition profile. Do not upload someone else's personal information without their permission. If you believe a child or another person has provided information without appropriate permission, contact us so we can investigate.</p>
+<p>We do not use the competition camera for identifying people or create a facial-recognition profile. Do not upload someone else's personal information without their permission. If you believe a child or another person has provided information without appropriate permission, contact us so we can investigate. <a href="#children">Section 9</a> explains our age rules.</p>
+</section>
+<section id="children" aria-labelledby="children-title">
+<h2 id="children-title">9. Children, teens and age checks</h2>
+<p>GymWars is for people aged 13 and over. It is not directed to children under 13, and we do not knowingly collect personal information from them. The age question in onboarding starts at 13. If we learn that we have collected personal information from a child under 13, we will delete it. If you believe a child under 13 is using GymWars, contact <a href="mailto:ultasdevelopment@gmail.com?subject=GymWars%20child%20account">ultasdevelopment@gmail.com</a>.</p>
+<p><strong>App store age signals.</strong> From GymWars 2.3.0, where the law requires app stores to check ages (currently including some U.S. states), GymWars asks Apple or Google for your age range, such as 13–15, 16–17 or 18 and over, and whether a parent or guardian has approved the app. Apple may ask you before sharing it. We use this information only to apply age rules: people under 13 cannot continue, a parent or guardian's decision is respected, and advertising measurement stays off for people under 18. The age range stays on your device. We do not add it to your profile, show it to other people, send it to analytics or advertising partners, or sell it.</p>
+<p><strong>Teens.</strong> From GymWars 2.3.0, if you tell us in onboarding that you are under 18, or an app store tells us so, GymWars does not request tracking permission and does not send Meta advertising measurement from your device. Where the law requires it, we will notify you, or ask a parent or guardian for approval, before a significant change to GymWars. Parents and guardians can contact us to ask about, correct or delete a teen's information.</p>
 </section>
 <section id="payments" aria-labelledby="payments-title">
-<h2 id="payments-title">9. Subscriptions and payments</h2>
+<h2 id="payments-title">10. Subscriptions and payments</h2>
 <p>Apple or Google processes payment details. GymWars does not receive your full payment-card number. RevenueCat and GymWars receive purchase, subscription and entitlement information needed to manage premium access and restore purchases.</p>
 </section>
 <section id="contact" aria-labelledby="contact-title">
-<h2 id="contact-title">10. Contact and policy changes</h2>
+<h2 id="contact-title">11. Contact and policy changes</h2>
 <p>GymWars is operated by UltasDev, a trade name of YUSUF EMİR ULUTAŞ, a sole proprietorship. For a privacy request, email <a href="mailto:ultasdevelopment@gmail.com?subject=GymWars%20privacy%20request">ultasdevelopment@gmail.com</a>. Include your GymWars username and the request; do not send your password or payment-card details.</p>
 <p>We will update this page when our practices change and revise the date above. The <a href="support.html">GymWars Support page</a> explains reporting, blocking and account deletion.</p>
 </section>
